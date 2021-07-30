@@ -1,0 +1,226 @@
+[
+  {
+    "city": "Arizona",
+    "id": 1,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Arizona_Cardinals_logo.svg/179px-Arizona_Cardinals_logo.svg.png",
+    "name": "Cardinals",
+    "state": "Arizona"
+  },
+  {
+    "city": "Atlanta",
+    "id": 2,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Atlanta_Falcons_logo.svg/192px-Atlanta_Falcons_logo.svg.png",
+    "name": "Falcons",
+    "state": "Georgia"
+  },
+  {
+    "city": "Baltimore",
+    "id": 3,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Baltimore_Ravens_logo.svg/193px-Baltimore_Ravens_logo.svg.png",
+    "name": "Ravens",
+    "state": "Maryland"
+  },
+  {
+    "city": "Buffalo",
+    "id": 4,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Buffalo_Bills_logo.svg/189px-Buffalo_Bills_logo.svg.png",
+    "name": "Bills",
+    "state": "New York"
+  },
+  {
+    "city": "Carolina",
+    "id": 5,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Carolina_Panthers_logo.svg/100px-Carolina_Panthers_logo.svg.png",
+    "name": "Panthers",
+    "state": "North Carolina"
+  },
+  {
+    "city": "Chicago",
+    "id": 6,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Chicago_Bears_logo.svg/100px-Chicago_Bears_logo.svg.png",
+    "name": "Bears",
+    "state": "Illinois"
+  },
+  {
+    "city": "Cincinnati",
+    "id": 7,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Cincinnati_Bengals_logo.svg/100px-Cincinnati_Bengals_logo.svg.png",
+    "name": "Bengals",
+    "state": "Ohio"
+  },
+  {
+    "city": "Cleveland",
+    "id": 8,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d9/Cleveland_Browns_logo.svg/100px-Cleveland_Browns_logo.svg.png",
+    "name": "Browns",
+    "state": "Ohio"
+  },
+  {
+    "city": "Dallas",
+    "id": 9,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Dallas_Cowboys.svg/100px-Dallas_Cowboys.svg.png",
+    "name": "Cowboys",
+    "state": "Texas"
+  },
+  {
+    "city": "Denver",
+    "id": 10,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Denver_Broncos_logo.svg/100px-Denver_Broncos_logo.svg.png",
+    "name": "Broncos",
+    "state": "Colorado"
+  },
+  {
+    "city": "Detroit",
+    "id": 11,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Detroit_Lions_logo.svg/100px-Detroit_Lions_logo.svg.png",
+    "name": "Lions",
+    "state": "Michigan"
+  },
+  {
+    "city": "Green Bay",
+    "id": 12,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Green_Bay_Packers_logo.svg/100px-Green_Bay_Packers_logo.svg.png",
+    "name": "Packers",
+    "state": "Wisconsin"
+  },
+  {
+    "city": "Houston",
+    "id": 13,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Houston_Texans_logo.svg/100px-Houston_Texans_logo.svg.png",
+    "name": "Texans",
+    "state": "Texas"
+  },
+  {
+    "city": "Indianapolis",
+    "id": 14,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Indianapolis_Colts_logo.svg/100px-Indianapolis_Colts_logo.svg.png",
+    "name": "Colts",
+    "state": "Indiana"
+  },
+  {
+    "city": "Jacksonville",
+    "id": 15,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Jacksonville_Jaguars_logo.svg/100px-Jacksonville_Jaguars_logo.svg.png",
+    "name": "Jaguars",
+    "state": "Florida"
+  },
+  {
+    "city": "Kansas City",
+    "id": 16,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Kansas_City_Chiefs_logo.svg/100px-Kansas_City_Chiefs_logo.svg.png",
+    "name": "Chiefs",
+    "state": "Missouri"
+  },
+  {
+    "city": "Los Angeles",
+    "id": 17,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/NFL_Chargers_logo.svg/100px-NFL_Chargers_logo.svg.png",
+    "name": "Chargers",
+    "state": "California"
+  },
+  {
+    "city": "Los Angeles",
+    "id": 18,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/Los_Angeles_Rams_logo.svg/100px-Los_Angeles_Rams_logo.svg.png",
+    "name": "Rams",
+    "state": "California"
+  },
+  {
+    "city": "Miami",
+    "id": 19,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Miami_Dolphins_logo.svg/100px-Miami_Dolphins_logo.svg.png",
+    "name": "Dolphins",
+    "state": "Florida"
+  },
+  {
+    "city": "Minnesota",
+    "id": 20,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Minnesota_Vikings_logo.svg/98px-Minnesota_Vikings_logo.svg.png",
+    "name": "Vikings",
+    "state": "Minnesota"
+  },
+  {
+    "city": "New England",
+    "id": 21,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/New_England_Patriots_logo.svg/100px-New_England_Patriots_logo.svg.png",
+    "name": "Patriots",
+    "state": "Massachusetts"
+  },
+  {
+    "city": "New Orleans",
+    "id": 22,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/New_Orleans_Saints_logo.svg/98px-New_Orleans_Saints_logo.svg.png",
+    "name": "Saints",
+    "state": "Louisiana"
+  },
+  {
+    "city": "New York",
+    "id": 23,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/New_York_Giants_logo.svg/100px-New_York_Giants_logo.svg.png",
+    "name": "Giants",
+    "state": "New York"
+  },
+  {
+    "city": "New York",
+    "id": 24,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/New_York_Jets_logo.svg/100px-New_York_Jets_logo.svg.png",
+    "name": "Jets",
+    "state": "New York"
+  },
+  {
+    "city": "Las Vegas",
+    "id": 25,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Las_Vegas_Raiders_logo.svg/150px-Las_Vegas_Raiders_logo.svg.png",
+    "name": "Raiders",
+    "state": "Navada"
+  },
+  {
+    "city": "Philadelphia",
+    "id": 26,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Philadelphia_Eagles_logo.svg/100px-Philadelphia_Eagles_logo.svg.png",
+    "name": "Eagles",
+    "state": "Pennsylvania"
+  },
+  {
+    "city": "Pittsburgh",
+    "id": 27,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pittsburgh_Steelers_logo.svg/100px-Pittsburgh_Steelers_logo.svg.png",
+    "name": "Steelers",
+    "state": "Pennsylvania"
+  },
+  {
+    "city": "San Francisco",
+    "id": 28,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/San_Francisco_49ers_logo.svg/100px-San_Francisco_49ers_logo.svg.png",
+    "name": "49ers",
+    "state": "California"
+  },
+  {
+    "city": "Seattle",
+    "id": 29,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Seattle_Seahawks_logo.svg/100px-Seattle_Seahawks_logo.svg.png",
+    "name": "Seahawks",
+    "state": "Washington"
+  },
+  {
+    "city": "Tampa Bay",
+    "id": 30,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Tampa_Bay_Buccaneers_logo.svg/100px-Tampa_Bay_Buccaneers_logo.svg.png",
+    "name": "Buccaneers",
+    "state": "Florida"
+  },
+  {
+    "city": "Tennesee",
+    "id": 31,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Tennessee_Titans_logo.svg/100px-Tennessee_Titans_logo.svg.png",
+    "name": "Titans",
+    "state": "Tennessee"
+  },
+  {
+    "city": "Washington",
+    "id": 32,
+    "imageUrl": "WAS,https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Washington_football_team_wlogo.svg/1024px-Washington_football_team_wlogo.svg.png",
+    "name": "Football Team",
+    "state": "Washington, DC"
+  }
+]

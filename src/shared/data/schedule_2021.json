@@ -1,0 +1,681 @@
+{
+  "id": 1,
+  "year": 2021,
+  "weeks": [
+    {
+      "id": 1,
+      "name": "",
+      "games": [
+        {
+          "id": 1,
+          "weekId": 1,
+          "homeTeamId": 30,
+          "awayTeamId": 9,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20210909",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 2,
+          "weekId": 1,
+          "homeTeamId": 17,
+          "awayTeamId": 6,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20210912",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 3,
+          "weekId": 1,
+          "homeTeamId": 25,
+          "awayTeamId": 3,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20210913",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "",
+      "games": [
+        {
+          "id": 4,
+          "weekId": 2,
+          "homeTeamId": 32,
+          "awayTeamId": 23,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20210916",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 5,
+          "weekId": 2,
+          "homeTeamId": 3,
+          "awayTeamId": 16,
+          "homeTeamSpread": "20210919",
+          "dayId": 1,
+          "dateTimeUtc": "TBD",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 6,
+          "weekId": 2,
+          "homeTeamId": 12,
+          "awayTeamId": 11,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20210920",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+
+      ]
+    },
+    {
+      "id": 3,
+      "name": "",
+      "games": [
+        {
+          "id": 7,
+          "weekId": 3,
+          "homeTeamId": 13,
+          "awayTeamId": 5,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20210923",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 8,
+          "weekId": 3,
+          "homeTeamId": 28,
+          "awayTeamId": 12,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20210926",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 9,
+          "weekId": 3,
+          "homeTeamId": 9,
+          "awayTeamId": 26,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20210927",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "",
+      "games": [
+        {
+          "id": 10,
+          "weekId": 4,
+          "homeTeamId": 15,
+          "awayTeamId": 7,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20210930",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 11,
+          "weekId": 4,
+          "homeTeamId": 21,
+          "awayTeamId": 30,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20211003",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 12,
+          "weekId": 4,
+          "homeTeamId": 17,
+          "awayTeamId": 25,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20211004",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "",
+      "games": [
+        {
+          "id": 13,
+          "weekId": 5,
+          "homeTeamId": 29,
+          "awayTeamId": 18,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211007",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 14,
+          "weekId": 5,
+          "homeTeamId": 16,
+          "awayTeamId": 4,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20211010",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 15,
+          "weekId": 5,
+          "homeTeamId": 3,
+          "awayTeamId": 14,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20211011",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "",
+      "games": [
+        {
+          "id": 16,
+          "weekId": 6,
+          "homeTeamId": 26,
+          "awayTeamId": 30,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211014",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 17,
+          "weekId": 6,
+          "homeTeamId": 29,
+          "awayTeamId": 27,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20211017",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 18,
+          "weekId": 6,
+          "homeTeamId": 31,
+          "awayTeamId": 4,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20211018",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "",
+      "games": [
+        {
+          "id": 19,
+          "weekId": 7,
+          "homeTeamId": 8,
+          "awayTeamId": 10,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211021",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 20,
+          "weekId": 7,
+          "homeTeamId": 28,
+          "awayTeamId": 14,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20211024",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 21,
+          "weekId": 7,
+          "homeTeamId": 29,
+          "awayTeamId": 22,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20211025",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "",
+      "games": [
+        {
+          "id": 22,
+          "weekId": 8,
+          "homeTeamId": 1,
+          "awayTeamId": 12,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20210928",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 23,
+          "weekId": 8,
+          "homeTeamId": 20,
+          "awayTeamId": 9,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20210931",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 24,
+          "weekId": 8,
+          "homeTeamId": 16,
+          "awayTeamId": 23,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20211101",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "",
+      "games": [
+        {
+          "id": 25,
+          "weekId": 9,
+          "homeTeamId": 14,
+          "awayTeamId": 24,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211104",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 26,
+          "weekId": 9,
+          "homeTeamId": 17,
+          "awayTeamId": 31,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20211107",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 27,
+          "weekId": 9,
+          "homeTeamId": 27,
+          "awayTeamId": 6,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20211108",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "",
+      "games": [
+        {
+          "id": 28,
+          "weekId": 10,
+          "homeTeamId": 19,
+          "awayTeamId": 3,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211111",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 29,
+          "weekId": 10,
+          "homeTeamId": 16,
+          "awayTeamId": 10,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20211114",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 30,
+          "weekId": 10,
+          "homeTeamId": 28,
+          "awayTeamId": 17,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20211115",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "",
+      "games": [
+        {
+          "id": 31,
+          "weekId": 11,
+          "homeTeamId": 2,
+          "awayTeamId": 21,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211118",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 32,
+          "weekId": 11,
+          "homeTeamId": 17,
+          "awayTeamId": 27,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20211121",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 33,
+          "weekId": 11,
+          "homeTeamId": 30,
+          "awayTeamId": 23,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20211122",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "",
+      "games": [
+        {
+          "id": 34,
+          "weekId": 12,
+          "homeTeamId": 22,
+          "awayTeamId": 4,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211125",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 35,
+          "weekId": 12,
+          "homeTeamId": 3,
+          "awayTeamId": 8,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20211128",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 36,
+          "weekId": 12,
+          "homeTeamId": 29,
+          "awayTeamId": 32,
+          "homeTeamSpread": "20211129",
+          "dayId": 2,
+          "dateTimeUtc": "TBD",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "",
+      "games": [
+        {
+          "id": 37,
+          "weekId": 13,
+          "homeTeamId": 22,
+          "awayTeamId": 9,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211202",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 38,
+          "weekId": 13,
+          "homeTeamId": 29,
+          "awayTeamId": 28,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20211205",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 39,
+          "weekId": 13,
+          "homeTeamId": 4,
+          "awayTeamId": 21,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20211206",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "",
+      "games": [
+        {
+          "id": 40,
+          "weekId": 14,
+          "homeTeamId": 20,
+          "awayTeamId": 27,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211209",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 41,
+          "weekId": 14,
+          "homeTeamId": 12,
+          "awayTeamId": 6,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20211212",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 42,
+          "weekId": 14,
+          "homeTeamId": 1,
+          "awayTeamId": 17,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20211213",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "",
+      "games": [
+        {
+          "id": 43,
+          "weekId": 15,
+          "homeTeamId": 17,
+          "awayTeamId": 16,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20121216",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 44,
+          "weekId": 15,
+          "homeTeamId": 30,
+          "awayTeamId": 22,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20121219",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 45,
+          "weekId": 15,
+          "homeTeamId": 6,
+          "awayTeamId": 20,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20121220",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "",
+      "games": [
+        {
+          "id": 46,
+          "weekId": 16,
+          "homeTeamId": 17,
+          "awayTeamId": 28,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211223",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 47,
+          "weekId": 16,
+          "homeTeamId": 1,
+          "awayTeamId": 14,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211225",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 48,
+          "weekId": 16,
+          "homeTeamId": 12,
+          "awayTeamId": 8,
+          "homeTeamSpread": "TBD",
+          "dayId": 5,
+          "dateTimeUtc": "20211225",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 49,
+          "weekId": 16,
+          "homeTeamId": 9,
+          "awayTeamId": 32,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20211226",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 50,
+          "weekId": 16,
+          "homeTeamId": 6,
+          "awayTeamId": 19,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20211227",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "",
+      "games": [
+        {
+          "id": 51,
+          "weekId": 17,
+          "homeTeamId": 12,
+          "awayTeamId": 20,
+          "homeTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20220102",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 52,
+          "weekId": 17,
+          "homeTeamId": 27,
+          "awayTeamId": 8,
+          "homeTeamSpread": "TBD",
+          "dayId": 2,
+          "dateTimeUtc": "20220103",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    }
+  ]
+}
