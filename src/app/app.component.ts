@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'football-pickem-pool';
+
+
+  // navigate = function(name) {
+  //   this.router.navigateByUrl('/${name}');
+  // }
 }

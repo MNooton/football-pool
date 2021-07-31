@@ -41,15 +41,28 @@
   }
 </style>
 
+
+<mat-card  id="card" style="text-align: center;">
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
-
-</div>
-
-<div class="content" role="main">
+<mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['standings']">
+      <mat-icon>subject</mat-icon>
+      <span>Standings</span>
+    </button>
+    <button mat-menu-item [routerLink]="['schedule']">
+      <mat-icon>calendar_today</mat-icon>
+      <span>Schedule</span>
+    </button>
+  </mat-menu>
+  <span>Football Pool Title</span>
+</mat-toolbar>
 <router-outlet></router-outlet>
 
-</div>
+</mat-card>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
