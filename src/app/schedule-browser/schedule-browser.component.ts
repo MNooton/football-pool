@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as scheduleData from '../../shared/data/schedule_2021.json';
+import scheduleData from '../../shared/data/schedule_2021.json';
 
 @Component({
   selector: 'app-schedule-browser',
@@ -8,13 +8,15 @@ import * as scheduleData from '../../shared/data/schedule_2021.json';
 })
 export class ScheduleBrowserComponent implements OnInit {
   schedule = scheduleData;
+  selectedWeek;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.schedule.weeks);
+    this.selectedWeek = this.schedule.weeks[0];
   }
 
 }
 
-// just installed ng carousel for this
-// https://www.npmjs.com/package/@ngmodule/material-carousel
-// https://www.techiediaries.com/angular-10-material-carousel-slider-images/
+// Keep watching this: https://zoaibkhan.com/blog/create-a-responsive-card-grid-in-angular-using-flex-layout-part-1/
+// https://blog.briebug.com/blog/5-ways-to-pass-data-into-child-components-in-angular

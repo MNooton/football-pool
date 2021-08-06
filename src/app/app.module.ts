@@ -12,6 +12,9 @@ import { ScheduleBrowserComponent } from './schedule-browser/schedule-browser.co
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { HomeComponent } from './home/home.component';
 import { StandingsComponent } from './standings/standings.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { WeekViewComponent } from './week-view/week-view.component';
+import { GameCardComponent } from './game-card/game-card.component';
 
 const routes: Routes = [
   {
@@ -33,7 +36,9 @@ const routes: Routes = [
     AppComponent,
     ScheduleBrowserComponent,
     HomeComponent,
-    StandingsComponent
+    StandingsComponent,
+    WeekViewComponent,
+    GameCardComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
