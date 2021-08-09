@@ -15,6 +15,8 @@ import { StandingsComponent } from './standings/standings.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { WeekViewComponent } from './week-view/week-view.component';
 import { GameCardComponent } from './game-card/game-card.component';
+import { DateFunctionService } from 'src/shared/services/date.function.service';
+import { DatePipe } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -50,7 +52,7 @@ const routes: Routes = [
     MatMenuModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [DateFunctionService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
