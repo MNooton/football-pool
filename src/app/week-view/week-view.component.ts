@@ -20,7 +20,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
   @Input() week: Week;
 
   constructor(private dateFunctionService: DateFunctionService,
-    private datepipe: DatePipe) { }
+              private datepipe: DatePipe) { }
 
   ngOnInit(): void {
     console.log(this.week);
