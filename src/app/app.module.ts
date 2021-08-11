@@ -18,6 +18,7 @@ import { WeekViewComponent } from './week-view/week-view.component';
 import { GameCardComponent } from './game-card/game-card.component';
 import { DateFunctionService } from 'src/shared/services/date.function.service';
 import { DatePipe } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
     path: 'standings', component: StandingsComponent
   },
   {
-    path: '', redirectTo: '/home', pathMatch: 'full'
+    path: '', redirectTo: '/standings', pathMatch: 'full'
   }
 ];
 
@@ -46,7 +47,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { useHash: true}),
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
@@ -54,7 +55,7 @@ const routes: Routes = [
     FlexLayoutModule,
     MatTableModule
   ],
-  providers: [DateFunctionService, DatePipe],
+  providers: [DateFunctionService, DatePipe, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

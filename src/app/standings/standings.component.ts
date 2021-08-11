@@ -10,7 +10,7 @@ import pickData from '../../shared/data/picks.json';
 })
 export class StandingsComponent implements OnInit {
   persons: Person[] = personData;
-  displayedColumns: string[] = ['position', 'imageUrl', 'name', 'record'];
+  displayedColumns: string[] = ['imageUrl', 'name', 'position', 'record'];
   standings = null;
 
   constructor() { }
