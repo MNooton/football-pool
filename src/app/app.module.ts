@@ -6,11 +6,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScheduleBrowserComponent } from './schedule-browser/schedule-browser.component';
-import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { HomeComponent } from './home/home.component';
 import { StandingsComponent } from './standings/standings.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -19,6 +20,7 @@ import { GameCardComponent } from './game-card/game-card.component';
 import { DateFunctionService } from 'src/shared/services/date.function.service';
 import { DatePipe } from '@angular/common';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = [
   {
@@ -53,7 +55,10 @@ const routes: Routes = [
     MatCardModule,
     MatMenuModule,
     FlexLayoutModule,
-    MatTableModule
+    MatTableModule,
+    MatListModule,
+    MatDividerModule,
+    MatButtonModule
   ],
   providers: [DateFunctionService, DatePipe, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

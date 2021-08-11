@@ -4,32 +4,43 @@
   <div class="flex-container" fxLayout="column" fxLayoutGap="16px" >
     <div *ngFor="let game of games">
       <mat-card class="mat-elevation-z4">
-        <mat-card-header style="padding-bottom: 10px;">
+        <mat-card-header style="padding-bottom: 1px;">
           <mat-card-title>Game #{{game.id}}: {{game.date}}</mat-card-title>
         </mat-card-header>
         <mat-card-content >
-          <div fxLayout="column" class="nflFont" style="height:100%">
-            <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="20px" style="height:30px; margin: 20px;">
-              <div fxFlex="15">
-                <img mat-card-image src="{{game.awayTeam.imageUrl}}">
-              </div>
-              <div fxFlex="50">
-                <p>
-                  {{game.awayTeam.city}} {{game.awayTeam.name}}
-                </p>
-              </div>
-            </div>
-              <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="20px" style="height:30px; margin: 20px;">
-                <div fxFlex="15">
-                  <img mat-card-image src="{{game.homeTeam.imageUrl}}" >
+          <mat-list fxLayout="column" class="nflFont">
+            <mat-list-item style="height: 100%;">
+              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                <div flex="15">
+                  <img src="{{game.awayTeam.imageUrl}}" style="width:35px">
                 </div>
-                <div fxFlex="50">
+                <div flex="15">
                   <p>
-                    {{game.homeTeam.city}} {{game.homeTeam.name}}
+                    {{game.awayTeam.city}} {{game.awayTeam.name}}
                   </p>
                 </div>
+                <div flex="15">
+                    <p></p>
+                </div>
               </div>
-          </div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item style="height: 100%;">
+              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                <div flex="15">
+                  <img src="{{game.homeTeam.imageUrl}}" style="width:35px">
+                </div>
+                <div flex="15">
+                  <p>
+                    @ {{game.homeTeam.city}} {{game.homeTeam.name}}
+                  </p>
+                </div>
+                <div flex="15">
+                    <p></p>
+                </div>
+              </div>
+            </mat-list-item>
+          </mat-list>
         </mat-card-content>
         <mat-card-actions>
         </mat-card-actions>
