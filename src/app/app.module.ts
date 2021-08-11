@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -50,7 +51,8 @@ const routes: Routes = [
     MatIconModule,
     MatCardModule,
     MatMenuModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTableModule
   ],
   providers: [DateFunctionService, DatePipe],
   bootstrap: [AppComponent]
