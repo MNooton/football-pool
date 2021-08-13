@@ -37,7 +37,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
     this.games = this.week.games.map( game => ({
       id: game.id,
       weekId: game.weekId,
-      date: this.datepipe.transform(this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc), 'fullDate'),
+      date: this.datepipe.transform(this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc), 'mediumDate'),
       dayName: this.days.filter( day => day.id === game.dayId)[0].name,
       awayTeam: this.teams.filter(team => team.id === game.awayTeamId).map( awayTeam => ({
         city: awayTeam.city,

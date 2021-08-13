@@ -9,35 +9,42 @@ import scheduleData from '../../shared/data/schedule_2021.json';
 })
 export class ScheduleBrowserComponent implements OnInit {
   schedule = scheduleData;
-  selectedWeekId = 0;
+  selectedWeekId = 1;
   selectedWeek;
+  selectedWeekIndex(): number { return this.selectedWeekId - 1; }
+
   constructor(private dateFunctionService: DateFunctionService) { }
 
   ngOnInit(): void {
+    console.log(`Selected Week ${ this.selectedWeekId }`);
     console.log(this.schedule.weeks);
     this.setCurrentWeekId();
-    console.log(this.selectedWeekId);
-    this.selectedWeek = this.schedule.weeks[this.selectedWeekId];
+    console.log(`Selected Week ${ this.selectedWeekId }`);
+    this.selectedWeek = this.schedule.weeks[this.selectedWeekIndex()];
   }
 
   previousWeek(): void {
-    if (this.selectedWeekId === 0){
+    console.log(`Selected Week ${ this.selectedWeekId }`);
+    if (this.selectedWeekId === 1){
       this.selectedWeekId = 17;
     }
     else {
       this.selectedWeekId = this.selectedWeekId - 1;
     }
-    this.selectedWeek = this.schedule.weeks[this.selectedWeekId];
+    this.selectedWeek = this.schedule.weeks[this.selectedWeekIndex()];
+    console.log(`New Selected Week ${ this.selectedWeekId }`);
   }
 
   nextWeek(): void {
+    console.log(`Selected Week ${ this.selectedWeekId }`);
     if (this.selectedWeekId === 17){
-      this.selectedWeekId = 0;
+      this.selectedWeekId = 1;
     }
     else {
       this.selectedWeekId = this.selectedWeekId + 1;
     }
-    this.selectedWeek = this.schedule.weeks[this.selectedWeekId];
+    this.selectedWeek = this.schedule.weeks[this.selectedWeekIndex()];
+    console.log(`New Selected Week ${ this.selectedWeekId }`);
   }
 
   setCurrentWeekId(): void {
