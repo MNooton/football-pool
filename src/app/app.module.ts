@@ -21,6 +21,7 @@ import { DateFunctionService } from 'src/shared/services/date.function.service';
 import { DatePipe } from '@angular/common';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { RecordService } from 'src/shared/services/record.service';
 
 const routes: Routes = [
   {
@@ -33,7 +34,7 @@ const routes: Routes = [
     path: 'standings', component: StandingsComponent
   },
   {
-    path: '', redirectTo: '/standings', pathMatch: 'full'
+    path: '', redirectTo: '/schedule', pathMatch: 'full'
   }
 ];
 
@@ -60,7 +61,7 @@ const routes: Routes = [
     MatDividerModule,
     MatButtonModule
   ],
-  providers: [DateFunctionService, DatePipe, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [DateFunctionService, RecordService, DatePipe, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

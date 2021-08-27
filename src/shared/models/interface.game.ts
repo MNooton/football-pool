@@ -3,7 +3,7 @@ export interface Game {
   weekId: number;
   homeTeamId: number;
   awayTeamId: number;
-  homeTeamSpread: string;
+  awayTeamSpread: string;
   dayId: number;
   dateTimeUtc: string;
   homePoints: number;

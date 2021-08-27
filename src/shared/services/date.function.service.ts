@@ -8,7 +8,7 @@ export class DateFunctionService {
 
   constructor() { }
 
-  getYYYYMMDDFromDate(date: Date) {
+  getYYYYMMDDFromDate(date: Date): string {
     const YYYY = date.getFullYear() + '';
     const MM = this.padLeft(date.getMonth(), 2, '0');
     const DD = this.padLeft(date.getDay(), 2, '0');
@@ -16,7 +16,7 @@ export class DateFunctionService {
     return '' + YYYY + MM + DD;
   }
 
-  getDateFromYYYYMMDD(dateString: String) {
+  getDateFromYYYYMMDD(dateString: string): Date {
     const year  = +dateString.substring(0, 4);
     const month = +dateString.substring(4, 6);
     const day   = +dateString.substring(6, 8);
