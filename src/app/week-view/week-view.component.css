@@ -4,7 +4,13 @@
 }
 
 .winningTeam {
-  border-color: lightgreen;
+  border-color: #2eab58;
   border-style: solid;
   border-radius: 5px;
+}
+.mat-badge-content .normal{
+}
+
+.mat-badge-content .status{
+  background: lightslategray;
 }

@@ -85,24 +85,25 @@ export class RecordService {
   // tslint:disable-next-line:typedef
   rankStandings(oldStandings: Standing[]){
     let newStandings: Standing[] = [];
-    let currentRank = 1;
+    let currentRankNumber = 1;
     while ( oldStandings.length > 0) {
       // get the highest score. Assign all with that score rank 1.
       const maxPoints = Math.max.apply(Math, oldStandings.map(standing => standing.points));
 
-      //
-      newStandings = newStandings.concat(oldStandings.filter(s => s.points === maxPoints).map(filteredItem => {
+      const currentRank = oldStandings.filter(s => s.points === maxPoints).map(filteredItem => {
         return {
           personId: filteredItem.personId,
-          rank: currentRank,
+          rank: currentRankNumber,
           imageUrl: filteredItem.imageUrl,
           name: filteredItem.name,
           record: filteredItem.record,
           points: filteredItem.points
         };
-      }));
+      });
+      //
+      newStandings = newStandings.concat(currentRank);
 
-      currentRank += 1;
+      currentRankNumber += currentRank.length;
       oldStandings = oldStandings.filter(s => s.points !== maxPoints);
     }
     // console.log({ updatedStandings: newStandings});

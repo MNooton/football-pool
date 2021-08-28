@@ -53,8 +53,11 @@
                 <div fxFlex>
                   <p style="font-size: 14px;">{{pick.name}}</p>
                 </div>
-                <div fxFlex="10">
+                <div fxFlex="20">
                   <img src="{{pick.imageUrl}}" style="width:25px">
+                </div>
+                <div fxFlex="20">
+                  <span matBadge="{{pick.status}}" class="status"></span>
                 </div>
               </div>
             </mat-list-item>

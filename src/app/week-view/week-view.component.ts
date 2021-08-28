@@ -35,9 +35,12 @@ export class WeekViewComponent implements OnInit, OnChanges {
   }
 
   setWeek(): void {
-    this.games = this.week.games.map( game => ({
+    this.games = this.week.games.map( game => {
+      const winningTeamId = this.recordService.getWinner(game);
+      return {
       id: game.id,
-      winningTeamId: this.recordService.getWinner(game),
+      // tslint:disable-next-line:object-literal-shorthand
+      winningTeamId: winningTeamId,
       weekId: game.weekId,
       date: this.datepipe.transform(this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc), 'mediumDate'),
       dayName: this.days.filter( day => day.id === game.dayId)[0].name,
@@ -60,8 +63,9 @@ export class WeekViewComponent implements OnInit, OnChanges {
       }))[0],
       picks: this.recordService.pickData.filter(pick => pick.gameId === game.id).map( filteredPick => ({
         name: this.recordService.personData.filter(person => person.id === filteredPick.personId)[0].name,
-        imageUrl: this.teams.filter(team => team.id === filteredPick.winningTeamId)[0].imageUrl
+        imageUrl: this.teams.filter(team => team.id === filteredPick.winningTeamId)[0].imageUrl,
+        status: filteredPick.winningTeamId === winningTeamId ? 'W' : (winningTeamId === 0) ? 'T' : 'L'
       }))
-    }));
+  }; });
   }
 }
