@@ -37,6 +37,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
   setWeek(): void {
     this.games = this.week.games.map( game => ({
       id: game.id,
+      winningTeamId: this.recordService.getWinner(game),
       weekId: game.weekId,
       date: this.datepipe.transform(this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc), 'mediumDate'),
       dayName: this.days.filter( day => day.id === game.dayId)[0].name,
@@ -45,14 +46,16 @@ export class WeekViewComponent implements OnInit, OnChanges {
         name: awayTeam.name,
         imageUrl: awayTeam.imageUrl,
         id: awayTeam.id,
+        points: game.awayPoints,
         // tslint:disable-next-line:max-line-length
-        spread: (Number(game.awayTeamSpread)) ? ((Number(game.awayTeamSpread) < 0) ? '-' + game.awayTeamSpread : '+' + game.awayTeamSpread ) : '(+/-)'
+        spread: (Number(game.awayTeamSpread)) ? ((Number(game.awayTeamSpread) < 0) ? '' + game.awayTeamSpread : '+' + game.awayTeamSpread ) : '(+/-)'
       }))[0],
 
       homeTeam: this.teams.filter(team => team.id === game.homeTeamId).map( homeTeam => ({
         city: homeTeam.city,
         name: homeTeam.name,
         imageUrl: homeTeam.imageUrl,
+        points: game.homePoints,
         id: homeTeam.id
       }))[0],
       picks: this.recordService.pickData.filter(pick => pick.gameId === game.id).map( filteredPick => ({

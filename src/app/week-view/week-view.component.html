@@ -9,7 +9,7 @@
       </div>
         <mat-card-content style="margin-bottom: 10px;">
           <mat-list fxLayout="column" class="nflFont">
-            <mat-list-item style="height: 100%;">
+            <mat-list-item style="height: 100%;" [ngClass]="{ 'winningTeam' : game.winningTeamId === game.awayTeam.id}">
               <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width:100%;">
                 <div fxFlex="10">
                   <img src="{{game.awayTeam.imageUrl}}" style="width:35px">
@@ -23,12 +23,12 @@
                     <p>{{game.awayTeam.spread}}</p>
                 </div>
                 <div fxFlex="10">
-                    <p>N/A</p>
+                    <p>{{game.awayTeam.points}}</p>
                 </div>
               </div>
             </mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item style="height: 100%;">
+            <mat-list-item style="height: 100%;" [ngClass]="{ 'winningTeam' : game.winningTeamId === game.homeTeam.id}">
               <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width:100%;">
                 <div fxFlex="10">
                   <img src="{{game.homeTeam.imageUrl}}" style="width:35px">
@@ -40,7 +40,7 @@
                 </div>
                 <div fxFlex="10"></div>
                 <div fxFlex="10">
-                  <p>N/A</p>
+                  <p>{{game.homeTeam.points}}</p>
                 </div>
               </div>
             </mat-list-item>
