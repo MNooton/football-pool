@@ -20,7 +20,7 @@
                   </p>
                 </div>
                 <div fxFlex="10">
-                    <p>(+/-)</p>
+                    <p>{{game.awayTeam.spread}}</p>
                 </div>
                 <div fxFlex="10">
                     <p>N/A</p>
@@ -45,6 +45,21 @@
               </div>
             </mat-list-item>
           </mat-list>
+          <mat-divider></mat-divider>
+          <p style="font-size: 16px; font-weight: 500; margin-bottom:0;">Picks</p>
+          <mat-list fxLayout="column" class="nflFont">
+            <mat-list-item style="height: 100%;" *ngFor="let pick of game.picks">
+              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width:100%;">
+                <div fxFlex>
+                  <p style="font-size: 14px;">{{pick.name}}</p>
+                </div>
+                <div fxFlex="10">
+                  <img src="{{pick.imageUrl}}" style="width:25px">
+                </div>
+              </div>
+            </mat-list-item>
+          </mat-list>
+
         </mat-card-content>
         <mat-card-actions>
         </mat-card-actions>

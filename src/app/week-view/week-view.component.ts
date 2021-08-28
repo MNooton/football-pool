@@ -1,11 +1,10 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Game } from 'src/shared/models/interface.game';
-import { Team } from 'src/shared/models/interface.team';
 import { Week } from 'src/shared/models/interface.week';
 import teamData from '../../shared/data/teams.json';
 import dayData from '../../shared/data/days.json';
 import { DateFunctionService } from 'src/shared/services/date.function.service';
 import { DatePipe } from '@angular/common';
+import { RecordService } from 'src/shared/services/record.service';
 
 @Component({
   selector: 'app-week-view',
@@ -20,7 +19,8 @@ export class WeekViewComponent implements OnInit, OnChanges {
   @Input() week: Week;
 
   constructor(private dateFunctionService: DateFunctionService,
-              private datepipe: DatePipe) { }
+              private datepipe: DatePipe,
+              public recordService: RecordService) { }
 
   ngOnInit(): void {
     console.log(this.week);
@@ -28,8 +28,9 @@ export class WeekViewComponent implements OnInit, OnChanges {
     console.log(this.games);
   }
 
+  // tslint:disable-next-line:typedef
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
+   // console.log(changes);
     this.setWeek();
   }
 
@@ -43,7 +44,9 @@ export class WeekViewComponent implements OnInit, OnChanges {
         city: awayTeam.city,
         name: awayTeam.name,
         imageUrl: awayTeam.imageUrl,
-        id: awayTeam.id
+        id: awayTeam.id,
+        // tslint:disable-next-line:max-line-length
+        spread: (Number(game.awayTeamSpread)) ? ((Number(game.awayTeamSpread) < 0) ? '-' + game.awayTeamSpread : '+' + game.awayTeamSpread ) : '(+/-)'
       }))[0],
 
       homeTeam: this.teams.filter(team => team.id === game.homeTeamId).map( homeTeam => ({
@@ -51,7 +54,11 @@ export class WeekViewComponent implements OnInit, OnChanges {
         name: homeTeam.name,
         imageUrl: homeTeam.imageUrl,
         id: homeTeam.id
-      }))[0]
+      }))[0],
+      picks: this.recordService.pickData.filter(pick => pick.gameId === game.id).map( filteredPick => ({
+        name: this.recordService.personData.filter(person => person.id === filteredPick.personId)[0].name,
+        imageUrl: this.teams.filter(team => team.id === filteredPick.winningTeamId)[0].imageUrl
+      }))
     }));
   }
 }

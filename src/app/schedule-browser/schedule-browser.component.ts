@@ -19,15 +19,11 @@ export class ScheduleBrowserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(`Selected Week ${ this.selectedWeekId }`);
-    console.log(this.recordService.scheduleData.weeks);
     this.setCurrentWeekId();
-    console.log(`Selected Week ${ this.selectedWeekId }`);
     this.selectedWeek = this.recordService.scheduleData.weeks[this.selectedWeekIndex()];
   }
 
   previousWeek(): void {
-    console.log(`Selected Week ${ this.selectedWeekId }`);
     if (this.selectedWeekId === 1){
       this.selectedWeekId = 17;
     }
@@ -35,11 +31,9 @@ export class ScheduleBrowserComponent implements OnInit {
       this.selectedWeekId = this.selectedWeekId - 1;
     }
     this.selectedWeek = this.recordService.scheduleData.weeks[this.selectedWeekIndex()];
-    console.log(`New Selected Week ${ this.selectedWeekId }`);
   }
 
   nextWeek(): void {
-    console.log(`Selected Week ${ this.selectedWeekId }`);
     if (this.selectedWeekId === 17){
       this.selectedWeekId = 1;
     }
@@ -47,7 +41,6 @@ export class ScheduleBrowserComponent implements OnInit {
       this.selectedWeekId = this.selectedWeekId + 1;
     }
     this.selectedWeek = this.recordService.scheduleData.weeks[this.selectedWeekIndex()];
-    console.log(`New Selected Week ${ this.selectedWeekId }`);
   }
 
   setCurrentWeekId(): void {
