@@ -4,6 +4,7 @@
 }
 
 .winningTeam {
-  background-color: lightgreen;
-  border-radius: 2px;
+  border-color: lightgreen;
+  border-style: solid;
+  border-radius: 5px;
 }
