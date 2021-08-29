@@ -28,7 +28,7 @@ import { RecordService } from 'src/shared/services/record.service';
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = {
-    swipe: { direction: Hammer.DIRECTION_ALL },
+    swipe: { direction: Hammer.DIRECTION_HORIZONTAL },
   } as any;
 }
 
