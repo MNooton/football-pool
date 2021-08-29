@@ -1,5 +1,5 @@
 <p>Game Schedule</p>
-<div class="content" style="padding: 16px;">
+<div class="content" style="padding: 16px;" (swipeleft)="nextWeek()" (swiperight)="previousWeek()">
   <button (click)="previousWeek()" mat-button color="primary">previous</button>
   <button (click)="nextWeek()" mat-button color="primary">next</button>
   <app-week-view [week]="this.selectedWeek"></app-week-view>

@@ -51,7 +51,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
         id: awayTeam.id,
         points: game.awayPoints,
         // tslint:disable-next-line:max-line-length
-        spread: (Number(game.awayTeamSpread)) ? ((Number(game.awayTeamSpread) < 0) ? '' + game.awayTeamSpread : '+' + game.awayTeamSpread ) : '(+/-)'
+        spread: (Number(game.awayTeamSpread)) ? ((Number(game.awayTeamSpread) < 0) ? '' + game.awayTeamSpread : '+' + game.awayTeamSpread ) : '+/-'
       }))[0],
 
       homeTeam: this.teams.filter(team => team.id === game.homeTeamId).map( homeTeam => ({
