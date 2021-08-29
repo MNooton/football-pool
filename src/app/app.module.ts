@@ -29,6 +29,8 @@ import { RecordService } from 'src/shared/services/record.service';
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = {
     swipe: { direction: Hammer.DIRECTION_HORIZONTAL },
+    pinch: { enable: false },
+    rotate: { enable: false }
   } as any;
 }
 
