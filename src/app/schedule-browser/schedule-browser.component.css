@@ -1,7 +1,10 @@
 .content {
   padding: 16px;
 }
-
+.wrapper {
+  overflow-y: auto;
+  touch-action: pan-y !important;
+}
 /* .content > mat-card {
   width: 200px;
 } */

@@ -1,11 +1,11 @@
 
-<p>Week #{{week.id}}</p>
+<p style="font-size: 24px; margin-top:0px; margin-bottom: 5px;">Week {{week.id}}</p>
 <div style="margin: 2px;">
   <div class="flex-container" fxLayout="column" fxLayoutGap="16px" >
     <div *ngFor="let game of games">
       <mat-card class="mat-elevation-z4" style="padding-left:8px; padding-right:8px;">
         <div style="text-align: center; width: 100%">
-             <mat-card-title style="font-size: 16px;">Game #{{game.id}}: {{game.date}}</mat-card-title>
+             <mat-card-title style="font-size: 16px;">Game {{game.id}}: {{game.date}}</mat-card-title>
       </div>
         <mat-card-content style="margin-bottom: 10px;">
           <mat-list fxLayout="column" class="nflFont">
