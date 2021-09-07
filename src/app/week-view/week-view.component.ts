@@ -36,7 +36,9 @@ export class WeekViewComponent implements OnInit, OnChanges {
 
   setWeek(): void {
     this.games = this.week.games.map( game => {
-      const winningTeamId = this.recordService.getWinner(game);
+      //  Set winningTeam to none/0 if the game hasn't bee played yet.
+      // tslint:disable-next-line:max-line-length
+      const winningTeamId = (this.dateWithoutTime(new Date()) > this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc)) ? this.recordService.getWinner(game) : 0;
       return {
       id: game.id,
       // tslint:disable-next-line:object-literal-shorthand
@@ -68,4 +70,10 @@ export class WeekViewComponent implements OnInit, OnChanges {
       }))
   }; });
   }
+
+  dateWithoutTime(dateTime): Date {
+    const date = new Date(dateTime. getTime());
+    date. setHours(0, 0, 0, 0);
+    return date;
+    }
 }
