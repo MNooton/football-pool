@@ -24,7 +24,7 @@ export class RecordService {
 
   constructor(public dateFunctionService: DateFunctionService) {
     console.log('INSTANTIATED THE RECORD SERVICE');
-    this.currentDate =  new Date(); // this.dateFunctionService.getDateFromYYYYMMDD('20211013');
+    this.currentDate =  this.dateFunctionService.dateWithoutTime(new Date()); // this.dateFunctionService.getDateFromYYYYMMDD('20211013');
     this.scheduleData = importedScheduleData;
     this.personData = importedPersonData;
     this.pickData = importedPickData;

@@ -33,4 +33,10 @@ export class DateFunctionService {
     }
     return s;
   }
+
+  dateWithoutTime(dateTime): Date {
+    const date = new Date(dateTime. getTime());
+    date. setHours(0, 0, 0, 0);
+    return date;
+    }
 }

@@ -38,7 +38,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
     this.games = this.week.games.map( game => {
       //  Set winningTeam to none/0 if the game hasn't bee played yet.
       // tslint:disable-next-line:max-line-length
-      const winningTeamId = (this.dateWithoutTime(new Date()) > this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc)) ? this.recordService.getWinner(game) : 0;
+      const winningTeamId = (this.dateFunctionService.dateWithoutTime(new Date()) > this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc)) ? this.recordService.getWinner(game) : 0;
       return {
       id: game.id,
       // tslint:disable-next-line:object-literal-shorthand
@@ -64,7 +64,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
         id: homeTeam.id
       }))[0],
       picks: this.recordService.pickData.filter(pick => pick.gameId === game.id).map( filteredPick => ({
-        isPlayed: this.dateWithoutTime(new Date()) > this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc),
+        isPlayed: this.dateFunctionService.dateWithoutTime(new Date()) > this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc),
         name: this.recordService.personData.filter(person => person.id === filteredPick.personId)[0].name,
         imageUrl: this.teams.filter(team => team.id === filteredPick.winningTeamId)[0].imageUrl,
         status: filteredPick.winningTeamId === winningTeamId ? 'W' : (winningTeamId === 0) ? 'T' : 'L'
@@ -72,9 +72,4 @@ export class WeekViewComponent implements OnInit, OnChanges {
   }; });
   }
 
-  dateWithoutTime(dateTime): Date {
-    const date = new Date(dateTime. getTime());
-    date. setHours(0, 0, 0, 0);
-    return date;
-    }
 }
