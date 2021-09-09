@@ -57,7 +57,7 @@
                   <img src="{{pick.imageUrl}}" style="width:25px">
                 </div>
                 <div fxFlex="20">
-                  <span matBadge="{{pick.status}}" class="status"></span>
+                  <span *ngIf="pick.isPlayed" matBadge="{{pick.status}}" class="status"></span>
                 </div>
               </div>
             </mat-list-item>

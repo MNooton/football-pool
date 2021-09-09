@@ -64,6 +64,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
         id: homeTeam.id
       }))[0],
       picks: this.recordService.pickData.filter(pick => pick.gameId === game.id).map( filteredPick => ({
+        isPlayed: this.dateWithoutTime(new Date()) > this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc),
         name: this.recordService.personData.filter(person => person.id === filteredPick.personId)[0].name,
         imageUrl: this.teams.filter(team => team.id === filteredPick.winningTeamId)[0].imageUrl,
         status: filteredPick.winningTeamId === winningTeamId ? 'W' : (winningTeamId === 0) ? 'T' : 'L'
