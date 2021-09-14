@@ -57,7 +57,10 @@
                   <img src="{{pick.imageUrl}}" style="width:25px">
                 </div>
                 <div fxFlex="20">
-                  <span *ngIf="pick.isPlayed" matBadge="{{pick.status}}" class="status"></span>
+                  <mat-icon *ngIf="pick.isPlayed && pick.status === 'W'" style="color: #0da146">check_circle</mat-icon>
+                  <mat-icon *ngIf="pick.isPlayed && pick.status === 'L'" style="color: #c2270c">cancel</mat-icon>
+                  <mat-icon *ngIf="pick.isPlayed && pick.status === 'T'">minimize</mat-icon>
+                  <!-- <span *ngIf="pick.isPlayed" matBadge="{{pick.status}}" class="status"></span> -->
                 </div>
               </div>
             </mat-list-item>
