@@ -10,8 +10,8 @@ export class DateFunctionService {
 
   getYYYYMMDDFromDate(date: Date): string {
     const YYYY = date.getFullYear() + '';
-    const MM = this.padLeft(date.getMonth(), 2, '0');
-    const DD = this.padLeft(date.getDay(), 2, '0');
+    const MM = this.padLeft(date.getMonth() + 1, 2, '0'); // these functions are zero based (hence +1)
+    const DD = this.padLeft(date.getDate(), 2, '0');
     console.log('date ' + YYYY + MM + DD);
     return '' + YYYY + MM + DD;
   }

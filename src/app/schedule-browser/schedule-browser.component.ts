@@ -49,17 +49,10 @@ export class ScheduleBrowserComponent implements OnInit {
     this.recordService.scheduleData.weeks.forEach((week) => {
       // get Monday
       const mondayGame = week.games.filter((day) => day.dayId === 2)[0];
-      const mondayGameDate = mondayGame.dateTimeUtc;
 
-      if (currentDate > mondayGameDate){
-       // console.log('current Date: ' + currentDate);
-       // console.log('mondayGameDate: ' + mondayGameDate);
+      if ((currentDate) >  (mondayGame.dateTimeUtc )){
         this.selectedWeekId = mondayGame.weekId + 1;
       }
-      else {}
     });
   }
 }
-
-// Keep watching this: https://zoaibkhan.com/blog/create-a-responsive-card-grid-in-angular-using-flex-layout-part-1/
-// https://blog.briebug.com/blog/5-ways-to-pass-data-into-child-components-in-angular
