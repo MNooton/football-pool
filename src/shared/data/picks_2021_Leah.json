@@ -1,0 +1,17 @@
+[
+  {
+    "personId": 6,
+    "gameId": 1,
+    "winningTeamId": 30
+  },
+  {
+    "personId": 6,
+    "gameId": 2,
+    "winningTeamId": 6
+  },
+  {
+    "personId": 6,
+    "gameId": 3,
+    "winningTeamId": 3
+  }
+]

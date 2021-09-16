@@ -5,7 +5,12 @@ import { Game } from '../models/interface.game';
 import { Record } from '../models/interface.record';
 import { DateFunctionService } from './date.function.service';
 import importedScheduleData from '../../shared/data/schedule_2021.json';
-import importedPickData from '../../shared/data/picks_2021.json';
+import importedPickData_Mike from '../../shared/data/picks_2021_Mike.json';
+import importedPickData_Michelle from '../../shared/data/picks_2021_Michelle.json';
+import importedPickData_Derek from '../../shared/data/picks_2021_Derek.json';
+import importedPickData_Aaron from '../../shared/data/picks_2021_Aaron.json';
+import importedPickData_Lando from '../../shared/data/picks_2021_Lando.json';
+import importedPickData_Leah from '../../shared/data/picks_2021_Leah.json';
 import importedPersonData from '../../shared/data/persons.json';
 import { GameResult } from '../models/interface.gameResult';
 import { NodeWithI18n } from '@angular/compiler';
@@ -27,7 +32,11 @@ export class RecordService {
     this.currentDate =  this.dateFunctionService.dateWithoutTime(new Date()); // this.dateFunctionService.getDateFromYYYYMMDD('20211013');
     this.scheduleData = importedScheduleData;
     this.personData = importedPersonData;
-    this.pickData = importedPickData;
+    this.pickData =  importedPickData_Mike.concat(importedPickData_Michelle
+      , importedPickData_Derek
+      , importedPickData_Aaron
+      , importedPickData_Lando
+      , importedPickData_Leah);
     this.playedGames = this.scheduleData.weeks.flatMap(week =>
       week.games.filter(game => {
         return this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc) < this.currentDate;

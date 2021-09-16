@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
-import { Person } from 'src/shared/models/interface.person';
 import { Standing } from 'src/shared/models/interface.standing';
 import { RecordService } from 'src/shared/services/record.service';
-import pickData from '../../shared/data/picks_2021.json';
 
 @Component({
   selector: 'app-standings',
