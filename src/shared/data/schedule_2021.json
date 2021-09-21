@@ -75,8 +75,8 @@
           "awayTeamSpread": "11.5",
           "dayId": 2,
           "dateTimeUtc": "20210920",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 35,
+          "awayPoints": 17
         }
 
       ]
