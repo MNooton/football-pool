@@ -28,4 +28,21 @@
     "gameId": 6,
     "winningTeamId": 12
   }
+
+  ,
+  {
+    "personId": 4,
+    "gameId": 7,
+    "winningTeamId": 5
+  },
+  {
+    "personId": 4,
+    "gameId": 8,
+    "winningTeamId": 28
+  },
+  {
+    "personId": 4,
+    "gameId": 9,
+    "winningTeamId": 9
+  }
 ]
