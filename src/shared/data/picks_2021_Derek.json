@@ -28,6 +28,11 @@
     "personId": 3,
     "gameId": 6,
     "winningTeamId": 11
+  },
+  {
+    "personId": 3,
+    "gameId": 7,
+    "winningTeamId": 5
   }
 
 ]
