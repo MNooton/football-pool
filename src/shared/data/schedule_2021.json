@@ -127,8 +127,8 @@
         {
           "id": 10,
           "weekId": 4,
-          "homeTeamId": 15,
-          "awayTeamId": 7,
+          "homeTeamId": 7,
+          "awayTeamId": 15,
           "awayTeamSpread": "7.5",
           "dayId": 5,
           "dateTimeUtc": "20210930",
