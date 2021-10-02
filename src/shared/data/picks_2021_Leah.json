@@ -49,5 +49,15 @@
     "personId": 6,
     "gameId": 10,
     "winningTeamId": 7
+  },
+  {
+    "personId": 6,
+    "gameId": 11,
+    "winningTeamId": 30
+  },
+  {
+    "personId": 6,
+    "gameId": 12,
+    "winningTeamId": 17
   }
 ]
