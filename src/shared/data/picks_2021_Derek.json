@@ -74,6 +74,11 @@
     "personId": 3,
     "gameId": 15,
     "winningTeamId": 3
+  },
+  {
+    "personId": 3,
+    "gameId": 16,
+    "winningTeamId": 30
   }
 
 ]
