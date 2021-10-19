@@ -221,8 +221,8 @@
           "awayTeamSpread": "4.5",
           "dayId": 1,
           "dateTimeUtc": "20211017",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 23,
+          "awayPoints": 20
         },
         {
           "id": 18,
@@ -232,8 +232,8 @@
           "awayTeamSpread": "-5.5",
           "dayId": 2,
           "dateTimeUtc": "20211018",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 34,
+          "awayPoints": 31
         }
       ]
     },
