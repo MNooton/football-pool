@@ -104,5 +104,20 @@
     "personId": 5,
     "gameId": 21,
     "winningTeamId": 22
+  },
+  {
+    "personId": 5,
+    "gameId": 22,
+    "winningTeamId": 12
+  },
+  {
+    "personId": 5,
+    "gameId": 23,
+    "winningTeamId": 9
+  },
+  {
+    "personId": 5,
+    "gameId": 24,
+    "winningTeamId": 23
   }
 ]
