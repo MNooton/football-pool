@@ -483,9 +483,9 @@
         {
           "id": 36,
           "weekId": 12,
-          "homeTeamId": 29,
-          "awayTeamId": 32,
-          "awayTeamSpread": "-1",
+          "homeTeamId": 32,
+          "awayTeamId": 29,
+          "awayTeamSpread": "1",
           "dayId": 2,
           "dateTimeUtc": "20211129",
           "homePoints": 0,
