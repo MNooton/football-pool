@@ -205,5 +205,9 @@
     "personId": 3,
     "gameId":39,
     "winningTeamId": 21
+  },{
+    "personId": 3,
+    "gameId":40,
+    "winningTeamId": 20
   }
 ]
