@@ -220,4 +220,10 @@
     "gameId":42,
     "winningTeamId": 1
   }
+  ,
+  {
+    "personId": 3,
+    "gameId":43,
+    "winningTeamId": 16
+  }
 ]
