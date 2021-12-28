@@ -677,8 +677,8 @@
           "awayTeamSpread": "3",
           "dayId": 2,
           "dateTimeUtc": "20211227",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 3,
+          "awayPoints": 20
         }
       ]
     },
