@@ -259,13 +259,11 @@
   "personId": 1,
   "gameId":50,
   "winningTeamId": 22
-}
-
-,
+},
 {
   "personId": 1,
   "gameId":51,
-  "winningTeamId": 20
+  "winningTeamId": 12
 },
 {
   "personId": 1,
