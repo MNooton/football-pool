@@ -10,6 +10,7 @@ import { RecordService } from 'src/shared/services/record.service';
 })
 export class ScheduleBrowserComponent implements OnInit {
   // schedule: Schedule = null;
+  maxWeek = 18;
   selectedWeekId = 1;
   selectedWeek;
   selectedWeekIndex(): number { return this.selectedWeekId - 1; }
@@ -25,7 +26,7 @@ export class ScheduleBrowserComponent implements OnInit {
 
   previousWeek(): void {
     if (this.selectedWeekId === 1){
-      this.selectedWeekId = 17;
+      this.selectedWeekId = this.maxWeek;
     }
     else {
       this.selectedWeekId = this.selectedWeekId - 1;
@@ -34,7 +35,7 @@ export class ScheduleBrowserComponent implements OnInit {
   }
 
   nextWeek(): void {
-    if (this.selectedWeekId === 17){
+    if (this.selectedWeekId === this.maxWeek){
       this.selectedWeekId = 1;
     }
     else {
