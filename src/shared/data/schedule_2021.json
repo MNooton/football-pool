@@ -712,16 +712,27 @@
     },
     {
       "id": 18,
-      "name": "Week 18 - You Pick",
+      "name": "Week 18",
       "games": [
         {
           "id": 57,
           "weekId": 18,
-          "homeTeamId": 100,
-          "awayTeamId": 100,
-          "awayTeamSpread": "TBD",
+          "homeTeamId": 26,
+          "awayTeamId": 9,
+          "awayTeamSpread": "-7",
           "dayId": 2,
-          "dateTimeUtc": "20230110",
+          "dateTimeUtc": "20220108",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 58,
+          "weekId": 18,
+          "homeTeamId": 25,
+          "awayTeamId": 17,
+          "awayTeamSpread": "-3",
+          "dayId": 2,
+          "dateTimeUtc": "20220109",
           "homePoints": 0,
           "awayPoints": 0
         }
