@@ -733,6 +733,78 @@
           "awayTeamSpread": "-3",
           "dayId": 2,
           "dateTimeUtc": "20220109",
+          "homePoints": 35,
+          "awayPoints": 32
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Wild Card Weekend - Party at L&L's House",
+      "games": [
+        {
+          "id": 59,
+          "weekId": 19,
+          "homeTeamId": 7,
+          "awayTeamId": 25,
+          "awayTeamSpread": "6.5",
+          "dayId": 2,
+          "dateTimeUtc": "20220115",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 60,
+          "weekId": 19,
+          "homeTeamId": 4,
+          "awayTeamId": 21,
+          "awayTeamSpread": "4.5",
+          "dayId": 2,
+          "dateTimeUtc": "20220115",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 61,
+          "weekId": 19,
+          "homeTeamId": 30,
+          "awayTeamId": 26,
+          "awayTeamSpread": "8.5",
+          "dayId": 2,
+          "dateTimeUtc": "20220116",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 62,
+          "weekId": 19,
+          "homeTeamId": 9,
+          "awayTeamId": 28,
+          "awayTeamSpread": "3",
+          "dayId": 2,
+          "dateTimeUtc": "20220116",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 63,
+          "weekId": 19,
+          "homeTeamId": 16,
+          "awayTeamId": 27,
+          "awayTeamSpread": "12.5",
+          "dayId": 2,
+          "dateTimeUtc": "20220116",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 64,
+          "weekId": 19,
+          "homeTeamId": 18,
+          "awayTeamId": 1,
+          "awayTeamSpread": "4",
+          "dayId": 2,
+          "dateTimeUtc": "20220117",
           "homePoints": 0,
           "awayPoints": 0
         }
