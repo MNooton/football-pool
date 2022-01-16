@@ -288,17 +288,17 @@
   {
     "personId": 4,
     "gameId":59,
-    "winningTeamId": 7
+    "winningTeamId": 25
   },
   {
     "personId": 4,
     "gameId":60,
-    "winningTeamId": 4
+    "winningTeamId": 21
   },
   {
     "personId": 4,
     "gameId":61,
-    "winningTeamId": 30
+    "winningTeamId": 26
   },
   {
     "personId": 4,
@@ -308,7 +308,7 @@
   {
     "personId": 4,
     "gameId":63,
-    "winningTeamId": 16
+    "winningTeamId": 27
   },
   {
     "personId": 4,
