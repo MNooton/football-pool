@@ -805,6 +805,56 @@
           "awayTeamSpread": "4",
           "dayId": 2,
           "dateTimeUtc": "20220117",
+          "homePoints": 34,
+          "awayPoints": 11
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Divisional Round",
+      "games": [
+        {
+          "id": 65,
+          "weekId": 20,
+          "homeTeamId": 31,
+          "awayTeamId": 7,
+          "awayTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20220122",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 66,
+          "weekId": 20,
+          "homeTeamId": 12,
+          "awayTeamId": 28,
+          "awayTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20220122",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 67,
+          "weekId": 20,
+          "homeTeamId": 30,
+          "awayTeamId": 18,
+          "awayTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20220123",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 68,
+          "weekId": 20,
+          "homeTeamId": 16,
+          "awayTeamId": 4,
+          "awayTeamSpread": "TBD",
+          "dayId": 1,
+          "dateTimeUtc": "20220123",
           "homePoints": 0,
           "awayPoints": 0
         }

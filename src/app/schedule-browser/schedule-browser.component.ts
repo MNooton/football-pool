@@ -10,7 +10,7 @@ import { RecordService } from 'src/shared/services/record.service';
 })
 export class ScheduleBrowserComponent implements OnInit {
   // schedule: Schedule = null;
-  maxWeek = 18;
+  maxWeek = 20;
   selectedWeekId = 1;
   selectedWeek;
   selectedWeekIndex(): number { return this.selectedWeekId - 1; }
@@ -46,10 +46,14 @@ export class ScheduleBrowserComponent implements OnInit {
 
   setCurrentWeekId(): void {
     const currentDate = this.dateFunctionService.getYYYYMMDDFromDate(new Date());
-
     this.recordService.scheduleData.weeks.forEach((week) => {
       // get Monday
-      const mondayGame = week.games.filter((day) => day.dayId === 2)[0];
+      let mondayGame = week.games.filter((day) => day.dayId === 2)[0];
+
+      if (!mondayGame){
+        mondayGame = week.games.filter((day) => day.dayId === 1)[0];
+      }
+      // need to do something here for weeks that don't have a monday.. Maybe find sunday if not exists.
 
       if ((currentDate) >  (mondayGame.dateTimeUtc )){
         this.selectedWeekId = mondayGame.weekId + 1;
