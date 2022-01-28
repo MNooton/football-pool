@@ -333,5 +333,15 @@
     "personId": 2,
     "gameId":68,
     "winningTeamId": 4
+  },
+  {
+    "personId": 2,
+    "gameId":69,
+    "winningTeamId": 16
+  },
+  {
+    "personId": 2,
+    "gameId":70,
+    "winningTeamId": 18
   }
 ]
