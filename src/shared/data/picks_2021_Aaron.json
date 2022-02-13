@@ -344,5 +344,10 @@
     "personId": 4,
     "gameId":70,
     "winningTeamId": 18
+  },
+  {
+    "personId": 4,
+    "gameId":71,
+    "winningTeamId": 18
   }
 ]
