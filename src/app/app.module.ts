@@ -24,6 +24,9 @@ import { DatePipe } from '@angular/common';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { RecordService } from 'src/shared/services/record.service';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
@@ -46,6 +49,15 @@ const routes: Routes = [
     path: 'standings', component: StandingsComponent
   },
   {
+    path: 'signUp', component: SignUpComponent
+  },
+  {
+    path: 'signIn', component: SignInComponent
+  },
+  {
+    path: 'profile', component: ProfileComponent
+  },
+  {
     path: '', redirectTo: '/schedule', pathMatch: 'full'
   }
 ];
@@ -57,7 +69,10 @@ const routes: Routes = [
     HomeComponent,
     StandingsComponent,
     WeekViewComponent,
-    GameCardComponent
+    GameCardComponent,
+    SignUpComponent,
+    SignInComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

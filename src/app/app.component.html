@@ -49,6 +49,14 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['signUp']">
+      <mat-icon>signup</mat-icon>
+      <span >SignUp</span>
+    </button>
+    <button mat-menu-item [routerLink]="['signIn']">
+      <mat-icon>signin</mat-icon>
+      <span >SignIn</span>
+    </button>
     <button mat-menu-item [routerLink]="['standings']">
       <mat-icon>subject</mat-icon>
       <span >Standings</span>
