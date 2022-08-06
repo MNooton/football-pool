@@ -1,5 +1,5 @@
 export interface Pick {
-  personId: number;
+  personId?: number;
   gameId: number;
   winningTeamId: number;
 }

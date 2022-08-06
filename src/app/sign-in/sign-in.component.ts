@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { IUser, CognitoService } from '../cognito.service';
+import { IUser, CognitoService } from '../../shared/services/cognito.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -34,7 +34,6 @@ export class SignInComponent {
   }
 
   public setPassword(password): void {
-    console.log(password);
     this.user.password = password;
   }
 

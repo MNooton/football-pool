@@ -12,7 +12,6 @@ export class DateFunctionService {
     const YYYY = date.getFullYear() + '';
     const MM = this.padLeft(date.getMonth() + 1, 2, '0'); // these functions are zero based (hence +1)
     const DD = this.padLeft(date.getDate(), 2, '0');
-    console.log('date ' + YYYY + MM + DD);
     return '' + YYYY + MM + DD;
   }
 

@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import Amplify, { Auth } from 'aws-amplify';
 
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { EmailValidator } from '@angular/forms';
+
 
 export interface IUser {
   email: string;
@@ -18,7 +19,8 @@ export interface IUser {
 })
 export class CognitoService {
 
-  private authenticationSubject: BehaviorSubject<any>;
+  public authenticationSubject: BehaviorSubject<any>;
+  public currentUser: IUser;
 
   constructor() {
     Amplify.configure({
@@ -29,7 +31,6 @@ export class CognitoService {
   }
 
   public signUp(user: IUser): Promise<any> {
-    console.log(user);
     return Auth.signUp({
       username: user.name,
       password: user.password,
@@ -44,7 +45,8 @@ export class CognitoService {
 
   public signIn(user: IUser): Promise<any> {
     return Auth.signIn({ username: user.name, password: user.password})
-    .then(() => {
+    .then((currentUser) => {
+      this.currentUser = currentUser;
       this.authenticationSubject.next(true);
     });
   }
@@ -58,13 +60,20 @@ export class CognitoService {
 
   public isAuthenticated(): Promise<boolean> {
     if (this.authenticationSubject.value) {
+      console.log({ message: 'I am authenticated.', obj: this.authenticationSubject.value});
+     // this.getAllUsers();
       return Promise.resolve(true);
     } else {
+      console.log({ message: 'I am not authenticated.', obj: this.authenticationSubject.value});
       return this.getUser()
       .then((user: any) => {
         if (user) {
+          this.setUser(user);
+          console.log({ loggedin: user});
+          this.authenticationSubject.next(true);
           return true;
         } else {
+          console.log('isAuthenticated return false');
           return false;
         }
       }).catch(() => {
@@ -84,4 +93,39 @@ export class CognitoService {
     });
   }
 
+  private setUser(user): void {
+    this.currentUser = {
+      name: user.username,
+      email: user.attributes.email,
+      password: '',
+      showPassword: false,
+      code: ''
+    };
+  }
+
+  public getAllUsers(): void { // NOT WORKING, credentials aren't being supplied
+    const AWS = require('aws-sdk');
+
+    const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({
+      apiVersion: '2016-04-18',
+      region: 'us-west-2'
+      // credentials: Auth.essentialCredentials(credentials)
+    });
+    let params = {
+      UserPoolId: environment.cognito.userPoolId, /* required */
+      AttributesToGet: [
+        'email',
+      ],
+      Limit: 0
+    };
+    // tslint:disable-next-line:typedef
+    // tslint:disable-next-line:only-arrow-functions
+    // tslint:disable-next-line:typedef
+    cognitoidentityserviceprovider.listUsers(params, function (err, data) {
+      if (err) { console.log(err, err.stack); } // an error occurred
+      else { console.log(data); }           // successful response
+    });
+
+ }
 }
+

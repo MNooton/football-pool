@@ -1,5 +1,5 @@
 import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule } from '@angular/platform-browser';
-import { Injectable, NgModule } from '@angular/core';
+import { Injectable, NgModule, APP_INITIALIZER  } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,7 +27,8 @@ import { RecordService } from 'src/shared/services/record.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { OnlyLoggedInUsersGuard } from 'src/shared/services/onlyLoggedInUsers.guard';
+import { CognitoService } from 'src/shared/services/cognito.service';
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = {
@@ -40,13 +41,13 @@ export class MyHammerConfig extends HammerGestureConfig {
 
 const routes: Routes = [
   {
-    path: 'home', component: HomeComponent
+    path: 'home', component: HomeComponent, canActivate: [OnlyLoggedInUsersGuard]
   },
   {
-    path: 'schedule', component: ScheduleBrowserComponent
+    path: 'schedule', component: ScheduleBrowserComponent, canActivate: [OnlyLoggedInUsersGuard]
   },
   {
-    path: 'standings', component: StandingsComponent
+    path: 'standings', component: StandingsComponent, canActivate: [OnlyLoggedInUsersGuard]
   },
   {
     path: 'signUp', component: SignUpComponent
@@ -55,10 +56,10 @@ const routes: Routes = [
     path: 'signIn', component: SignInComponent
   },
   {
-    path: 'profile', component: ProfileComponent
+    path: 'profile', component: ProfileComponent, canActivate: [OnlyLoggedInUsersGuard]
   },
   {
-    path: '', redirectTo: '/schedule', pathMatch: 'full'
+    path: '', redirectTo: '/schedule', pathMatch: 'full', canActivate: [OnlyLoggedInUsersGuard]
   }
 ];
 
@@ -90,8 +91,21 @@ const routes: Routes = [
     MatBadgeModule,
     HammerModule
   ],
-  providers: [DateFunctionService, RecordService, DatePipe, {provide: LocationStrategy, useClass: HashLocationStrategy}
-    , { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig }],
+  providers: [DateFunctionService, RecordService, DatePipe
+    , OnlyLoggedInUsersGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}, CognitoService
+    , { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (cs: CognitoService) => () => cs.isAuthenticated(),
+      deps: [CognitoService],
+      multi: true
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (rs: RecordService) => () => rs.loadRecords(),
+      deps: [RecordService],
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

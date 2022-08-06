@@ -23,15 +23,13 @@ export class WeekViewComponent implements OnInit, OnChanges {
               public recordService: RecordService) { }
 
   ngOnInit(): void {
-    console.log(this.week);
     this.setWeek();
-    console.log(this.games);
   }
 
   // tslint:disable-next-line:typedef
   ngOnChanges(changes: SimpleChanges) {
-   // console.log(changes);
-    this.setWeek();
+    // console.log(this.recordService.pickData);
+     this.setWeek();
   }
 
   setWeek(): void {

@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +25,7 @@
     "@angular/router": "~10.2.0",
     "@ngmodule/material-carousel": "^0.6.0",
     "aws-amplify": "^4.3.26",
+    "aws-sdk": "^2.1179.0",
     "bootstrap": "^5.1.3",
     "bootstrap-icons": "^1.8.3",
     "hammerjs": "^2.0.8",

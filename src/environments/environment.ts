@@ -5,8 +5,15 @@
 export const environment = {
   production: false,
   cognito: {
-    userPoolId: 'us-east-1_GuwbXcMjJ',
-    userPoolWebClientId: 'u9ag63dicaas31345it4gb1d0',
+    userPoolId: 'us-west-2_aWQafXo2j', // 'us-east-1_GuwbXcMjJ',
+    userPoolWebClientId: 'sjo7m2jn0085jne07shsjldvv', // 'u9ag63dicaas31345it4gb1d0',
+    region: 'us-west-2'
+  },
+  s3: {
+    AWSS3: {
+        bucket: 'arn:aws:s3:::footballappdata', // REQUIRED -  Amazon S3 bucket
+        region: 'us-west-2', // OPTIONAL -  Amazon service region
+    }
   }
 };
 
