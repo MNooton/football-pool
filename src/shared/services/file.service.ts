@@ -37,7 +37,7 @@ export class FileService {
   //   return Storage.list(folderName);
   // }
 
-  listFiles(): any{
+  async listFiles(): Promise<any>{
     const params = {
       Bucket: this.bucketName,
       Delimiter: '/'
@@ -45,14 +45,15 @@ export class FileService {
      };
 
     // tslint:disable-next-line:typedef
-    this.s3.listObjects(params, (err, data) => {
-        if (err) {
-          console.log('List Files Error', err);
-        } else {
-          console.log('List Files Success', data);
-          return data;
-        }
-      });
+    return this.s3.listObjects(params).promise();
+    // this.s3.listObjects(params, (err, data) => {
+    //     if (err) {
+    //       console.log('List Files Error', err);
+    //     } else {
+    //       console.log('List Files Success', data);
+    //       return data;
+    //     }
+    //   });
 
   }
 
@@ -76,11 +77,27 @@ export class FileService {
 
   convertFileToString(data: any): string {
     const fileText = new TextDecoder('utf-8').decode(data.Body);
-    console.log(fileText);
     return fileText;
   }
 
-  writeFile(email: string, content: string): void {
-
-  }
+  writeFile(name: string, content: string): Promise <boolean> {
+    return new Promise <boolean> ((resolve, reject) => {
+      const params = {
+      Key: name,
+      Bucket: this.bucketName,
+      Body: content,
+      ACL: 'private'
+     // Prefix: 's/5469b2f5b4292d22522e84e0/ms.files/'
+     };
+      this.s3.upload( params, (err, data) => {
+      if (err) {
+        console.log('Save File Error', err);
+        resolve(false);
+      } else {
+        console.log('Save File Success', data);
+        resolve(true);
+      }
+    });
+  });
+}
 }

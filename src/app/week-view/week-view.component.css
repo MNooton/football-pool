@@ -20,3 +20,13 @@
   line-height: 40px;
   margin-top: -10px;
 }
+
+.pickButton {
+  border-radius: 10px;
+  border-color: floralwhite;
+}
+
+.myPick {
+  background-color: khaki;
+}
+

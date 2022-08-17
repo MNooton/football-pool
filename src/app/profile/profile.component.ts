@@ -24,6 +24,7 @@ export class ProfileComponent implements OnInit {
         , password: ''
         , showPassword: false
         , code: ''
+        , gender: user.attributes.gender
       };
     });
   }

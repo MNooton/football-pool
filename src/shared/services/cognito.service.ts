@@ -12,6 +12,7 @@ export interface IUser {
   showPassword: boolean;
   code: string;
   name: string;
+  gender: string;
 }
 
 @Injectable({
@@ -34,7 +35,7 @@ export class CognitoService {
     return Auth.signUp({
       username: user.name,
       password: user.password,
-      attributes: { email: user.email },
+      attributes: { email: user.email, gender: user.gender },
     });
   }
 
@@ -69,11 +70,9 @@ export class CognitoService {
       .then((user: any) => {
         if (user) {
           this.setUser(user);
-          console.log({ loggedin: user});
           this.authenticationSubject.next(true);
           return true;
         } else {
-          console.log('isAuthenticated return false');
           return false;
         }
       }).catch(() => {
@@ -99,7 +98,8 @@ export class CognitoService {
       email: user.attributes.email,
       password: '',
       showPassword: false,
-      code: ''
+      code: '',
+      gender: user.attributes.gender
     };
   }
 
@@ -111,7 +111,7 @@ export class CognitoService {
       region: 'us-west-2'
       // credentials: Auth.essentialCredentials(credentials)
     });
-    let params = {
+    const params = {
       UserPoolId: environment.cognito.userPoolId, /* required */
       AttributesToGet: [
         'email',
@@ -121,10 +121,10 @@ export class CognitoService {
     // tslint:disable-next-line:typedef
     // tslint:disable-next-line:only-arrow-functions
     // tslint:disable-next-line:typedef
-    cognitoidentityserviceprovider.listUsers(params, function (err, data) {
-      if (err) { console.log(err, err.stack); } // an error occurred
-      else { console.log(data); }           // successful response
-    });
+    cognitoidentityserviceprovider.listUsers(params, (err, data) => {
+        if (err) { console.log(err, err.stack); } // an error occurred
+        else { console.log(data); } // successful response
+      });
 
  }
 }

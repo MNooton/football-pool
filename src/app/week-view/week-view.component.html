@@ -12,7 +12,7 @@
             <mat-list-item style="height: 100%;" [ngClass]="{ 'winningTeam' : game.winningTeamId === game.awayTeam.id}">
               <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width:100%;">
                 <div fxFlex="10">
-                  <img src="{{game.awayTeam.imageUrl}}" style="width:35px">
+                  <button class="pickButton" (click)="pick(game.id, game.awayTeam.id)" [ngClass]="{ 'myPick' : game.myPick == game.awayTeam.id }"><img src="{{game.awayTeam.imageUrl}}" style="width:35px"></button>
                 </div>
                 <div fxFlex >
                   <p style="font-size: 14px;">
@@ -31,7 +31,7 @@
             <mat-list-item style="height: 100%;" [ngClass]="{ 'winningTeam' : game.winningTeamId === game.homeTeam.id}">
               <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width:100%;">
                 <div fxFlex="10">
-                  <img src="{{game.homeTeam.imageUrl}}" style="width:35px">
+                  <button class="pickButton" (click)="pick(game.id, game.homeTeam.id)" [ngClass]="{ 'myPick' : game.myPick == game.homeTeam.id }"><img src="{{game.homeTeam.imageUrl}}" style="width:35px"></button>
                 </div>
                 <div fxFlex>
                   <p style="font-size: 14px;">

@@ -4,7 +4,7 @@ import { Pick } from '../models/interface.pick';
 import { Game } from '../models/interface.game';
 import { Record } from '../models/interface.record';
 import { DateFunctionService } from './date.function.service';
-// import importedScheduleData from '../../shared/data/schedule_2021.json';
+import importedScheduleData from '../../shared/data/schedule_2022.json';
 // import importedPickData_Mike from '../../shared/data/picks_2021_Mike.json';
 // import importedPickData_Michelle from '../../shared/data/picks_2021_Michelle.json';
 // import importedPickData_Derek from '../../shared/data/picks_2021_Derek.json';
@@ -13,10 +13,11 @@ import { DateFunctionService } from './date.function.service';
 // import importedPickData_Leah from '../../shared/data/picks_2021_Leah.json';
 // import importedPersonData from '../../shared/data/persons.json';
 import { GameResult } from '../models/interface.gameResult';
-import { NodeWithI18n } from '@angular/compiler';
+import { ConstantPool, NodeWithI18n } from '@angular/compiler';
 import { Standing } from '../models/interface.standing';
 import { Person } from '../models/interface.person';
 import { FileService } from './file.service';
+import { PinpointSMSVoice } from 'aws-sdk';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class RecordService {
 
   constructor(public dateFunctionService: DateFunctionService, fileService: FileService) {
     this.currentDate =  this.dateFunctionService.dateWithoutTime(new Date()); // this.dateFunctionService.getDateFromYYYYMMDD('20211013');
-    // this.scheduleData = importedScheduleData;
+    this.scheduleData = importedScheduleData;
     this.fileService = fileService;
    // const files = fileService.listFiles();
    //  console.log({fileList: files});
@@ -39,21 +40,11 @@ export class RecordService {
   }
 
   loadRecords(): Promise<any> {
-    const promise = new Promise<void>((resolve, reject) => {
-     this.fileService.getFileText('schedule_2021.json').then((scheduleFile) => {
-      const scheduleFileText = this.fileService.convertFileToString(scheduleFile);
-      this.scheduleData = JSON.parse(scheduleFileText);
-      this.fileService.getFileText('persons.json').then((personsFile) =>
-      {
-        const personFileText = this.fileService.convertFileToString(personsFile);
-        this.personData = JSON.parse(personFileText);
-        console.log(this.personData);
-        this.pickData =  []; // importedPickData_Mike.concat(importedPickData_Michelle
-        //  , importedPickData_Derek
-        //  , importedPickData_Aaron
-        //  , importedPickData_Lando
-        //  , importedPickData_Leah);
-        this.playedGames = this.scheduleData.weeks.flatMap(week =>
+    return new Promise<void>((resolve, reject) => {
+      this.pickData =  [];
+      this.personData = [];
+      this.getAllPicks().then(() => {
+      this.playedGames = this.scheduleData.weeks.flatMap(week =>
           week.games.filter(game => {
             return this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc) < this.currentDate;
           })).map(playedGame => (
@@ -63,15 +54,14 @@ export class RecordService {
             }
           ));
           // Looks like I'm calculating the played games ok. Now I need to load the picks and calculate some records!
-        console.log( { schedule: this.scheduleData, games: this.playedGames, picks: this.pickData});
-        resolve();
-      });
-     }
-     );
-
-
-  });
-    return promise;
+      console.log( { schedule: this.scheduleData, games: this.playedGames, picks: this.pickData});
+      resolve();
+          }); });
+        // importedPickData_Mike.concat(importedPickData_Michelle
+        //  , importedPickData_Derek
+        //  , importedPickData_Aaron
+        //  , importedPickData_Lando
+        //  , importedPickData_Leah);
   }
 
   getRecord(personId: number): Record {
@@ -143,4 +133,54 @@ export class RecordService {
     return newStandings;
   }
 
+  createPickContent(picks: Pick[], personId: any, gender: any, userName: any): any {
+    // tslint:disable-next-line:one-variable-per-declaration
+
+    return  {
+      personId,
+      name: userName,
+      gender,
+      picks: picks.map(pick => ({
+        gameId: pick.gameId,
+        winningTeamId: pick.winningTeamId
+      }))
+    };
+  }
+
+  getAllPicks(): Promise<void> {
+    return new Promise<void>((resolve, reject) => { this.fileService.listFiles().then(data => {
+        const pickFileList = data.Contents.filter(file => file.Key.startsWith('picks') );
+        let filesProcessed = 0;
+
+        if (pickFileList.length === 0) {
+          resolve();
+        }
+
+        pickFileList.forEach(x =>  {
+          this.fileService.getFileText(x.Key).then(pickFile => {
+            const pickFileText = this.fileService.convertFileToString(pickFile);
+            const fileContent = JSON.parse(pickFileText);
+            const person = {
+              id: fileContent.personId,
+              name: fileContent.name,
+              imageUrl: fileContent.gender === 'male' ? 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg' : 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Woman_Silhouette.svg'
+            };
+            this.personData.push(person);
+            const picks = fileContent.picks.map(pick => ({
+              personId: fileContent.personId,
+              gameId: pick.gameId,
+              winningTeamId: pick.winningTeamId
+            }));
+
+            this.pickData = this.pickData.concat(picks);
+            console.log({ picksLoaded: this.pickData});
+            filesProcessed += 1;
+            if (filesProcessed === pickFileList.length) {
+              resolve();
+            }
+          });
+        });
+      });
+    });
+  }
 }

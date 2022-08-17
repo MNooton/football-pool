@@ -9,6 +9,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
 import * as Hammer from 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -89,7 +91,9 @@ const routes: Routes = [
     MatDividerModule,
     MatButtonModule,
     MatBadgeModule,
-    HammerModule
+    HammerModule,
+    MatSnackBarModule,
+    MatSelectModule
   ],
   providers: [DateFunctionService, RecordService, DatePipe
     , OnlyLoggedInUsersGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}, CognitoService

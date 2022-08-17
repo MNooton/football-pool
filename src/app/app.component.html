@@ -36,10 +36,10 @@
 
 <mat-card id="card" style="text-align: center;">
 <!-- Toolbar -->
-<mat-toolbar color="primary">
+<mat-toolbar style="background-color: #323232; color:#d4d2d2;">
   <div fxLayout="row" style="width:100%;">
     <div fxFlex fxLayoutAlign="center center">
-      <button mat-mini-fab color="primary" [matMenuTriggerFor]="menu" aria-label="">
+      <button mat-mini-fab style="background-color:transparent ;color:darkgrey;" [matMenuTriggerFor]="menu" aria-label="">
         <mat-icon>menu</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
@@ -60,7 +60,7 @@
           <span>Schedule</span>
         </button>
       </mat-menu>
-      <span class="nflFont" style="font-size: larger; padding-left:20px;">2021 Football Pool</span>
+      <span class="nflFont" style="font-size: larger; padding-left:20px;">2022 Football Pool</span>
     </div>
     <div fxFlexAlign="end">
       <button mat-button [matMenuTriggerFor]="menu2">{{username}}</button>

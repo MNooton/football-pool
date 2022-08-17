@@ -21,7 +21,6 @@ export class  OnlyLoggedInUsersGuard implements CanActivate {
   // }
   // tslint:disable-next-line:typedef
   canActivate() {
-    console.log('OnlyLoggedInUsers');
     return this.cognitoService.isAuthenticated().then((e) => {
       if (e) {
             console.log('Logged in!');

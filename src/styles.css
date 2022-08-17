@@ -13,3 +13,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-family: NFL;
 }
 
+.blue-snackbar {
+  background: #4fe386;
+  color: black;
+  margin:auto;
+  text-align: center;
+}
+
+simple-snack-bar span {
+  margin:auto;
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+}

@@ -1,5 +1,5 @@
 export interface Person {
-  id: number;
+  id: any;
   name: string;
   imageUrl: string;
 }
