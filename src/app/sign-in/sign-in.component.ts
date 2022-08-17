@@ -18,8 +18,8 @@ export class SignInComponent {
     this.loading = false;
     this.user = {
       name: '',
-      email: 'mike.newton.blammo@gmail.com',
-      password: 'passwordOne2!'
+      email: '',
+      password: ''
     } as IUser;
   }
 

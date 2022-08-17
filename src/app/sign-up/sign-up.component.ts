@@ -23,8 +23,8 @@ export class SignUpComponent {
     this.isConfirm = false;
     this.user = {
       name: '',
-      email: 'test@test.com',
-      password: 'passwordOne2!',
+      email: '',
+      password: '', //passwordOne2!
       code: '',
       gender: ''
     } as IUser;
