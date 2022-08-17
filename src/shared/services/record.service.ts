@@ -34,9 +34,6 @@ export class RecordService {
     this.currentDate =  this.dateFunctionService.dateWithoutTime(new Date()); // this.dateFunctionService.getDateFromYYYYMMDD('20211013');
     this.scheduleData = importedScheduleData;
     this.fileService = fileService;
-   // const files = fileService.listFiles();
-   //  console.log({fileList: files});
-
   }
 
   loadRecords(): Promise<any> {
@@ -54,14 +51,8 @@ export class RecordService {
             }
           ));
           // Looks like I'm calculating the played games ok. Now I need to load the picks and calculate some records!
-      console.log( { schedule: this.scheduleData, games: this.playedGames, picks: this.pickData});
       resolve();
           }); });
-        // importedPickData_Mike.concat(importedPickData_Michelle
-        //  , importedPickData_Derek
-        //  , importedPickData_Aaron
-        //  , importedPickData_Lando
-        //  , importedPickData_Leah);
   }
 
   getRecord(personId: number): Record {
@@ -173,7 +164,6 @@ export class RecordService {
             }));
 
             this.pickData = this.pickData.concat(picks);
-            console.log({ picksLoaded: this.pickData});
             filesProcessed += 1;
             if (filesProcessed === pickFileList.length) {
               resolve();

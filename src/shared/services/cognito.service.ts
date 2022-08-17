@@ -40,7 +40,6 @@ export class CognitoService {
   }
 
   public confirmSignUp(user: IUser): Promise<any> {
-    console.log({ e: user.email, c: user.code, u: user.name });
     return Auth.confirmSignUp(user.name, user.code);
   }
 
@@ -88,7 +87,10 @@ export class CognitoService {
   public updateUser(user: IUser): Promise<any> {
     return Auth.currentUserPoolUser()
     .then((cognitoUser: any) => {
-      return Auth.updateUserAttributes(cognitoUser, user);
+      console.log({
+        cognitoUser, user
+      });
+      return Auth.updateUserAttributes(cognitoUser, { gender: user.gender, username: user.name});
     });
   }
 

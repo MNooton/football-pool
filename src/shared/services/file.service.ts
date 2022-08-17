@@ -46,14 +46,6 @@ export class FileService {
 
     // tslint:disable-next-line:typedef
     return this.s3.listObjects(params).promise();
-    // this.s3.listObjects(params, (err, data) => {
-    //     if (err) {
-    //       console.log('List Files Error', err);
-    //     } else {
-    //       console.log('List Files Success', data);
-    //       return data;
-    //     }
-    //   });
 
   }
 
@@ -64,15 +56,6 @@ export class FileService {
     };
     return this.s3.getObject(params).promise();
 
-    // this.s3.getObject(params, function(err, data) {
-    //   if (err) {
-    //     console.error(err); // an error occurred
-    //     return 'no data';
-    //   } else {
-    //     // tslint:disable-next-line:variable-name
-
-    //   }
-    // });
   }
 
   convertFileToString(data: any): string {
@@ -91,10 +74,8 @@ export class FileService {
      };
       this.s3.upload( params, (err, data) => {
       if (err) {
-        console.log('Save File Error', err);
         resolve(false);
       } else {
-        console.log('Save File Success', data);
         resolve(true);
       }
     });

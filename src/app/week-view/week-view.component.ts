@@ -19,10 +19,11 @@ export class WeekViewComponent implements OnInit, OnChanges {
   teams = teamData;
   days = dayData;
   games = null;
-  adjectives = ['shitty', 'good', 'weird', 'questionable', 'retarded', 'decent', 'smart', 'bad', 'horny', 'dumb', 'stupid, motherfucking', 'whack', 'irrational', 'intelligent', 'gay'];
+  adjectives = ['shitty', 'good', 'weird', 'questionable', 'retarded', 'decent', 'smart', 'bitch-ass', 'bad', 'horny', 'dumb', 'stupid, motherfucking', 'whack', 'irrational', 'intelligent', 'gay'];
   pickMade = false;
   newPicks: Pick[];
   myPicks: Pick[];
+  currentWeekId: number;
 
   @Input() week: Week;
 
@@ -35,13 +36,14 @@ export class WeekViewComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.myPicks = this.recordService.pickData.filter(x => x.personId === this.cognitoService.currentUser.email);
+    this.currentWeekId = this.week.id; // The schedule browser will automatically set us to the current week.
     this.setWeek();
   }
 
   // tslint:disable-next-line:typedef
   ngOnChanges(changes: SimpleChanges) {
     // console.log(this.recordService.pickData);
-     // this.setWeek();
+    this.setWeek();
   }
 
   setWeek(): void {
@@ -93,11 +95,6 @@ export class WeekViewComponent implements OnInit, OnChanges {
   // Should insert into person's list of picks
   // Should highlight the pick
   pick(gameId, teamId): void {
-    console.log({
-      personId: this.cognitoService.currentUser.email,
-      team: teamId,
-      game: gameId
-    });
     // show the save button
     if (!this.pickMade) {
         this.pickMade = true;
@@ -112,12 +109,6 @@ export class WeekViewComponent implements OnInit, OnChanges {
     const game = this.games[gameIndex];
     const uiPickIndex = game.picks.findIndex(pick => pick.name === this.cognitoService.currentUser.name);
 
-    console.log( {
-      gameIndex,
-      uiPickIndex,
-      p: game.picks,
-      gameId
-    });
     const uiPick = {
       isPlayed: false,
       gameId,
@@ -147,7 +138,6 @@ export class WeekViewComponent implements OnInit, OnChanges {
     } else {
       this.myPicks[recordPickIndex] = recordPick;
     }
-    console.log({ picks: game.picks});
   }
 
   // persist myPicks to storage

@@ -51,11 +51,11 @@
           <mat-icon>login</mat-icon>
           <span >SignIn</span>
         </button>
-        <button mat-menu-item [routerLink]="['standings']">
+        <button mat-menu-item *ngIf="isAuthenticated" [routerLink]="['standings']">
           <mat-icon>subject</mat-icon>
           <span >Standings</span>
         </button>
-        <button mat-menu-item [routerLink]="['schedule']">
+        <button mat-menu-item *ngIf="isAuthenticated" [routerLink]="['schedule']">
           <mat-icon>calendar_today</mat-icon>
           <span>Schedule</span>
         </button>

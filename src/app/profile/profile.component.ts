@@ -40,4 +40,7 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  public setUsername(username): void {
+    this.user.name = username;
+  }
 }
