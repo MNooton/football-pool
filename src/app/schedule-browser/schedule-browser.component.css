@@ -8,3 +8,8 @@
 /* .content > mat-card {
   width: 200px;
 } */
+
+.title {
+  font-size: 28px;
+  font-weight: 500;
+}

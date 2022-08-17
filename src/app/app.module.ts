@@ -31,6 +31,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OnlyLoggedInUsersGuard } from 'src/shared/services/onlyLoggedInUsers.guard';
 import { CognitoService } from 'src/shared/services/cognito.service';
+import { SaveSnackBarComponent } from './save-snack-bar/save-snack-bar.component';
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = {
@@ -75,7 +76,8 @@ const routes: Routes = [
     GameCardComponent,
     SignUpComponent,
     SignInComponent,
-    ProfileComponent
+    ProfileComponent,
+    SaveSnackBarComponent
   ],
   imports: [
     BrowserModule,

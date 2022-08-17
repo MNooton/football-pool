@@ -46,7 +46,7 @@ export class CognitoService {
   public signIn(user: IUser): Promise<any> {
     return Auth.signIn({ username: user.name, password: user.password})
     .then((currentUser) => {
-      this.currentUser = currentUser;
+      this.setUser(currentUser);
       this.authenticationSubject.next(true);
     });
   }

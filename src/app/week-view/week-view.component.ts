@@ -9,6 +9,7 @@ import { RecordService } from 'src/shared/services/record.service';
 import { CognitoService } from 'src/shared/services/cognito.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FileService } from 'src/shared/services/file.service';
+import { SaveSnackBarComponent } from '../save-snack-bar/save-snack-bar.component';
 
 @Component({
   selector: 'app-week-view',
@@ -19,7 +20,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
   teams = teamData;
   days = dayData;
   games = null;
-  adjectives = ['shitty', 'good', 'weird', 'questionable', 'retarded', 'decent', 'smart', 'bitch-ass', 'bad', 'horny', 'dumb', 'stupid, motherfucking', 'whack', 'irrational', 'intelligent', 'gay'];
+  adjectives = ['brutal', 'embarrassing', 'shitty', 'good', 'weird', 'questionable', 'retarded', 'decent', 'smart', 'bitch-ass', 'bad', 'horny', 'dumb', 'stupid, motherfucking', 'whack', 'irrational', 'intelligent', 'gay'];
   pickMade = false;
   newPicks: Pick[];
   myPicks: Pick[];
@@ -96,13 +97,28 @@ export class WeekViewComponent implements OnInit, OnChanges {
   // Should highlight the pick
   pick(gameId, teamId): void {
     // show the save button
+    console.log({ pickmade: this.pickMade});
     if (!this.pickMade) {
         this.pickMade = true;
         const rndInt = this.randomIntFromInterval(0, this.adjectives.length - 1);
-        const saveButtonSnackBar = this.snackBar.open(`You have made some ${ this.adjectives[rndInt] } picks`, 'Save');
-        saveButtonSnackBar.onAction().subscribe(() => {
-        this.savePicks();
-      });
+       // const saveButtonSnackBar = this.snackBar.open(`You have made some ${ this.adjectives[rndInt] } picks`, 'Save');
+        const saveButtonSnackBar = this.snackBar.openFromComponent(SaveSnackBarComponent, {
+          data: {
+            message: `You have made some ${ this.adjectives[rndInt] } picks`,
+            actionName: 'Save',
+            preClose: () => {
+              this.snackBar.dismiss();
+              this.pickMade = false;
+            },
+            action: () => {
+              this.savePicks();
+              this.pickMade = false;
+            }
+          },
+        });
+      //   saveButtonSnackBar.onAction().subscribe(() => {
+      //   this.savePicks();
+      // });
     }
 
     const gameIndex = this.games.findIndex(item => item.id === gameId);

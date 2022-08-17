@@ -15,8 +15,8 @@
     </div>
     <div class="row">
       <div class="col mb-2">
-          <mat-label>Gender</mat-label>
-          <mat-select [(value)]="user.gender"  *ngIf="user">
+          <mat-label>Gender:</mat-label>
+          <mat-select [(value)]="user.gender" *ngIf="user" style="background-color:lightgrey; border-color:darkcyan" class="form-control form-control-sm">
             <mat-option disabled>None</mat-option>
             <mat-option value="female">Female</mat-option>
             <mat-option value="male">Male</mat-option>
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col d-grid">
+      <div class="col mb-2">
         <button type="button" (click)="update()" class="btn btn-sm btn-dark" [disabled]="loading">
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
           Update

@@ -1,0 +1,6 @@
+<span>
+{{ message }}
+</span>
+<button md-button class="md-simple-snackbar-action" *ngIf="hasAction" (click)="action()">{{ actionName }}</button>
+<button md-button class="md-simple-snackbar-action" (click)="dismiss()">Cancel</button>
+
