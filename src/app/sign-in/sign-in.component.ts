@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { IUser, CognitoService } from '../../shared/services/cognito.service';
 
@@ -14,7 +15,8 @@ export class SignInComponent {
   user: IUser;
 
   constructor(private router: Router,
-              private cognitoService: CognitoService) {
+              private cognitoService: CognitoService,
+              private snackBar: MatSnackBar) {
     this.loading = false;
     this.user = {
       name: '',
@@ -28,7 +30,10 @@ export class SignInComponent {
     this.cognitoService.signIn(this.user)
     .then(() => {
       this.router.navigate(['/schedule']);
-    }).catch(() => {
+    }).catch((err) => {
+      this.snackBar.open('ERROR: ' + err.message, 'Ok', {
+        duration: 5000
+      } );
       this.loading = false;
     });
   }
