@@ -4,7 +4,7 @@ import { Pick } from 'src/shared/models/interface.pick';
 import teamData from '../../shared/data/teams.json';
 import dayData from '../../shared/data/days.json';
 import { DateFunctionService } from 'src/shared/services/date.function.service';
-import { DatePipe } from '@angular/common';
+import { DatePipe, getLocaleDateFormat } from '@angular/common';
 import { RecordService } from 'src/shared/services/record.service';
 import { CognitoService } from 'src/shared/services/cognito.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -60,6 +60,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
         .filter(myPick => myPick.personId === this.cognitoService.currentUser.email)[0]?.winningTeamId,
       weekId: game.weekId,
       date: this.datepipe.transform(this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc), 'mediumDate'),
+      dateTimeUtc: game.dateTimeUtc,
       dayName: this.days.filter( day => day.id === game.dayId)[0].name,
       awayTeam: this.teams.filter(team => team.id === game.awayTeamId).map( awayTeam => ({
         city: awayTeam.city,
@@ -177,6 +178,17 @@ export class WeekViewComponent implements OnInit, OnChanges {
 
       }
     });
+  }
+
+  disablePickButton(game: any): boolean {
+    if (this.currentWeekId !== game.weekId) {
+      return true;
+    }
+
+    if (new Date() > this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc)) {
+      return true;
+    }
+    return false;
   }
 
 }

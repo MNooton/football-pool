@@ -14,7 +14,7 @@
                 <div fxFlex="10">
                   <!-- <div fxFlex="30"></div>
                   <div fxFlex="30"> -->
-                    <button [disabled]="this.currentWeekId !== game.weekId" class="pickButton" (click)="pick(game.id, game.awayTeam.id)" [ngClass]="{ 'myPick' : game.myPick == game.awayTeam.id }"><img src="{{game.awayTeam.imageUrl}}" style="width:35px"></button>
+                    <button [disabled]="disablePickButton(game)" class="pickButton" (click)="pick(game.id, game.awayTeam.id)" [ngClass]="{ 'myPick' : game.myPick == game.awayTeam.id }"><img src="{{game.awayTeam.imageUrl}}" style="width:35px"></button>
                   <!-- </div>
                   <div fxFlex="10">
                     <mat-icon [hidden]=" game.myPick != game.awayTeam.id" aria-hidden="false" style="color: green;" aria-label="Example home icon">check_circle_outline</mat-icon>
@@ -39,7 +39,7 @@
                 <div fxFlex="10">
                   <!-- <div fxFlex="30"></div>
                   <div fxFlex="30"> -->
-                    <button [disabled]="this.currentWeekId !== game.weekId" class="pickButton" (click)="pick(game.id, game.homeTeam.id)" [ngClass]="{ 'myPick' : game.myPick == game.homeTeam.id }"><img src="{{game.homeTeam.imageUrl}}" style="width:35px"></button>
+                    <button [disabled]="disablePickButton(game)" class="pickButton" (click)="pick(game.id, game.homeTeam.id)" [ngClass]="{ 'myPick' : game.myPick == game.homeTeam.id }"><img src="{{game.homeTeam.imageUrl}}" style="width:35px"></button>
                   <!-- </div>
                   <div fxFlex="10">
                     <mat-icon [hidden]=" game.myPick != game.homeTeam.id" aria-hidden="false" style="color: green;" aria-label="Example home icon">check_circle_outline</mat-icon>

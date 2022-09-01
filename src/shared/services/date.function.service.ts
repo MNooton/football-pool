@@ -20,7 +20,13 @@ export class DateFunctionService {
     const month = +dateString.substring(4, 6);
     const day   = +dateString.substring(6, 8);
 
-    const date  = new Date(year, month - 1, day);
+    let date  = new Date(year, month - 1, day);
+    if (dateString.length > 8) {
+        const hours = +dateString.substring(8, 10);
+        const minutes = +dateString.substring(10, 12);
+        const seconds = +dateString.substring(12, 14);
+        date = new Date(year, month - 1, day, hours, minutes, seconds);
+    }
 
     return date;
   }
