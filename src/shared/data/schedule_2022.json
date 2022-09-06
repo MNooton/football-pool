@@ -9,9 +9,9 @@
         {
           "id": 1,
           "weekId": 1,
-          "homeTeamId": 18,
-          "awayTeamId": 4,
-          "awayTeamSpread": "",
+          "homeTeamId": 4,
+          "awayTeamId": 18,
+          "awayTeamSpread": "2.5",
           "dayId": 5,
           "dateTimeUtc": "20220908170000",
           "homePoints": 0,
