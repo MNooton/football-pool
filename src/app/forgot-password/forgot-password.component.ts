@@ -41,7 +41,7 @@ export class ForgotPasswordComponent implements OnInit {
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
       panelClass: ['blue-snackbar'],
-      duration: 2000
+      duration: 10000
     });
     this.gotCode = true;
   }
@@ -52,7 +52,7 @@ export class ForgotPasswordComponent implements OnInit {
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
         panelClass: ['blue-snackbar'],
-        duration: 2000
+        duration: 5000
       });
       this.router.navigate(['/signIn']);
     }).catch(err => {
