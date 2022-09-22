@@ -32,6 +32,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { OnlyLoggedInUsersGuard } from 'src/shared/services/onlyLoggedInUsers.guard';
 import { CognitoService } from 'src/shared/services/cognito.service';
 import { SaveSnackBarComponent } from './save-snack-bar/save-snack-bar.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = {
@@ -62,6 +63,9 @@ const routes: Routes = [
     path: 'profile', component: ProfileComponent, canActivate: [OnlyLoggedInUsersGuard]
   },
   {
+    path: 'forgotPassword', component: ForgotPasswordComponent
+  },
+  {
     path: '', redirectTo: '/schedule', pathMatch: 'full', canActivate: [OnlyLoggedInUsersGuard]
   }
 ];
@@ -77,7 +81,8 @@ const routes: Routes = [
     SignUpComponent,
     SignInComponent,
     ProfileComponent,
-    SaveSnackBarComponent
+    SaveSnackBarComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

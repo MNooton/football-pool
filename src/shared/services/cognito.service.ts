@@ -128,6 +128,17 @@ export class CognitoService {
         else { console.log(data); } // successful response
       });
 
- }
+  }
+
+  public async forgotPassword(username) {
+    // Will send an email to the user w/ a code
+    return await Auth.forgotPassword(username) as boolean;
+
+  }
+
+  public submitNewPassword(username: string, code: string, newPassword: string): Promise<string> {
+    return Auth.forgotPasswordSubmit(username, code, newPassword);
+  }
+
 }
 

@@ -49,6 +49,4 @@ export class SignInComponent {
   public setUsername(username): void {
     this.user.name = username;
   }
-
-
 }
