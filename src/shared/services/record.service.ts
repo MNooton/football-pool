@@ -83,16 +83,16 @@ export class RecordService {
   getWinner(game: Game): number {
     let result = 0;
     const awayTeamSpread = Number(game.awayTeamSpread);
-    if ( awayTeamSpread ) {
-      const awayWin = (awayTeamSpread + game.awayPoints) > game.homePoints;
-      const homeWin = (awayTeamSpread + game.awayPoints) < game.homePoints;
+   // if ( awayTeamSpread ) {
+    const awayWin = (awayTeamSpread + game.awayPoints) > game.homePoints;
+    const homeWin = (awayTeamSpread + game.awayPoints) < game.homePoints;
 
-      if (awayWin) {
+    if (awayWin) {
         result = game.awayTeamId;
       } else if (homeWin) {
         result = game.homeTeamId;
       }
-    }
+    // }
     return result;
   }
 
