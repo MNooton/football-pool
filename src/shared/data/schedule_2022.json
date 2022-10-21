@@ -249,8 +249,8 @@
           "awayTeamSpread": "2",
           "dayId": 5,
           "dateTimeUtc": "20221020170000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 42,
+          "awayPoints": 34
         },
         {
           "id": 20,
