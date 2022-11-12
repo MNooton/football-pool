@@ -65,9 +65,7 @@ const routes: Routes = [
   {
     path: 'forgotPassword', component: ForgotPasswordComponent
   },
-  {
-    path: '', redirectTo: '/schedule', pathMatch: 'full', canActivate: [OnlyLoggedInUsersGuard]
-  }
+  { path: '', redirectTo: '/schedule', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -87,7 +85,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes, { useHash: true}),
+    RouterModule.forRoot(routes, { useHash: true, relativeLinkResolution: 'legacy' }),
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
