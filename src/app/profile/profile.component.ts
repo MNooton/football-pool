@@ -4,7 +4,7 @@ import { IUser, CognitoService } from '../../shared/services/cognito.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
 
