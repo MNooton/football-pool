@@ -411,13 +411,13 @@
         {
           "id": 32,
           "weekId": 11,
-          "homeTeamId": 27,
-          "awayTeamId": 7,
+          "homeTeamId": 17,
+          "awayTeamId": 16,
           "awayTeamSpread": "-6.5",
           "dayId": 1,
           "dateTimeUtc": "20221120170000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 27,
+          "awayPoints": 30
         },
         {
           "id": 33,
@@ -427,8 +427,8 @@
           "awayTeamSpread": "-8",
           "dayId": 2,
           "dateTimeUtc": "20221121170000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 10,
+          "awayPoints": 38
         }
       ]
     },
@@ -441,7 +441,7 @@
           "weekId": 12,
           "homeTeamId": 11,
           "awayTeamId": 4,
-          "awayTeamSpread": "",
+          "awayTeamSpread": "-9.5",
           "dayId": 5,
           "dateTimeUtc": "20221124170000",
           "homePoints": 0,
@@ -452,18 +452,18 @@
           "weekId": 12,
           "homeTeamId": 9,
           "awayTeamId": 23,
-          "awayTeamSpread": "",
+          "awayTeamSpread": "10",
           "dayId": 5,
           "dateTimeUtc": "20221124",
-          "homePoints": 33,
-          "awayPoints": 36
+          "homePoints": 0,
+          "awayPoints": 0
         },
         {
           "id": 34,
           "weekId": 12,
           "homeTeamId": 20,
           "awayTeamId": 21,
-          "awayTeamSpread": "",
+          "awayTeamSpread": "2.5",
           "dayId": 5,
           "dateTimeUtc": "20221124170000",
           "homePoints": 0,
@@ -474,7 +474,7 @@
           "weekId": 12,
           "homeTeamId": 26,
           "awayTeamId": 12,
-          "awayTeamSpread": "",
+          "awayTeamSpread": "6.5",
           "dayId": 1,
           "dateTimeUtc": "20221127170000",
           "homePoints": 0,
@@ -485,7 +485,7 @@
           "weekId": 12,
           "homeTeamId": 14,
           "awayTeamId": 27,
-          "awayTeamSpread": "",
+          "awayTeamSpread": "2.5",
           "dayId": 2,
           "dateTimeUtc": "20221128170000",
           "homePoints": 0,
