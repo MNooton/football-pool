@@ -16,7 +16,7 @@ export class ScheduleBrowserComponent implements OnInit {
   selectedWeekIndex(): number { return this.selectedWeekId - 1; }
 
   constructor(private dateFunctionService: DateFunctionService, private recordService: RecordService) {
-
+    this.maxWeek = this.recordService.scheduleData.weeks.length;
   }
 
   ngOnInit(): void {
