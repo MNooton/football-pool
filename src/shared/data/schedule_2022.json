@@ -822,8 +822,8 @@
           "awayTeamSpread": "8.5",
           "dayId": 7,
           "dateTimeUtc": "20230121130000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 27,
+          "awayPoints": 20
         },
         {
           "id": 66,
@@ -833,8 +833,8 @@
           "awayTeamSpread": "7.5",
           "dayId": 7,
           "dateTimeUtc": "20230121170000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 38,
+          "awayPoints": 7
         },
         {
           "id": 67,
@@ -844,8 +844,8 @@
           "awayTeamSpread": "5.5",
           "dayId": 1,
           "dateTimeUtc": "20230122120000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 10,
+          "awayPoints": 27
         },
         {
           "id": 68,
@@ -855,9 +855,37 @@
           "awayTeamSpread": "3.5",
           "dayId": 1,
           "dateTimeUtc": "20230122150000",
-          "homePoints": 0,
-          "awayPoints": 0
-        }
+          "homePoints": 19,
+          "awayPoints": 12
+        }]
+    },
+        {
+          "id": 21,
+          "name": "Divisional Round",
+          "games": [
+            {
+              "id": 69,
+              "weekId": 21,
+              "homeTeamId": 26,
+              "awayTeamId": 28,
+              "awayTeamSpread": "",
+              "dayId": 7,
+              "dateTimeUtc": "20230129120000",
+              "homePoints": 0,
+              "awayPoints": 0
+            },
+            {
+              "id": 70,
+              "weekId": 21,
+              "homeTeamId": 16,
+              "awayTeamId": 7,
+              "awayTeamSpread": "",
+              "dayId": 7,
+              "dateTimeUtc": "20230129150000",
+              "homePoints": 0,
+              "awayPoints": 0
+            }
+
       ]
     }
   ]
