@@ -859,34 +859,32 @@
           "awayPoints": 12
         }]
     },
-        {
-          "id": 21,
-          "name": "Divisional Round",
-          "games": [
-            {
-              "id": 69,
-              "weekId": 21,
-              "homeTeamId": 26,
-              "awayTeamId": 28,
-              "awayTeamSpread": "",
-              "dayId": 7,
-              "dateTimeUtc": "20230129120000",
-              "homePoints": 0,
-              "awayPoints": 0
-            },
-            {
-              "id": 70,
-              "weekId": 21,
-              "homeTeamId": 16,
-              "awayTeamId": 7,
-              "awayTeamSpread": "",
-              "dayId": 7,
-              "dateTimeUtc": "20230129150000",
-              "homePoints": 0,
-              "awayPoints": 0
-            }
-
-      ]
+      {
+        "id": 21,
+        "name": "Conference Championships",
+        "games": [
+          {
+            "id": 69,
+            "weekId": 21,
+            "homeTeamId": 26,
+            "awayTeamId": 28,
+            "awayTeamSpread": "2.5",
+            "dayId": 1,
+            "dateTimeUtc": "20230129120000",
+            "homePoints": 0,
+            "awayPoints": 0
+          },
+          {
+            "id": 70,
+            "weekId": 21,
+            "homeTeamId": 16,
+            "awayTeamId": 7,
+            "awayTeamSpread": "-1.5",
+            "dayId": 1,
+            "dateTimeUtc": "20230129150000",
+            "homePoints": 0,
+            "awayPoints": 0
+          }]
     }
   ]
 }
