@@ -7,7 +7,7 @@ import { DateFunctionService } from 'src/shared/services/date.function.service';
 import { DatePipe, getLocaleDateFormat } from '@angular/common';
 import { RecordService } from 'src/shared/services/record.service';
 import { CognitoService } from 'src/shared/services/cognito.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import { FileService } from 'src/shared/services/file.service';
 import { SaveSnackBarComponent } from '../save-snack-bar/save-snack-bar.component';
 
