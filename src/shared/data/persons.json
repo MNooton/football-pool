@@ -3,30 +3,35 @@
     "id": 1,
     "name": "Newton",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg"
-  } ,
+  },
   {
     "id": 2,
     "name": "Michelle",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Woman_Silhouette.svg"
-  } ,
+  },
   {
     "id": 3,
     "name": "Derek",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg"
-  } ,
+  },
   {
     "id": 4,
     "name": "Aaron",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg"
-  } ,
+  },
   {
     "id": 5,
     "name": "Landon",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg"
-  } ,
+  },
   {
     "id": 6,
     "name": "Leah",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Woman_Silhouette.svg"
+  },
+  {
+    "id": 7,
+    "name": "Scott",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg"
   }
 ]
