@@ -46,6 +46,7 @@ export class ScheduleBrowserComponent implements OnInit {
 
   setCurrentWeekId(): void {
     const currentDate = this.dateFunctionService.getYYYYMMDDFromDate(new Date());
+    this.selectedWeekId = 1;
     this.recordService.scheduleData.weeks.forEach((week) => {
       // get Monday
       let mondayGame = week.games.filter((day) => day.dayId === 2)[0];

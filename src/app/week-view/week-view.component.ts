@@ -7,7 +7,8 @@ import { DateFunctionService } from 'src/shared/services/date.function.service';
 import { DatePipe, getLocaleDateFormat } from '@angular/common';
 import { RecordService } from 'src/shared/services/record.service';
 import { CognitoService } from 'src/shared/services/cognito.service';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import {MatSnackBar, MatSnackBarRef, MatSnackBarModule} from '@angular/material/snack-bar';
+// import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import { FileService } from 'src/shared/services/file.service';
 import { SaveSnackBarComponent } from '../save-snack-bar/save-snack-bar.component';
 
@@ -163,7 +164,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
     , this.cognitoService.currentUser.gender
     , this.cognitoService.currentUser.name);
 
-    const filename = 'picks_2022_' + this.cognitoService.currentUser.email + '.json';
+    const filename = 'picks_2023_' + this.cognitoService.currentUser.email + '.json';
     this.fileService.writeFile(filename, JSON.stringify(content)).then(response => {
       if (response) {
         this.pickMade = false;

@@ -8,7 +8,7 @@
              <mat-card-title style="font-size: 16px;">Game {{game.id}}: {{game.date}}</mat-card-title>
       </div>
         <mat-card-content style="margin-bottom: 10px;">
-          <mat-list fxLayout="column" class="nflFont">
+          <mat-list fxLayout="column" class="">
             <mat-list-item style="height: 100%;" [ngClass]="{ 'winningTeam' : game.winningTeamId === game.awayTeam.id}">
               <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width:100%;">
                 <div fxFlex="10">
@@ -59,7 +59,7 @@
           </mat-list>
           <mat-divider></mat-divider>
           <p style="font-size: 16px; font-weight: 500; margin-bottom:0;">Picks</p>
-          <mat-list fxLayout="column" class="nflFont">
+          <mat-list fxLayout="column" class="">
             <mat-list-item style="height: 100%;" *ngFor="let pick of game.picks">
               <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width:100%;">
                 <div fxFlex>
@@ -79,7 +79,7 @@
             <mat-list-item style="text-align: center;" *ngIf="game.picks?.length === 0">
               <div fxLayout="row" style="width:100%;">
                 <div fxFlex  fxLayoutAlign="center center">
-                  <p style="font-size: 14px;">No Picks Yet. Send Your Picks To Newton.</p>
+                  <p style="font-size: 14px;">No Picks Yet.</p>
                 </div>
               </div>
             </mat-list-item>

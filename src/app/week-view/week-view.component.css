@@ -1,4 +1,4 @@
-:host /deep/ .mat-list-item-content {
+:host deep .mat-list-item-content {
   padding-left: 0!important;
   padding-right: 0!important;
 }
@@ -24,6 +24,8 @@
 .pickButton {
   border-radius: 10px;
   border-color: floralwhite;
+  height: 50px;
+  width: 80px;
 }
 
 .myPick {
