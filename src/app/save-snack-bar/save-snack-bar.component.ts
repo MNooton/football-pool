@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {
-  MatLegacySnackBar as MatSnackBar,
-  MAT_LEGACY_SNACK_BAR_DATA as MAT_SNACK_BAR_DATA,
-  MatLegacySnackBarRef as MatSnackBarRef,
-} from '@angular/material/legacy-snack-bar';
+  MatSnackBar as MatSnackBar,
+  MAT_SNACK_BAR_DATA as MAT_SNACK_BAR_DATA,
+  MatSnackBarRef as MatSnackBarRef,
+} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-save-snack-bar',
