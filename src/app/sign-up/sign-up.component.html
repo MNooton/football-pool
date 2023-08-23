@@ -47,6 +47,7 @@
       <div class="card-body" *ngIf="isConfirm">
         <div class="row">
           <div class="col mb-2">
+            <p>Check your email, you should have had a confirmation code sent to you!</p>
             <label for="code" class="form-label">Code:</label>
             <input type="text" id="code" name="code" [value]="user.code" (change)="setConfirmCode($event.target.value)" class="form-control form-control-sm">
           </div>
