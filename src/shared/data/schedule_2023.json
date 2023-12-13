@@ -577,8 +577,8 @@
           "awayTeamSpread": "-6.5",
           "dayId": 2,
           "dateTimeUtc": "20231211170000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 24,
+          "awayPoints": 22
         },
         {
           "id": 54,
@@ -588,8 +588,8 @@
           "awayTeamSpread": "13.5",
           "dayId": 2,
           "dateTimeUtc": "20231211170000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 27,
+          "awayPoints": 28
         }
       ]
     },
@@ -598,11 +598,33 @@
       "name": "Week 15",
       "games": [
         {
+          "id": 58,
+          "weekId": 15,
+          "homeTeamId": 25,
+          "awayTeamId": 17,
+          "awayTeamSpread": "3",
+          "dayId": 5,
+          "dateTimeUtc": "20231214170000",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 59,
+          "weekId": 15,
+          "homeTeamId": 11,
+          "awayTeamId": 10,
+          "awayTeamSpread": "5",
+          "dayId": 5,
+          "dateTimeUtc": "20231216170000",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
           "id": 43,
           "weekId": 15,
           "homeTeamId": 15,
           "awayTeamId": 3,
-          "awayTeamSpread": "",
+          "awayTeamSpread": "-3.5",
           "dayId": 5,
           "dateTimeUtc": "20231217170000",
           "homePoints": 0,
@@ -611,9 +633,9 @@
         {
           "id": 44,
           "weekId": 15,
-          "homeTeamId": 21,
-          "awayTeamId": 16,
-          "awayTeamSpread": "",
+          "homeTeamId": 29,
+          "awayTeamId": 26,
+          "awayTeamSpread": "-3.5",
           "dayId": 1,
           "dateTimeUtc": "20231218170000",
           "homePoints": 0,
