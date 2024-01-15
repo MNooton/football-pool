@@ -780,7 +780,7 @@
           "homeTeamId": 16,
           "awayTeamId": 19,
           "awayTeamSpread": "4",
-          "dayId": 1,
+          "dayId": 7,
           "dateTimeUtc": "20240113170000",
           "homePoints": 26,
           "awayPoints": 7
@@ -793,8 +793,8 @@
           "awayTeamSpread": "7.5",
           "dayId": 1,
           "dateTimeUtc": "20240114133000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 32,
+          "awayPoints": 48
         },
         {
           "id": 66,
@@ -802,7 +802,7 @@
           "homeTeamId": 11,
           "awayTeamId": 18,
           "awayTeamSpread": "3",
-          "dayId": 7,
+          "dayId": 1,
           "dateTimeUtc": "20240114170000",
           "homePoints": 0,
           "awayPoints": 0
@@ -813,7 +813,7 @@
           "homeTeamId": 4,
           "awayTeamId": 27,
           "awayTeamSpread": "10",
-          "dayId": 7,
+          "dayId": 2,
           "dateTimeUtc": "20240115100000",
           "homePoints": 0,
           "awayPoints": 0
@@ -824,8 +824,103 @@
           "homeTeamId": 30,
           "awayTeamId": 26,
           "awayTeamSpread": "-3",
-          "dayId": 1,
+          "dayId": 2,
           "dateTimeUtc": "20240115170000",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Divisional Round",
+      "games": [
+        {
+          "id": 68,
+          "weekId": 19,
+          "homeTeamId": 100,
+          "awayTeamId": 100,
+          "awayTeamSpread": "",
+          "dayId": 7,
+          "dateTimeUtc": "20240120133000",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 69,
+          "weekId": 19,
+          "homeTeamId": 100,
+          "awayTeamId": 100,
+          "awayTeamSpread": "",
+          "dayId": 7,
+          "dateTimeUtc": "20240120170000",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 70,
+          "weekId": 19,
+          "homeTeamId": 100,
+          "awayTeamId": 100,
+          "awayTeamSpread": "",
+          "dayId": 1,
+          "dateTimeUtc": "20240121133000",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 71,
+          "weekId": 19,
+          "homeTeamId": 100,
+          "awayTeamId": 100,
+          "awayTeamSpread": "",
+          "dayId": 1,
+          "dateTimeUtc": "20240121170000",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Conference Chanmpionships",
+      "games": [
+        {
+          "id": 72,
+          "weekId": 21,
+          "homeTeamId": 100,
+          "awayTeamId": 100,
+          "awayTeamSpread": "",
+          "dayId": 1,
+          "dateTimeUtc": "20240128133000",
+          "homePoints": 0,
+          "awayPoints": 0
+        },
+        {
+          "id": 73,
+          "weekId": 21,
+          "homeTeamId": 100,
+          "awayTeamId": 100,
+          "awayTeamSpread": "",
+          "dayId": 1,
+          "dateTimeUtc": "20240128170000",
+          "homePoints": 0,
+          "awayPoints": 0
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Superbowl",
+      "games": [
+        {
+          "id": 74,
+          "weekId": 21,
+          "homeTeamId": 100,
+          "awayTeamId": 100,
+          "awayTeamSpread": "",
+          "dayId": 1,
+          "dateTimeUtc": "20240211133000",
           "homePoints": 0,
           "awayPoints": 0
         }
