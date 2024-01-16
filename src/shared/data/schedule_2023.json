@@ -804,8 +804,8 @@
           "awayTeamSpread": "3",
           "dayId": 1,
           "dateTimeUtc": "20240114170000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 24,
+          "awayPoints": 23
         },
         {
           "id": 64,
@@ -815,8 +815,8 @@
           "awayTeamSpread": "10",
           "dayId": 2,
           "dateTimeUtc": "20240115100000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 31,
+          "awayPoints": 17
         },
         {
           "id": 67,
@@ -826,8 +826,8 @@
           "awayTeamSpread": "-3",
           "dayId": 2,
           "dateTimeUtc": "20240115170000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 32,
+          "awayPoints": 9
         }
       ]
     },
@@ -838,8 +838,8 @@
         {
           "id": 68,
           "weekId": 19,
-          "homeTeamId": 100,
-          "awayTeamId": 100,
+          "homeTeamId": 3,
+          "awayTeamId": 13,
           "awayTeamSpread": "",
           "dayId": 7,
           "dateTimeUtc": "20240120133000",
@@ -849,8 +849,8 @@
         {
           "id": 69,
           "weekId": 19,
-          "homeTeamId": 100,
-          "awayTeamId": 100,
+          "homeTeamId": 28,
+          "awayTeamId": 12,
           "awayTeamSpread": "",
           "dayId": 7,
           "dateTimeUtc": "20240120170000",
@@ -860,22 +860,22 @@
         {
           "id": 70,
           "weekId": 19,
-          "homeTeamId": 100,
-          "awayTeamId": 100,
+          "homeTeamId": 11,
+          "awayTeamId": 30,
           "awayTeamSpread": "",
           "dayId": 1,
-          "dateTimeUtc": "20240121133000",
+          "dateTimeUtc": "20240121120000",
           "homePoints": 0,
           "awayPoints": 0
         },
         {
           "id": 71,
           "weekId": 19,
-          "homeTeamId": 100,
-          "awayTeamId": 100,
+          "homeTeamId": 4,
+          "awayTeamId": 16,
           "awayTeamSpread": "",
           "dayId": 1,
-          "dateTimeUtc": "20240121170000",
+          "dateTimeUtc": "20240121153000",
           "homePoints": 0,
           "awayPoints": 0
         }
