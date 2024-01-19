@@ -837,7 +837,7 @@
       "games": [
         {
           "id": 68,
-          "weekId": 19,
+          "weekId": 20,
           "homeTeamId": 3,
           "awayTeamId": 13,
           "awayTeamSpread": "9.5",
@@ -848,7 +848,7 @@
         },
         {
           "id": 69,
-          "weekId": 19,
+          "weekId": 20,
           "homeTeamId": 28,
           "awayTeamId": 12,
           "awayTeamSpread": "9.5",
@@ -859,7 +859,7 @@
         },
         {
           "id": 70,
-          "weekId": 19,
+          "weekId": 20,
           "homeTeamId": 11,
           "awayTeamId": 30,
           "awayTeamSpread": "6.5",
@@ -870,7 +870,7 @@
         },
         {
           "id": 71,
-          "weekId": 19,
+          "weekId": 20,
           "homeTeamId": 4,
           "awayTeamId": 16,
           "awayTeamSpread": "2.5",
@@ -915,7 +915,7 @@
       "games": [
         {
           "id": 74,
-          "weekId": 21,
+          "weekId": 22,
           "homeTeamId": 100,
           "awayTeamId": 100,
           "awayTeamSpread": "",
