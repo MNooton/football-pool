@@ -918,7 +918,7 @@
           "weekId": 22,
           "homeTeamId": 16,
           "awayTeamId": 28,
-          "awayTeamSpread": "",
+          "awayTeamSpread": "-2",
           "dayId": 1,
           "dateTimeUtc": "20240211153000",
           "homePoints": 0,
