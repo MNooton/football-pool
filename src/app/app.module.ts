@@ -19,7 +19,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScheduleBrowserComponent } from './schedule-browser/schedule-browser.component';
 import { HomeComponent } from './home/home.component';
 import { StandingsComponent } from './standings/standings.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { WeekViewComponent } from './week-view/week-view.component';
 import { GameCardComponent } from './game-card/game-card.component';
 import { DateFunctionService } from 'src/shared/services/date.function.service';
@@ -92,7 +91,6 @@ const routes: Routes = [
     MatIconModule,
     MatCardModule,
     MatMenuModule,
-    FlexLayoutModule,
     MatTableModule,
     MatListModule,
     MatDividerModule,
