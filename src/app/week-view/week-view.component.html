@@ -1,57 +1,45 @@
 
 <p style="font-size: 24px; margin-top:0px; margin-bottom: 5px;">{{week.name}}</p>
 <div style="margin: 2px;">
-  <div class="flex-container" fxLayout="column" fxLayoutGap="16px" >
+  <div class="flex-container" class="flex-col gap-8">
     <div *ngFor="let game of games">
       <mat-card class="mat-elevation-z4" style="padding-left:8px; padding-right:8px;">
         <div style="text-align: center; width: 100%">
              <mat-card-title style="font-size: 16px;">Game {{game.id}}: {{game.date}}</mat-card-title>
       </div>
         <mat-card-content style="margin-bottom: 10px;">
-          <mat-list fxLayout="column" class="">
+          <mat-list class="flex-col" class="">
             <mat-list-item style="height: 100%;" [ngClass]="{ 'winningTeam' : game.winningTeamId === game.awayTeam.id}">
-              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width:100%;">
-                <div fxFlex="10">
-                  <!-- <div fxFlex="30"></div>
-                  <div fxFlex="30"> -->
+              <div class="flex-row space-between items-center gap-10" style="width:100%;">
+                <div class="flex-1">
                     <button [disabled]="disablePickButton(game)" class="pickButton" (click)="pick(game.id, game.awayTeam.id)" [ngClass]="{ 'myPick' : game.myPick == game.awayTeam.id }"><img src="{{game.awayTeam.imageUrl}}" style="width:35px"></button>
-                  <!-- </div>
-                  <div fxFlex="10">
-                    <mat-icon [hidden]=" game.myPick != game.awayTeam.id" aria-hidden="false" style="color: green;" aria-label="Example home icon">check_circle_outline</mat-icon>
-                  </div> -->
                 </div>
-                <div fxFlex >
+                <div class="flex-1" >
                   <p style="font-size: 14px;">
                     {{game.awayTeam.city}} {{game.awayTeam.name}}
                   </p>
                 </div>
-                <div fxFlex="10">
+                <div class="flex-1">
                     <span matBadge="{{game.awayTeam.spread}}" matBadgeColor="accent"></span>
                 </div>
-                <div fxFlex="10">
+                <div class="flex-1">
                     <p>{{game.awayTeam.points}}</p>
                 </div>
               </div>
             </mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item style="height: 100%;" [ngClass]="{ 'winningTeam' : game.winningTeamId === game.homeTeam.id}">
-              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width:100%;">
-                <div fxFlex="10">
-                  <!-- <div fxFlex="30"></div>
-                  <div fxFlex="30"> -->
+              <div class="flex-row space-between items-center gap-10" style="width:100%;">
+                <div class="flex-1">
                     <button [disabled]="disablePickButton(game)" class="pickButton" (click)="pick(game.id, game.homeTeam.id)" [ngClass]="{ 'myPick' : game.myPick == game.homeTeam.id }"><img src="{{game.homeTeam.imageUrl}}" style="width:35px"></button>
-                  <!-- </div>
-                  <div fxFlex="10">
-                    <mat-icon [hidden]=" game.myPick != game.homeTeam.id" aria-hidden="false" style="color: green;" aria-label="Example home icon">check_circle_outline</mat-icon>
-                  </div> -->
-                </div>
-                <div fxFlex>
+                  </div>
+                <div class="flex-1">
                   <p style="font-size: 14px;">
                     @ {{game.homeTeam.city}} {{game.homeTeam.name}}
                   </p>
                 </div>
-                <div fxFlex="10"></div>
-                <div fxFlex="10">
+                <div class="flex-1"></div>
+                <div class="flex-1">
                   <p>{{game.homeTeam.points}}</p>
                 </div>
               </div>
@@ -59,16 +47,16 @@
           </mat-list>
           <mat-divider></mat-divider>
           <p style="font-size: 16px; font-weight: 500; margin-bottom:0;">Picks</p>
-          <mat-list fxLayout="column" class="">
+          <mat-list class="flex-col">
             <mat-list-item style="height: 100%;" *ngFor="let pick of game.picks">
-              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width:100%;">
-                <div fxFlex>
+              <div class="flex-row space-between items-center gap-10" style="width:100%;">
+                <div class="flex-1">
                   <p style="font-size: 14px;">{{pick.name}}</p>
                 </div>
-                <div fxFlex="20">
+                <div class="flex-1">
                   <img src="{{pick.imageUrl}}" style="width:25px">
                 </div>
-                <div fxFlex="20">
+                <div class="flex-1">
                   <mat-icon *ngIf="pick.isPlayed && pick.status === 'W'" style="color: #0da146">check_circle</mat-icon>
                   <mat-icon *ngIf="pick.isPlayed && pick.status === 'L'" style="color: #c2270c">cancel</mat-icon>
                   <mat-icon *ngIf="pick.isPlayed && pick.status === 'T'">minimize</mat-icon>
@@ -77,8 +65,8 @@
               </div>
             </mat-list-item>
             <mat-list-item style="text-align: center;" *ngIf="game.picks?.length === 0">
-              <div fxLayout="row" style="width:100%;">
-                <div fxFlex  fxLayoutAlign="center center">
+              <div class="flex-row" style="width:100%;">
+                <div class="flex-1 space-between items-center">
                   <p style="font-size: 14px;">No Picks Yet.</p>
                 </div>
               </div>

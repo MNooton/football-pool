@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { CognitoService } from './cognito.service';
 
 @Injectable()
-export class  OnlyLoggedInUsersGuard implements CanActivate {
+export class  OnlyLoggedInUsersGuard  {
   constructor(private cognitoService: CognitoService, private router: Router) {}
 
   // tslint:disable-next-line:typedef

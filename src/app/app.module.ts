@@ -1,5 +1,5 @@
 import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule } from '@angular/platform-browser';
-import { Injectable, NgModule, APP_INITIALIZER  } from '@angular/core';
+import { Injectable, NgModule, APP_INITIALIZER, inject  } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -46,13 +46,13 @@ export class MyHammerConfig extends HammerGestureConfig {
 
 const routes: Routes = [
   {
-    path: 'home', component: HomeComponent, canActivate: [OnlyLoggedInUsersGuard]
+    path: 'home', component: HomeComponent, canActivate: [() => inject(OnlyLoggedInUsersGuard).canActivate()]
   },
   {
-    path: 'schedule', component: ScheduleBrowserComponent, canActivate: [OnlyLoggedInUsersGuard]
+    path: 'schedule', component: ScheduleBrowserComponent, canActivate: [() => inject(OnlyLoggedInUsersGuard).canActivate()]
   },
   {
-    path: 'standings', component: StandingsComponent, canActivate: [OnlyLoggedInUsersGuard]
+    path: 'standings', component: StandingsComponent, canActivate: [() => inject(OnlyLoggedInUsersGuard).canActivate()]
   },
   {
     path: 'signUp', component: SignUpComponent
@@ -61,7 +61,7 @@ const routes: Routes = [
     path: 'signIn', component: SignInComponent
   },
   {
-    path: 'profile', component: ProfileComponent, canActivate: [OnlyLoggedInUsersGuard]
+    path: 'profile', component: ProfileComponent, canActivate: [() => inject(OnlyLoggedInUsersGuard).canActivate()]
   },
   {
     path: 'forgotPassword', component: ForgotPasswordComponent

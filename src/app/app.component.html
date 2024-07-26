@@ -37,8 +37,8 @@
 <mat-card id="card" style="text-align: center; padding: 4px">
 <!-- Toolbar -->
 <mat-toolbar style="background-color: #323232; color:#d4d2d2;">
-  <div fxLayout="row" style="width:100%;">
-    <div fxFlex fxLayoutAlign="center center">
+  <div class="flex-row" style="width:100%;">
+    <div class="flex-1 space-between items-center">
       <button mat-mini-fab style="background-color:transparent ;color:darkgrey;" [matMenuTriggerFor]="menu" aria-label="">
         <mat-icon>menu</mat-icon>
       </button>
@@ -62,7 +62,7 @@
       </mat-menu>
       <span class="nflFont" style="font-size: larger; padding-left:5px;">2023 Football Pool</span>
     </div>
-    <div fxFlexAlign="end">
+    <div>
       <button mat-button [matMenuTriggerFor]="menu2"><mat-icon>account_circle</mat-icon></button>
       <mat-menu #menu2="matMenu">
         <button mat-menu-item *ngIf="isAuthenticated"  [routerLink]="['profile']">
