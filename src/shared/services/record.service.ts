@@ -4,7 +4,7 @@ import { Pick } from '../models/interface.pick';
 import { Game } from '../models/interface.game';
 import { Record } from '../models/interface.record';
 import { DateFunctionService } from './date.function.service';
-import importedScheduleData from '../../shared/data/schedule_2023.json';
+import importedScheduleData from '../../shared/data/schedule_2024.json';
 import { GameResult } from '../models/interface.gameResult';
 import { ConstantPool, NodeWithI18n } from '@angular/compiler';
 import { Standing } from '../models/interface.standing';

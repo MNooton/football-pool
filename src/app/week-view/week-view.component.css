@@ -4,9 +4,9 @@
 }
 
 .winningTeam {
-  border-color: #2eab58;
+  /* border-color: #2eab58;
   border-style: solid;
-  border-radius: 5px;
+  border-radius: 5px; */
 }
 .mat-badge-content .normal{
 }
@@ -31,4 +31,134 @@
   border-color: #2eab58;
   border-width: 4px;
 }
+.mat-list-test {
+  display: flex;
+  flex-flow: row wrap;
+}
 
+.mat-list-base .mat-list-item.mat-list-item-test {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  height: 110px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.mat-list-item-test .item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.mat-list-item-test .item-content .text-container {
+  text-align: center;
+  margin-bottom: 1px;
+}
+
+.mat-list-item-test .item-content .text-container p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.mat-list-item-test .item-content .image-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85px; /* Set a fixed height for the image container */
+}
+
+.mat-list-item-test .item-content .image-container img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.mat-list-item-test .overlapping-image {
+  position: absolute;
+  /* top: -16px; */
+  right: -10px;
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  background-position: center;
+}
+
+.mat-list-item-game {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.mat-list-item-game > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-list-item-game > div > div {
+  margin: 5px 0;
+}
+.team-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+}
+
+#pickButton {
+  flex-basis: 60%;
+  display: flex;
+  align-items: center;
+  width: 66%;
+}
+
+.pickButtonImage {  
+  max-height: 50px;
+}
+
+#teamName {
+  margin-top: 10px;
+}
+
+#awaySpread {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#awayScore {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#homeScore {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
