@@ -110,11 +110,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
 }
 
 .team-info {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -124,18 +123,15 @@
 }
 
 #pickButton {
-  flex-basis: 60%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 66%;
+  justify-content: center;
+  /* width: 66%; */
 }
 
 .pickButtonImage {  
   max-height: 50px;
-}
-
-#teamName {
-  margin-top: 10px;
 }
 
 #awaySpread {
@@ -161,4 +157,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.sectionTitle {
+  font-size: 24px; 
+  font-weight: 400; 
+  margin-bottom:0;
 }

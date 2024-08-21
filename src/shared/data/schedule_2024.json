@@ -61,9 +61,9 @@
           "weekId": 2,
           "homeTeamId": 13,
           "awayTeamId": 6,
-          "awayTeamSpread": "20240915172000",
+          "awayTeamSpread": "",
           "dayId": 1,
-          "dateTimeUtc": "",
+          "dateTimeUtc": "20240915172000",
           "homePoints": 0,
           "awayPoints": 0
         },
@@ -907,7 +907,7 @@
     },
     {
       "id": 21,
-      "name": "Conference Chanmpionships",
+      "name": "Conference Championships",
       "games": [
         {
           "id": 72,
