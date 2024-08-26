@@ -164,7 +164,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
     , this.cognitoService.currentUser.gender
     , this.cognitoService.currentUser.name);
 
-    const filename = 'picks_2023_' + this.cognitoService.currentUser.email + '.json';
+    const filename = 'picks_2024_' + this.cognitoService.currentUser.email + '.json';
     this.fileService.writeFile(filename, JSON.stringify(content)).then(response => {
       if (response) {
         this.pickMade = false;
