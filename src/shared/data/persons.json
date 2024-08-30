@@ -9,7 +9,7 @@
     "id": 2,
     "name": "Michelle",
     "email": "michelle_coccola@hotmail.com",
-    "imageUrl": "/assets/img/WomanSilhouette51.svg2.png"
+    "imageUrl": "./assets/img/WomanSilhouette51.svg2.png"
   },
   {
     "id": 3,
@@ -21,24 +21,24 @@
     "id": 4,
     "name": "Aaron",
     "email": "nittynash1905@gmail.com",
-    "imageUrl": "/assets/img/Silhouetteofmanwithcane.svg2.png"
+    "imageUrl": "./assets/img/Silhouetteofmanwithcane.svg2.png"
   },
   {
     "id": 5,
     "name": "Landon",
     "email": "nasher246@gmail.com",
-    "imageUrl": "/assets/img/Silhouetteknife.png"
+    "imageUrl": "./assets/img/Silhouetteknife.png"
   },
   {
     "id": 6,
     "name": "Leah",
     "email": "leah.linton@yahoo.com",
-    "imageUrl": "/assets/img/WomanSilhouette52.svg2.png"
+    "imageUrl": "./assets/img/WomanSilhouette52.svg2.png"
   },
   {
     "id": 7,
     "name": "Scott",
     "email": "scott_hemphill5@hotmail.com",
-    "imageUrl": "/assets/img/NosferatuOrlokshadowsilhouette2.svg.png"
+    "imageUrl": "./assets/img/NosferatuOrlokshadowsilhouette2.svg.png"
   }
 ]
