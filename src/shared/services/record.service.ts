@@ -5,6 +5,7 @@ import { Game } from '../models/interface.game';
 import { Record } from '../models/interface.record';
 import { DateFunctionService } from './date.function.service';
 import importedScheduleData from '../../shared/data/schedule_2024.json';
+import importedPersonData from '../../shared/data/persons.json';
 import { GameResult } from '../models/interface.gameResult';
 import { ConstantPool, NodeWithI18n } from '@angular/compiler';
 import { Standing } from '../models/interface.standing';
@@ -20,12 +21,14 @@ export class RecordService {
   currentDate: Date;
   scheduleData: Schedule;
   pickData: Pick[];
+  personDataImport: Person[];
   personData: Person[];
   fileService: FileService;
 
   constructor(public dateFunctionService: DateFunctionService, fileService: FileService) {
     this.currentDate =  this.dateFunctionService.dateWithoutTime(new Date()); // this.dateFunctionService.getDateFromYYYYMMDD('20211013');
     this.scheduleData = importedScheduleData;
+    this.personDataImport = importedPersonData;
     this.fileService = fileService;
   }
 
@@ -144,10 +147,16 @@ export class RecordService {
           this.fileService.getFileText(x.Key).then(pickFile => {
             const pickFileText = this.fileService.convertFileToString(pickFile);
             const fileContent = JSON.parse(pickFileText);
+            var personPic = this.personDataImport.find(x => x.email == fileContent.personId).imageUrl;
+
+            if (!personPic){
+              personPic = fileContent.gender === 'male' ? 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg' : 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Woman_Silhouette.svg'
+            }
+
             const person = {
               id: fileContent.personId,
               name: fileContent.name,
-              imageUrl: fileContent.gender === 'male' ? 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg' : 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Woman_Silhouette.svg'
+              imageUrl: personPic 
             };
             this.personData.push(person);
             const picks = fileContent.picks.map(pick => ({

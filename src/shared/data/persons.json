@@ -2,36 +2,43 @@
   {
     "id": 1,
     "name": "Newton",
+    "email": "mike.newton.blammo@gmail.com",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg"
   },
   {
     "id": 2,
     "name": "Michelle",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Woman_Silhouette.svg"
+    "email": "michelle_coccola@hotmail.com",
+    "imageUrl": "/assets/Woman_Silhouette_51.svg2.png"
   },
   {
     "id": 3,
     "name": "Derek",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg"
+    "email": "sgt.d.newton@gmail.com",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Man_standing_silhouette.svg"
   },
   {
     "id": 4,
     "name": "Aaron",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg"
+    "email": "nittynash1905@gmail.com",
+    "imageUrl": "/assets/Silhouette_of_man_with_cane.svg2.png"
   },
   {
     "id": 5,
     "name": "Landon",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg"
+    "email": "nasher246@gmail.com",
+    "imageUrl": "/assets/Silhouette_knife.png"
   },
   {
     "id": 6,
     "name": "Leah",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Woman_Silhouette.svg"
+    "email": "leah.linton@yahoo.com",
+    "imageUrl": "/assets/Woman_Silhouette_52.svg2.png"
   },
   {
     "id": 7,
     "name": "Scott",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Person_Outline_2.svg"
+    "email": "scott_hemphill5@hotmail.com",
+    "imageUrl": "/assets/Nosferatu_Orlok_shadow_silhouette2.svg.png"
   }
 ]
