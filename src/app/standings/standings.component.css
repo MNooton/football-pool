@@ -1,0 +1,7 @@
+tr.mat-row {
+    height: 60px;
+}
+
+td.mat-cell:first-of-type {
+    padding-left: 20px;
+}
