@@ -21,7 +21,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
   teams = teamData;
   days = dayData;
   games = null;
-  adjectives = ['brutal', 'embarrassing', 'shitty', 'good', 'weird', 'questionable', 'retarded', 'decent', 'smart', 'bitch-ass', 'bad', 'horny', 'dumb', 'stupid, motherfucking', 'whack', 'irrational', 'intelligent', 'gay'];
+  adjectives = ['brutal', 'embarrassing', 'shitty', 'good', 'weird', 'questionable', 'retarded', 'decent', 'smart', 'bitch-ass', 'horny', 'stupid, motherfucking', 'whack', 'irrational', 'intelligent', 'scott-like'];
   pickMade = false;
   newPicks: Pick[];
   myPicks: Pick[];

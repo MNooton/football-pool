@@ -71,6 +71,7 @@
   justify-content: center;
   align-items: center;
   height: 85px; /* Set a fixed height for the image container */
+  width: 65px; /* Set a fixed height for the image container */
 }
 
 .mat-list-item-test .item-content .image-container img {
