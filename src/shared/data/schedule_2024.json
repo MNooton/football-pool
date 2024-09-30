@@ -141,7 +141,7 @@
           "homeTeamId": 23,
           "awayTeamId": 9,
           "awayTeamSpread": "-5.5",
-          "dayId": 1,
+          "dayId": 5,
           "dateTimeUtc": "20240926172000",
           "homePoints": 15,
           "awayPoints": 20
@@ -152,7 +152,7 @@
           "homeTeamId": 3,
           "awayTeamId": 4,
           "awayTeamSpread": "2.5",
-          "dayId": 2,
+          "dayId": 1,
           "dateTimeUtc": "20240929172000",
           "homePoints": 35,
           "awayPoints": 10
@@ -163,7 +163,7 @@
           "homeTeamId": 19,
           "awayTeamId": 31,
           "awayTeamSpread": "-1.5",
-          "dayId": 5,
+          "dayId": 2,
           "dateTimeUtc": "20240930162000",
           "homePoints": 0,
           "awayPoints": 0
@@ -174,7 +174,7 @@
           "homeTeamId": 11,
           "awayTeamId": 29,
           "awayTeamSpread": "3.5",
-          "dayId": 1,
+          "dayId": 2,
           "dateTimeUtc": "20240930162000",
           "homePoints": 0,
           "awayPoints": 0
@@ -191,7 +191,7 @@
           "homeTeamId": 2,
           "awayTeamId": 30,
           "awayTeamSpread": "",
-          "dayId": 2,
+          "dayId": 5,
           "dateTimeUtc": "20241003172000",
           "homePoints": 0,
           "awayPoints": 0
@@ -202,7 +202,7 @@
           "homeTeamId": 27,
           "awayTeamId": 9,
           "awayTeamSpread": "",
-          "dayId": 5,
+          "dayId": 1,
           "dateTimeUtc": "20241006172000",
           "homePoints": 0,
           "awayPoints": 0
@@ -213,7 +213,7 @@
           "homeTeamId": 16,
           "awayTeamId": 22,
           "awayTeamSpread": "",
-          "dayId": 1,
+          "dayId": 2,
           "dateTimeUtc": "20241007172000",
           "homePoints": 0,
           "awayPoints": 0
@@ -230,7 +230,7 @@
           "homeTeamId": 29,
           "awayTeamId": 28,
           "awayTeamSpread": "",
-          "dayId": 2,
+          "dayId": 5,
           "dateTimeUtc": "20241010172000",
           "homePoints": 0,
           "awayPoints": 0
@@ -241,7 +241,7 @@
           "homeTeamId": 23,
           "awayTeamId": 7,
           "awayTeamSpread": "",
-          "dayId": 5,
+          "dayId": 1,
           "dateTimeUtc": "20241013172000",
           "homePoints": 0,
           "awayPoints": 0
@@ -252,7 +252,7 @@
           "homeTeamId": 24,
           "awayTeamId": 4,
           "awayTeamSpread": "",
-          "dayId": 1,
+          "dayId": 2,
           "dateTimeUtc": "20241014172000",
           "homePoints": 0,
           "awayPoints": 0
