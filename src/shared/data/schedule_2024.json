@@ -410,8 +410,8 @@
           "awayTeamSpread": "-3.5",
           "dayId": 1,
           "dateTimeUtc": "20241110172000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 23,
+          "awayPoints": 26
         },
         {
           "id": 33,
@@ -421,8 +421,8 @@
           "awayTeamSpread": "2.5",
           "dayId": 2,
           "dateTimeUtc": "20241111172000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 15,
+          "awayPoints": 23
         }
       ]
     },
@@ -436,7 +436,7 @@
           "weekId": 11,
           "homeTeamId": 26,
           "awayTeamId": 32,
-          "awayTeamSpread": "",
+          "awayTeamSpread": "3.5",
           "dayId": 5,
           "dateTimeUtc": "20241114172000",
           "homePoints": 0,
@@ -445,9 +445,9 @@
         {
           "id": 35,
           "weekId": 11,
-          "homeTeamId": 24,
-          "awayTeamId": 14,
-          "awayTeamSpread": "",
+          "homeTeamId": 17,
+          "awayTeamId": 7,
+          "awayTeamSpread": "1.5",
           "dayId": 1,
           "dateTimeUtc": "20241117172000",
           "homePoints": 0,
@@ -458,7 +458,7 @@
           "weekId": 12,
           "homeTeamId": 9,
           "awayTeamId": 13,
-          "awayTeamSpread": "",
+          "awayTeamSpread": "-7.5",
           "dayId": 2,
           "dateTimeUtc": "20241118172000",
           "homePoints": 0,
