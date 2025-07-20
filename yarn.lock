@@ -4827,10 +4827,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jasmine@*", "@types/jasmine@~3.6.0":
-  version "3.6.11"
-  resolved "https://registry.npmjs.org/@types/jasmine/-/jasmine-3.6.11.tgz"
-  integrity sha512-S6pvzQDvMZHrkBz2Mcn/8Du7cpr76PlRJBAoHnSDNbulULsH5dp0Gns+WRyNX5LHejz/ljxK4/vIHK/caHt6SQ==
+"@types/jasmine@*", "@types/jasmine@~3.8.0":
+  version "3.8.2"
+  resolved "https://registry.npmjs.org/@types/jasmine/-/jasmine-3.8.2.tgz"
+  integrity sha512-u5h7dqzy2XpXTzhOzSNQUQpKGFvROF8ElNX9P/TJvsHnTg/JvsAseVsGWQAQQldqanYaM+5kwxW909BBFAUYsg==
 
 "@types/jasminewd2@~2.0.3":
   version "2.0.10"
@@ -8731,10 +8731,10 @@ jackspeak@^3.1.2:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jasmine-core@^3.6.0, jasmine-core@>=3.8, jasmine-core@~3.6.0:
-  version "3.6.0"
-  resolved "https://registry.npmjs.org/jasmine-core/-/jasmine-core-3.6.0.tgz"
-  integrity sha512-8uQYa7zJN8hq9z+g8z1bqCfdC8eoDAeVnM5sfqs7KHv9/ifoJ500m018fpFc7RDaO6SWCLCXwo/wPSNcdYTgcw==
+jasmine-core@^3.6.0, jasmine-core@>=3.8, jasmine-core@~3.8.0:
+  version "3.8.0"
+  resolved "https://registry.npmjs.org/jasmine-core/-/jasmine-core-3.8.0.tgz"
+  integrity sha512-zl0nZWDrmbCiKns0NcjkFGYkVTGCPUgoHypTaj+G2AzaWus7QGoXARSlYsSle2VRpSdfJmM+hzmFKzQNhF2kHg==
 
 jasmine-core@~2.8.0:
   version "2.8.0"
@@ -12521,10 +12521,10 @@ typed-assert@^1.0.8:
   resolved "https://registry.npmjs.org/typed-assert/-/typed-assert-1.0.9.tgz"
   integrity sha512-KNNZtayBCtmnNmbo5mG47p1XsCyrx6iVqomjcZnec/1Y5GGARaxPs6r49RnSPeUP3YjNYiU9sQHAtY4BBvnZwg==
 
-typescript@>=2.0, "typescript@>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev", "typescript@>=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >=3.0.0-dev || >= 3.1.0-dev || >= 3.2.0-dev || >= 4.0.0-dev", "typescript@>=3.2.x || >= 4.x", typescript@>=3.7.5, "typescript@>=4.9.3 <5.2", typescript@>=4.9.5, typescript@~4.9.5:
-  version "4.9.5"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-4.9.5.tgz"
-  integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
+typescript@^5.2.2, typescript@>=2.0, "typescript@>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev", "typescript@>=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >=3.0.0-dev || >= 3.1.0-dev || >= 3.2.0-dev || >= 4.0.0-dev", "typescript@>=3.2.x || >= 4.x", typescript@>=3.7.5, "typescript@>=4.9.3 <5.2", typescript@>=4.9.5:
+  version "5.2.2"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-5.2.2.tgz"
+  integrity sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==
 
 ua-parser-js@^0.7.30:
   version "0.7.32"
