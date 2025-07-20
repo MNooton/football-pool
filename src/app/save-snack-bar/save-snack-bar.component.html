@@ -1,9 +1,11 @@
 <div style="text-align: center">
   <span>
     {{ message }}
-    </span>
+  </span>
 </div>
 <div style="text-align: center">
-  <button md-button class="md-simple-snackbar-action" *ngIf="hasAction" (click)="action()">{{ actionName }}</button>
+  @if (hasAction) {
+    <button md-button class="md-simple-snackbar-action" (click)="action()">{{ actionName }}</button>
+  }
   <button md-button class="md-simple-snackbar-action" (click)="dismiss()">Cancel</button>
 </div>

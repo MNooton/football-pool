@@ -1,66 +1,74 @@
 <div class="row justify-content-center my-5">
   <div class="col-10">
     <div class="card">
-      <div class="card-body" *ngIf="!isConfirm">
-        <div class="row">
-          <div class="col mb-2">
-            <mat-label>Username:</mat-label>
-            <input type="username" id="username" name="username" [value]="user.name" (change)="setUsername($event.target.value)" class="form-control form-control-sm">
+      @if (!isConfirm) {
+        <div class="card-body">
+          <div class="row">
+            <div class="col mb-2">
+              <mat-label>Username:</mat-label>
+              <input type="username" id="username" name="username" [value]="user.name" (change)="setUsername($event.target.value)" class="form-control form-control-sm">
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col mb-2">
+          <div class="row">
+            <div class="col mb-2">
               <mat-label>Gender</mat-label>
               <mat-select [(value)]="gender" class="form-control form-control-sm">
                 <mat-option disabled>None</mat-option>
                 <mat-option value="female">Female</mat-option>
                 <mat-option value="male">Male</mat-option>
               </mat-select>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col mb-2">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" id="email" name="email" [value]="user.email" (change)="setEmail($event.target.value)" class="form-control form-control-sm">
+          <div class="row">
+            <div class="col mb-2">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" id="email" name="email" [value]="user.email" (change)="setEmail($event.target.value)" class="form-control form-control-sm">
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col mb-2">
-            <label for="password" class="form-label">Password:</label>
-            <div class="input-group input-group-sm">
-              <input [type]="user.showPassword ? 'text' : 'password'" id="password" name="password" [value]="user.password" (change)="setPassword($event.target.value)" class="form-control form-control-sm">
-              <button type="button" class="btn btn-outline-secondary" (click)="user.showPassword = !user.showPassword">
-                <i class="bi" [ngClass]="{'bi-eye-fill': !user.showPassword, 'bi-eye-slash-fill': user.showPassword}"></i>
+          <div class="row">
+            <div class="col mb-2">
+              <label for="password" class="form-label">Password:</label>
+              <div class="input-group input-group-sm">
+                <input [type]="user.showPassword ? 'text' : 'password'" id="password" name="password" [value]="user.password" (change)="setPassword($event.target.value)" class="form-control form-control-sm">
+                <button type="button" class="btn btn-outline-secondary" (click)="user.showPassword = !user.showPassword">
+                  <i class="bi" [ngClass]="{'bi-eye-fill': !user.showPassword, 'bi-eye-slash-fill': user.showPassword}"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-grid">
+              <button type="button" (click)="signUp()" class="btn btn-sm btn-success" [disabled]="loading">
+                @if (loading) {
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                }
+                Sign up
               </button>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col d-grid">
-            <button type="button" (click)="signUp()" class="btn btn-sm btn-success" [disabled]="loading">
-              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
-              Sign up
-            </button>
+      }
+      @if (isConfirm) {
+        <div class="card-body">
+          <div class="row">
+            <div class="col mb-2">
+              <p>Check your email, you should have had a confirmation code sent to you!</p>
+              <label for="code" class="form-label">Code:</label>
+              <input type="text" id="code" name="code" [value]="user.code" (change)="setConfirmCode($event.target.value)" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-grid">
+              <button type="button" (click)="confirmSignUp()" class="btn btn-sm btn-success" [disabled]="loading">
+                @if (loading) {
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                }
+                Confirm
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card-body" *ngIf="isConfirm">
-        <div class="row">
-          <div class="col mb-2">
-            <p>Check your email, you should have had a confirmation code sent to you!</p>
-            <label for="code" class="form-label">Code:</label>
-            <input type="text" id="code" name="code" [value]="user.code" (change)="setConfirmCode($event.target.value)" class="form-control form-control-sm">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col d-grid">
-            <button type="button" (click)="confirmSignUp()" class="btn btn-sm btn-success" [disabled]="loading">
-              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
-              Confirm
-            </button>
-          </div>
-        </div>
-      </div>
+      }
     </div>
   </div>
 </div>
