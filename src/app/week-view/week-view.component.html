@@ -36,7 +36,7 @@
               <div id="home" style="height: 100%; width: 48%;" [ngClass]="{ 'winningTeam' : game.winningTeamId === game.homeTeam.id}">
                 <div class="team-container" >
                   <div id="vs" style="width:20%">
-                    <p style="position: absolute; top:4%;" class="sectionTitle"> @ </p>
+                    <p style="position: absolute; top:4%;" class="sectionTitle"> &#64; </p>
                   </div>
                   <div id="pickButton" class="team-info">
                       <button [disabled]="disablePickButton(game)" (click)="pick(game.id, game.homeTeam.id)" [ngClass]="{ 'myPick' : game.myPick == game.homeTeam.id }">
