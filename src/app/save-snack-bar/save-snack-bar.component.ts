@@ -6,9 +6,10 @@ import {
 } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-save-snack-bar',
-  templateUrl: './save-snack-bar.component.html',
-  styleUrls: ['./save-snack-bar.component.css']
+    selector: 'app-save-snack-bar',
+    templateUrl: './save-snack-bar.component.html',
+    styleUrls: ['./save-snack-bar.component.css'],
+    standalone: false
 })
 export class SaveSnackBarComponent {
   message: string;

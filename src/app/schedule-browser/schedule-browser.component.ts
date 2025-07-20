@@ -4,9 +4,10 @@ import { DateFunctionService } from 'src/shared/services/date.function.service';
 import { RecordService } from 'src/shared/services/record.service';
 
 @Component({
-  selector: 'app-schedule-browser',
-  templateUrl: './schedule-browser.component.html',
-  styleUrls: ['./schedule-browser.component.css']
+    selector: 'app-schedule-browser',
+    templateUrl: './schedule-browser.component.html',
+    styleUrls: ['./schedule-browser.component.css'],
+    standalone: false
 })
 export class ScheduleBrowserComponent implements OnInit {
   // schedule: Schedule = null;

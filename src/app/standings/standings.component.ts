@@ -3,9 +3,10 @@ import { Standing } from 'src/shared/models/interface.standing';
 import { RecordService } from 'src/shared/services/record.service';
 
 @Component({
-  selector: 'app-standings',
-  templateUrl: './standings.component.html',
-  styleUrls: ['./standings.component.css']
+    selector: 'app-standings',
+    templateUrl: './standings.component.html',
+    styleUrls: ['./standings.component.css'],
+    standalone: false
 })
 export class StandingsComponent implements OnInit {
   displayedColumns: string[] = ['imageUrl', 'name', 'position', 'record'];

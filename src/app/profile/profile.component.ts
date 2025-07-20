@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { IUser, CognitoService } from '../../shared/services/cognito.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+    selector: 'app-profile',
+    templateUrl: './profile.component.html',
+    styleUrls: ['./profile.component.css'],
+    standalone: false
 })
 export class ProfileComponent implements OnInit {
 

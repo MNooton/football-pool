@@ -1,5 +1,5 @@
 import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule } from '@angular/platform-browser';
-import { Injectable, NgModule, APP_INITIALIZER, inject  } from '@angular/core';
+import { Injectable, NgModule, inject, provideAppInitializer } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -103,18 +103,14 @@ const routes: Routes = [
   providers: [DateFunctionService, RecordService, DatePipe
     , OnlyLoggedInUsersGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}, CognitoService
     , { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (cs: CognitoService) => () => cs.isAuthenticated(),
-      deps: [CognitoService],
-      multi: true
-    },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (rs: RecordService) => () => rs.loadRecords(),
-      deps: [RecordService],
-      multi: true
-    }],
+    provideAppInitializer(() => {
+        const initializerFn = ((cs: CognitoService) => () => cs.isAuthenticated())(inject(CognitoService));
+        return initializerFn();
+      }),
+    provideAppInitializer(() => {
+        const initializerFn = ((rs: RecordService) => () => rs.loadRecords())(inject(RecordService));
+        return initializerFn();
+      })],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

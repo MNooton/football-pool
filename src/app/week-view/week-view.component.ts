@@ -13,9 +13,10 @@ import { FileService } from 'src/shared/services/file.service';
 import { SaveSnackBarComponent } from '../save-snack-bar/save-snack-bar.component';
 
 @Component({
-  selector: 'app-week-view',
-  templateUrl: './week-view.component.html',
-  styleUrls: ['./week-view.component.css']
+    selector: 'app-week-view',
+    templateUrl: './week-view.component.html',
+    styleUrls: ['./week-view.component.css'],
+    standalone: false
 })
 export class WeekViewComponent implements OnInit, OnChanges {
   teams = teamData;
