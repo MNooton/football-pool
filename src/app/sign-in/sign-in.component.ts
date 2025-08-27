@@ -2,7 +2,7 @@ import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { IUser, CognitoService } from '../../shared/services/cognito.service';
+import { IUser, AuthService } from '../../shared/services/auth.service';
 
 @Component({
     selector: 'app-sign-in',
@@ -16,7 +16,7 @@ export class SignInComponent {
   user: IUser;
 
   constructor(private router: Router,
-              private cognitoService: CognitoService,
+              private authService: AuthService,
               private snackBar: MatSnackBar) {
     this.loading = false;
     this.user = {
@@ -28,7 +28,7 @@ export class SignInComponent {
 
   public signIn(): void {
     this.loading = true;
-    this.cognitoService.signIn(this.user)
+    this.authService.signIn(this.user)
     .then(() => {
       this.router.navigate(['/schedule']);
     }).catch((err) => {

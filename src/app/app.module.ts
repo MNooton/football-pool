@@ -31,7 +31,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OnlyLoggedInUsersGuard } from 'src/shared/services/onlyLoggedInUsers.guard';
-import { CognitoService } from 'src/shared/services/cognito.service';
+import { AuthService } from 'src/shared/services/auth.service';
 import { SaveSnackBarComponent } from './save-snack-bar/save-snack-bar.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 @Injectable()
@@ -101,10 +101,10 @@ const routes: Routes = [
     MatSelectModule
   ],
   providers: [DateFunctionService, RecordService, DatePipe
-    , OnlyLoggedInUsersGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}, CognitoService
+    , OnlyLoggedInUsersGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}, AuthService
     , { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
     provideAppInitializer(() => {
-        const initializerFn = ((cs: CognitoService) => () => cs.isAuthenticated())(inject(CognitoService));
+        const initializerFn = ((cs: AuthService) => () => cs.isAuthenticated())(inject(AuthService));
         return initializerFn();
       }),
     provideAppInitializer(() => {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser, CognitoService } from '../../shared/services/cognito.service';
+import { IUser, AuthService } from '../../shared/services/auth.service';
 
 @Component({
     selector: 'app-profile',
@@ -12,12 +12,12 @@ export class ProfileComponent implements OnInit {
   loading: boolean;
   user: IUser;
 
-  constructor(private cognitoService: CognitoService) {
+  constructor(private authService: AuthService) {
     this.loading = false;
   }
 
   public ngOnInit(): void {
-    this.cognitoService.getUser()
+    this.authService.getUser()
     .then((user: any) => {
       this.user = {
         name: user.username
@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
   public update(): void {
     this.loading = true;
 
-    this.cognitoService.updateUser(this.user)
+    this.authService.updateUser(this.user)
     .then(() => {
       this.loading = false;
     }).catch(() => {

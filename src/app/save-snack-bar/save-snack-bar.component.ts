@@ -20,7 +20,6 @@ export class SaveSnackBarComponent {
     this.actionName = data.actionName;
     this.message = data.message;
     this.actionFunction = data.action;
-    console.log({ a: data});
   }
 
   dismiss(): void {

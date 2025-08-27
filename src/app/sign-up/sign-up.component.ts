@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
-import { IUser, CognitoService } from '../../shared/services/cognito.service';
+import { IUser, AuthService } from '../../shared/services/auth.service';
 
 @Component({
     selector: 'app-sign-up',
@@ -18,7 +18,7 @@ export class SignUpComponent {
   gender = '';
 
   constructor(private router: Router,
-              private cognitoService: CognitoService,
+              private authService: AuthService,
               private snackBar: MatSnackBar) {
     this.loading = false;
     this.isConfirm = false;
@@ -38,7 +38,7 @@ export class SignUpComponent {
     else {
       this.user.gender = this.gender;
       this.loading = true;
-      this.cognitoService.signUp(this.user)
+      this.authService.signUp(this.user)
       .then(() => {
         this.loading = false;
         this.isConfirm = true;
@@ -56,7 +56,7 @@ export class SignUpComponent {
     else {
       this.user.gender = this.gender;
       this.loading = true;
-      this.cognitoService.confirmSignUp(this.user)
+      this.authService.confirmSignUp(this.user)
       .then(() => {
         this.router.navigate(['/signIn']);
       }).catch(() => {

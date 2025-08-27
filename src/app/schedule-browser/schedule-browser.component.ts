@@ -23,6 +23,7 @@ export class ScheduleBrowserComponent implements OnInit {
   ngOnInit(): void {
     this.setCurrentWeekId();
     this.selectedWeek = this.recordService.scheduleData.weeks[this.selectedWeekIndex()];
+    // console.log({ selectedWeek: this.selectedWeek});
   }
 
   previousWeek(): void {
@@ -55,8 +56,12 @@ export class ScheduleBrowserComponent implements OnInit {
       if (!mondayGame){
         mondayGame = week.games.filter((day) => day.dayId === 1)[0];
       }
+      // console.log( { date: currentDate, mondayGame: mondayGame});
 
-      if ((currentDate) >  (mondayGame.dateTimeUtc )){
+      if(!mondayGame) {
+        
+      }
+      else if ((currentDate) >  (mondayGame.dateTimeUtc )){
         this.selectedWeekId = mondayGame.weekId + 1;
       }
     });
