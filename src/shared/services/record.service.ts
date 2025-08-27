@@ -4,7 +4,7 @@ import { Pick } from '../models/interface.pick';
 import { Game } from '../models/interface.game';
 import { Record } from '../models/interface.record';
 import { DateFunctionService } from './date.function.service';
-import importedScheduleData from '../../shared/data/schedule_2024.json';
+import importedScheduleData from '../../shared/data/schedule_2025.json';
 import importedPersonData from '../../shared/data/persons.json';
 import { GameResult } from '../models/interface.gameResult';
 import { ConstantPool, NodeWithI18n } from '@angular/compiler';
@@ -12,6 +12,8 @@ import { Standing } from '../models/interface.standing';
 import { Person } from '../models/interface.person';
 import { FileService } from './file.service';
 import { PinpointSMSVoice } from 'aws-sdk';
+import { APP_CONSTANTS } from '../../shared/constants';
+
 
 @Injectable({
   providedIn: 'root'
@@ -33,12 +35,14 @@ export class RecordService {
   }
 
   loadRecords(): Promise<any> {
+    console.log("load_records")
     return new Promise<void>((resolve, reject) => {
       this.pickData =  [];
       this.personData = [];
       this.getAllPicks().then(() => {
       this.playedGames = this.scheduleData.weeks.flatMap(week =>
           week.games.filter(game => {
+            // console.log({ "date": this.currentDate });
             return this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc) < this.currentDate;
           })).map(playedGame => (
             {
@@ -136,7 +140,7 @@ export class RecordService {
 
   getAllPicks(): Promise<void> {
     return new Promise<void>((resolve, reject) => { this.fileService.listFiles().then(data => {
-        const pickFileList = data.Contents.filter(file => file.Key.startsWith('picks') );
+        const pickFileList = data.filter(file => file.path.startsWith(APP_CONSTANTS.PICK_FOLDER));
         let filesProcessed = 0;
 
         if (pickFileList.length === 0) {
@@ -144,9 +148,10 @@ export class RecordService {
         }
 
         pickFileList.forEach(x =>  {
-          this.fileService.getFileText(x.Key).then(pickFile => {
-            const pickFileText = this.fileService.convertFileToString(pickFile);
-            const fileContent = JSON.parse(pickFileText);
+          this.fileService.getFileText(x.path).then(pickFile => {
+            // apparently I don't need this next line
+            //const pickFileText = this.fileService.convertFileToString(pickFile);
+            const fileContent = JSON.parse(pickFile);
             var personPic = this.personDataImport.find(x => x.email == fileContent.personId).imageUrl;
 
             if (!personPic){

@@ -1,84 +1,100 @@
 import { Injectable } from '@angular/core';
-import { Amplify, Storage } from 'aws-amplify';
-import { SESV2 } from 'aws-sdk';
-import { resourceLimits } from 'worker_threads';
-import { environment } from '../../environments/environment';
+import { remove, list, uploadData, downloadData } from '@aws-amplify/storage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FileService {
-  s3: any;
   bucketName = 'footballappdata';
 
   constructor() {
-    Amplify.configure({
-      Storage: environment.s3,
+    console.log('start file service')
+    // Amplify.configure({
+    //   Storage: environment.s3, // e.g., { S3: { bucket: '...', region: '...' } }
+    // });
+
+  }
+
+  /**
+   * List top-level files/folders in your bucket
+   */
+  async listFiles(): Promise<any[]> {
+    const { items } = await list({
+      path: 'public/picks/'
     });
-
-    this.configure();
+    return items;
   }
 
-  configure(): void {
-    const AWSService = require('aws-sdk');
-    AWSService.config.update({
-      region: 'us-west-2',
-      credentials: new AWSService.CognitoIdentityCredentials({
-        IdentityPoolId: 'us-west-2:38573e23-157a-4097-bd61-42a89029b8ce' // '38573e23-157a-4097-bd61-42a89029b8ce'
-      })
-    });
-    this.s3 = new AWSService.S3({
-      apiVersion: '2006-03-01',
-      params: { Bucket: this.bucketName}
-    });
+  /**
+   * Get the content of a file as string
+   */
+// async getFileText(fileName: string): Promise<string> {
+//   const result = await downloadData({ path: fileName }) as unknown as { body: Blob };
+//   console.log({ content: result})
+//   const arrayBuffer = await result.body.arrayBuffer();
+//   return new TextDecoder('utf-8').decode(arrayBuffer);
+// }
+
+async getFileText(fileName: string): Promise<string> {
+  const download = await downloadData({ path: fileName });
+  // const data = (await download.result).body.text()
+  const data = await (await download.result).body.text();
+  return await data;
+}
+
+  /**
+   * Upload a text file (string content)
+   */
+  async writeFile(name: string, content: string): Promise<boolean> {
+    try {
+      const blob = new Blob([content], { type: 'text/plain' });
+      await uploadData({ path: name, data: blob });
+      return true;
+    } catch (err) {
+      console.error('Upload failed:', err);
+      return false;
+    }
   }
 
-  // listFiles(folderName: string): Promise<any> {
-  //   return Storage.list(folderName);
-  // }
-
-  async listFiles(): Promise<any>{
-    const params = {
-      Bucket: this.bucketName,
-      Delimiter: '/'
-     // Prefix: 's/5469b2f5b4292d22522e84e0/ms.files/'
-     };
-
-    // tslint:disable-next-line:typedef
-    return this.s3.listObjects(params).promise();
-
-  }
-
-  getFileText(fileName: string): Promise<string> {
-    const params = {
-      Bucket: this.bucketName,
-      Key: fileName
-    };
-    return this.s3.getObject(params).promise();
-
-  }
-
-  convertFileToString(data: any): string {
+    convertFileToString(data: any): string {
     const fileText = new TextDecoder('utf-8').decode(data.Body);
     return fileText;
   }
 
-  writeFile(name: string, content: string): Promise <boolean> {
-    return new Promise <boolean> ((resolve, reject) => {
-      const params = {
-      Key: name,
-      Bucket: this.bucketName,
-      Body: content,
-      ACL: 'private'
-     // Prefix: 's/5469b2f5b4292d22522e84e0/ms.files/'
-     };
-      this.s3.upload( params, (err, data) => {
-      if (err) {
-        resolve(false);
-      } else {
-        resolve(true);
-      }
-    });
-  });
+  async deleteFile(fileName: string): Promise<void> {
+  try {
+    await remove({ path: fileName });
+  } catch (error) {
+    console.error(`Error deleting file ${fileName}:`, error);
+    throw error;
+  }
 }
+
+/**
+ * Deletes all files under a prefix except for the newest file.
+ * 
+ * @param pathPrefix The folder/prefix to search under (e.g. "public/picks/")
+ * @param newestFile The filename (or full path) that should be kept
+ */
+async cleanupOldFiles(pathPrefix: string, newestFile: string): Promise<void> {
+  try {
+    // Get all files in the prefix
+    const { items } = await list({ path: pathPrefix });
+
+    // Iterate and delete everything except the newest file
+    for (const item of items) {
+      if (item.path !== newestFile) {
+        console.log(`Deleting old file: ${item.path}`);
+        await remove({ path: item.path });
+      }
+    }
+
+    console.log('Cleanup complete.');
+  } catch (error) {
+    console.error('Error cleaning up files:', error);
+    throw error;
+  }
+}
+
+
 }

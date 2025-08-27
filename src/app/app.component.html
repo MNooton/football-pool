@@ -5,80 +5,92 @@
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
 
-    .card-container > *:not(.circle-link) ,
-    .terminal {
-      width: 100%;
-    }
+  .card-container > *:not(.circle-link) ,
+  .terminal {
+  width: 100%;
+}
 
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
+.card:not(.highlight-card) {
+height: 16px;
+margin: 8px 0;
+}
 
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
+.card.highlight-card span {
+margin-left: 72px;
+}
 
-    svg#rocket-smoke {
-      right: 120px;
-      transform: rotate(-5deg);
-    }
-  }
+svg#rocket-smoke {
+right: 120px;
+transform: rotate(-5deg);
+}
+}
 
-  @media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-      display: none;
-      visibility: hidden;
-    }
-  }
+@media screen and (max-width: 575px) {
+svg#rocket-smoke {
+display: none;
+visibility: hidden;
+}
+}
 </style>
 
 
 <mat-card id="card" style="text-align: center; padding: 4px">
-<!-- Toolbar -->
-<mat-toolbar style="background-color: #323232; color:#d4d2d2;">
-  <div class="flex-row" style="width:100%;">
-    <div class="flex-1 space-between items-center">
-      <button mat-mini-fab style="background-color:transparent ;color:darkgrey;" [matMenuTriggerFor]="menu" aria-label="">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngIf="!isAuthenticated" [routerLink]="['signUp']">
-          <mat-icon>edit</mat-icon>
-          <span >SignUp</span>
+  <!-- Toolbar -->
+  <mat-toolbar style="background-color: #323232; color:#d4d2d2;">
+    <div class="flex-row" style="width:100%;">
+      <div class="flex-1 space-between items-center">
+        <button mat-mini-fab style="background-color:transparent ;color:darkgrey;" [matMenuTriggerFor]="menu" aria-label="">
+          <mat-icon>menu</mat-icon>
         </button>
-        <button mat-menu-item *ngIf="!isAuthenticated" [routerLink]="['signIn']">
-          <mat-icon>login</mat-icon>
-          <span >SignIn</span>
-        </button>
-        <button mat-menu-item *ngIf="isAuthenticated" [routerLink]="['standings']">
-          <mat-icon>subject</mat-icon>
-          <span >Standings</span>
-        </button>
-        <button mat-menu-item *ngIf="isAuthenticated" [routerLink]="['schedule']">
-          <mat-icon>calendar_today</mat-icon>
-          <span>Schedule</span>
-        </button>
-      </mat-menu>
-      <span class="nflFont" style="font-size: larger; padding-left:5px;">2024 Football Pool</span>
-    </div>
-    <div>
-      <button mat-button [matMenuTriggerFor]="menu2"><mat-icon>account_circle</mat-icon></button>
-      <mat-menu #menu2="matMenu">
-        <button mat-menu-item *ngIf="isAuthenticated"  [routerLink]="['profile']">
-          <mat-icon>perm_identity</mat-icon>
-          <span >Profile</span>
-        </button>
-        <button mat-menu-item *ngIf="isAuthenticated" (click)="signOut()">
-          <mat-icon>logout</mat-icon>
-          <span >SignOut</span>
-        </button>
-      </mat-menu>
-      <!-- <span class="" style="font-size: large; padding-left:20px;">User: {{username}}</span> -->
-    </div>
+        <mat-menu #menu="matMenu">
+          @if (!isAuthenticated) {
+            <button mat-menu-item [routerLink]="['signUp']">
+              <mat-icon>edit</mat-icon>
+              <span >SignUp</span>
+            </button>
+          }
+          @if (!isAuthenticated) {
+            <button mat-menu-item [routerLink]="['signIn']">
+              <mat-icon>login</mat-icon>
+              <span >SignIn</span>
+            </button>
+          }
+          @if (isAuthenticated) {
+            <button mat-menu-item [routerLink]="['standings']">
+              <mat-icon>subject</mat-icon>
+              <span >Standings</span>
+            </button>
+          }
+          @if (isAuthenticated) {
+            <button mat-menu-item [routerLink]="['schedule']">
+              <mat-icon>calendar_today</mat-icon>
+              <span>Schedule</span>
+            </button>
+          }
+        </mat-menu>
+        <span class="nflFont" style="font-size: larger; padding-left:5px;">{{ year }} Football Pool</span>
+      </div>
+      <div>
+        <button mat-button [matMenuTriggerFor]="menu2"><mat-icon>account_circle</mat-icon></button>
+        <mat-menu #menu2="matMenu">
+          @if (isAuthenticated) {
+            <button mat-menu-item  [routerLink]="['profile']">
+              <mat-icon>perm_identity</mat-icon>
+              <span >Profile</span>
+            </button>
+          }
+          @if (isAuthenticated) {
+            <button mat-menu-item (click)="signOut()">
+              <mat-icon>logout</mat-icon>
+              <span >SignOut</span>
+            </button>
+          }
+        </mat-menu>
+        <!-- <span class="" style="font-size: large; padding-left:20px;">User: {{username}}</span> -->
+      </div>
 
-  </div>
-</mat-toolbar>
-<router-outlet></router-outlet>
+    </div>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
 
 </mat-card>

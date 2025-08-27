@@ -1,17 +1,17 @@
 import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule } from '@angular/platform-browser';
-import { Injectable, NgModule, APP_INITIALIZER, inject  } from '@angular/core';
+import { Injectable, NgModule, inject, provideAppInitializer } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
-import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
-import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
+import { MatCardModule as MatCardModule } from '@angular/material/card';
+import { MatMenuModule as MatMenuModule } from '@angular/material/menu';
+import { MatTableModule as MatTableModule } from '@angular/material/table';
+import { MatListModule as MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatBadgeModule } from '@angular/material/badge';
 import {MatSnackBar, MatSnackBarRef, MatSnackBarModule} from '@angular/material/snack-bar';
 // import { MatLegacySnackBarModule as MatSnackBarModule } from '@angular/material/legacy-snack-bar';
-import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
+import { MatSelectModule as MatSelectModule } from '@angular/material/select';
 import * as Hammer from 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -31,7 +31,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OnlyLoggedInUsersGuard } from 'src/shared/services/onlyLoggedInUsers.guard';
-import { CognitoService } from 'src/shared/services/cognito.service';
+import { AuthService } from 'src/shared/services/auth.service';
 import { SaveSnackBarComponent } from './save-snack-bar/save-snack-bar.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 @Injectable()
@@ -101,20 +101,16 @@ const routes: Routes = [
     MatSelectModule
   ],
   providers: [DateFunctionService, RecordService, DatePipe
-    , OnlyLoggedInUsersGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}, CognitoService
+    , OnlyLoggedInUsersGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}, AuthService
     , { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (cs: CognitoService) => () => cs.isAuthenticated(),
-      deps: [CognitoService],
-      multi: true
-    },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (rs: RecordService) => () => rs.loadRecords(),
-      deps: [RecordService],
-      multi: true
-    }],
+    provideAppInitializer(() => {
+        const initializerFn = ((cs: AuthService) => () => cs.isAuthenticated())(inject(AuthService));
+        return initializerFn();
+      }),
+    provideAppInitializer(() => {
+        const initializerFn = ((rs: RecordService) => () => rs.loadRecords())(inject(RecordService));
+        return initializerFn();
+      })],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

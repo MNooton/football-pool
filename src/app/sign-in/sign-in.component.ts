@@ -2,12 +2,13 @@ import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { IUser, CognitoService } from '../../shared/services/cognito.service';
+import { IUser, AuthService } from '../../shared/services/auth.service';
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css'],
+    selector: 'app-sign-in',
+    templateUrl: './sign-in.component.html',
+    styleUrls: ['./sign-in.component.css'],
+    standalone: false
 })
 export class SignInComponent {
 
@@ -15,7 +16,7 @@ export class SignInComponent {
   user: IUser;
 
   constructor(private router: Router,
-              private cognitoService: CognitoService,
+              private authService: AuthService,
               private snackBar: MatSnackBar) {
     this.loading = false;
     this.user = {
@@ -27,7 +28,7 @@ export class SignInComponent {
 
   public signIn(): void {
     this.loading = true;
-    this.cognitoService.signIn(this.user)
+    this.authService.signIn(this.user)
     .then(() => {
       this.router.navigate(['/schedule']);
     }).catch((err) => {

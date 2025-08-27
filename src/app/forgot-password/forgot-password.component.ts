@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { CognitoService } from 'src/shared/services/cognito.service';
+import { AuthService } from 'src/shared/services/auth.service';
 
 @Component({
-  selector: 'app-forgot-password',
-  templateUrl: './forgot-password.component.html',
-  styleUrls: ['./forgot-password.component.css']
+    selector: 'app-forgot-password',
+    templateUrl: './forgot-password.component.html',
+    styleUrls: ['./forgot-password.component.css'],
+    standalone: false
 })
 export class ForgotPasswordComponent implements OnInit {
   user = null;
   gotCode = false;
-  constructor(public cognitoService: CognitoService
+  constructor(public authService: AuthService
             , private router: Router
             , private snackBar: MatSnackBar) { }
 
@@ -36,7 +37,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   public forgotPassword(): void {
-    this.cognitoService.forgotPassword(this.user.name);
+    this.authService.forgotPassword(this.user.name);
     this.snackBar.open('Check your email for the code', '', {
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
@@ -47,7 +48,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   public resetPassword(): void {
-    this.cognitoService.submitNewPassword(this.user.name, this.user.code, this.user.password).then(data => {
+    this.authService.submitNewPassword(this.user.name, this.user.code, this.user.password).then(data => {
       this.snackBar.open('Your password has been changed!', '', {
         horizontalPosition: 'center',
         verticalPosition: 'bottom',

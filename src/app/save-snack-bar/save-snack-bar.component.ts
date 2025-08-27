@@ -6,9 +6,10 @@ import {
 } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-save-snack-bar',
-  templateUrl: './save-snack-bar.component.html',
-  styleUrls: ['./save-snack-bar.component.css']
+    selector: 'app-save-snack-bar',
+    templateUrl: './save-snack-bar.component.html',
+    styleUrls: ['./save-snack-bar.component.css'],
+    standalone: false
 })
 export class SaveSnackBarComponent {
   message: string;
@@ -19,7 +20,6 @@ export class SaveSnackBarComponent {
     this.actionName = data.actionName;
     this.message = data.message;
     this.actionFunction = data.action;
-    console.log({ a: data});
   }
 
   dismiss(): void {

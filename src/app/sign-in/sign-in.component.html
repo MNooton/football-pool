@@ -22,7 +22,9 @@
         <div class="row">
           <div class="col d-grid">
             <button type="button" (click)="signIn()" class="btn btn-sm btn-success" [disabled]="loading">
-              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+              @if (loading) {
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              }
               Sign in
             </button>
           </div>

@@ -1,25 +1,28 @@
 import { Component, OnInit  } from '@angular/core';
-import { CognitoService } from '../shared/services/cognito.service';
+import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
+import { APP_CONSTANTS } from '../shared/constants';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    standalone: false
 })
 export class AppComponent implements OnInit {
     title = 'football-pool';
     isAuthenticated: boolean;
     username = null;
+    year = APP_CONSTANTS.YEAR
 
-    constructor(private router: Router, private cognitoService: CognitoService) {
+    constructor(private router: Router, private authService: AuthService) {
       this.isAuthenticated = false;
     }
 
     public ngOnInit(): void {
-      this.cognitoService.authenticationSubject.subscribe(val => {
+      this.authService.authenticationSubject.subscribe(val => {
         if (val) {
-          this.username = this.cognitoService.currentUser.name;
+          this.username = this.authService.currentUser.name;
           this.isAuthenticated = val;
         } else {
           this.username = null;
@@ -29,7 +32,7 @@ export class AppComponent implements OnInit {
     }
 
     public signOut(): void {
-      this.cognitoService.signOut()
+      this.authService.signOut()
       .then(() => {
         this.router.navigate(['/signIn']);
         this.username = '';
@@ -37,7 +40,7 @@ export class AppComponent implements OnInit {
     }
 
     public getUsername(): string {
-      return this.cognitoService.currentUser.name;
+      return this.authService.currentUser.name;
     }
 
   }
