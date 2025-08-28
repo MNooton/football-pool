@@ -56,8 +56,9 @@ export class AuthService {
 
   async signIn(user: IUser): Promise<void> {
     const authUser = await signIn({ username: user.name, password: user.password });
-      const attributes = await fetchUserAttributes();
-    this.setUser(authUser, attributes);
+    const userdetails = await getCurrentUser(); 
+    const attributes = await fetchUserAttributes();
+    this.setUser(userdetails, attributes);
     this.authenticationSubject.next(true);
   }
 
@@ -72,7 +73,7 @@ export class AuthService {
       return true;
     }
     try {
-      const user = await this.getUser();
+      const user = await getCurrentUser();
       const attributes = await fetchUserAttributes();
  
       if (user) {
@@ -106,6 +107,7 @@ export class AuthService {
       code: '',
       gender: attributes?.gender ?? '',
     };
+
   }
 
   async forgotPassword(username: string): Promise<void> {
