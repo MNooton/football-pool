@@ -197,13 +197,13 @@ export class WeekViewComponent implements OnInit, OnChanges {
   }
 
   disablePickButton(game: any): boolean {
-    // if (this.currentWeekId !== game.weekId) {
-    //   return true;
-    // }
+    if (this.currentWeekId !== game.weekId) {
+      return true;
+    }
 
-    // if (new Date() > this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc)) {
-    //   return true;
-    // }
+    if (new Date() > this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc)) {
+      return true;
+    }
     return false;
   }
 
