@@ -69,14 +69,6 @@
   font-weight: bold;
 }
 
-/* Spread badge stays pinned bottom-right */
-.spread-badge {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 0.7rem;
-}
-
 .vs {
   font-size: 1rem;
   font-weight: bold;
@@ -95,6 +87,29 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  margin: 0 8px;
+  object-fit: contain;
+}
+
+.pick-row {
+  display: flex;
+  align-items: center;   /* vertical alignment */
+  justify-content: space-between; /* spread them nicely if needed */
+  width: 100%;            /* ensure full width of list item */
+}
+
+.pick-name {
+  flex: 1;                /* take up remaining space */
+  white-space: nowrap;    /* prevent wrapping */
+  overflow: hidden;       
+  text-overflow: ellipsis; /* optional: add … for long names */
+}
+
+.pick-image {
+  width: 32px;   /* or whatever size works */
+  height: 32px;
+  margin: 0 8px;
+  object-fit: contain;
 }
 
 .no-picks {
@@ -120,21 +135,63 @@
   position: relative;
 }
 
-/* Spread badge aligned right-center of away team */
-.spread-badge {
-  position: absolute;
-  top: 50%;
-  right: -10px;   /* push slightly outside the team column */
-  transform: translateY(-50%);
-  font-size: 0.75rem;
-  color: white;
-  border-radius: 50%;
-  padding: 2px 6px;
-}
 
 .flex-container {
   display: flex;
   flex-direction: column; /* stack vertically */
   gap: 16px;              /* space between cards */
   width: 100%;
+}
+
+  .team-score-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .team-points {
+      font-weight: bold;
+      font-size: 20px;
+      margin: 0;
+    }
+
+    /* .spread-badge {
+      color: #fff;
+      border-radius: 1px;
+      padding-bottom: 15px;
+      padding-left: 10px;
+      font-size: 10px;
+      text-align: center;
+    } */
+.spread-badge {
+  display: inline-block;
+  background-color: #ff4081; 
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: 12px; 
+  margin-left: 6px;
+  line-height: 1.4;
+  white-space: nowrap; 
+  text-align: center;
+}
+
+  }
+
+  .team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+
+  .team-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .team-logo {
+      width: 28px;
+      height: 28px;
+    }
+  }
 }

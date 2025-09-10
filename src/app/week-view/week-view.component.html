@@ -12,26 +12,28 @@
         <div class="teams-row">
           <!-- Away team -->
           <div id="visitor" class="team-column" [ngClass]="{ winningTeam: game.winningTeamId === game.awayTeam.id }">
-            <button
-              mat-button matRipple 
-              [disabled]="disablePickButton(game)"
-              (click)="pick(game.id, game.awayTeam.id)"
-              [ngClass]="{ myPick: game.myPick == game.awayTeam.id }"
-              class="team-button"
-            >
-              <img
-                class="team-logo"
-                [src]="game.awayTeam.imageUrl"
-                alt="{{ game.awayTeam.name }}"
-              />
-            </button>
-            <p class="team-name">{{ game.awayTeam.name }}</p>
-            <p class="team-points">{{ game.awayTeam.points }}</p>
-            <span
-              class="spread-badge"
-              matBadge="{{ game.awayTeam.spread }}"
-              matBadgeColor="accent"
-            ></span>
+            <div class="team-info">
+              <button
+                mat-button matRipple 
+                [disabled]="disablePickButton(game)"
+                (click)="pick(game.id, game.awayTeam.id)"
+                [ngClass]="{ myPick: game.myPick == game.awayTeam.id }"
+                class="team-button"
+              >
+                <img
+                  class="team-logo"
+                  [src]="game.awayTeam.imageUrl"
+                  alt="{{ game.awayTeam.name }}"
+                />
+              </button>
+              <p class="team-name">{{ game.awayTeam.name }}</p>
+            </div>
+            <div class="team-score-wrapper">
+              <p class="team-points">{{ game.awayTeam.points }}</p>
+              <div class="spread-badge">
+                {{ game.awayTeam.spread }}
+              </div>
+            </div>
           </div>
 
           <!-- VS -->
@@ -68,7 +70,7 @@
           @for (pick of game.picks; track pick) {
             <mat-list-item>
               <div class="pick-item">
-                <span>{{ pick.name }}</span>
+                <span class="pick-name">{{ pick.name }}</span>
                 <img
                   class="pick-avatar"
                   [src]="pick.imageUrl"
@@ -76,13 +78,13 @@
                 />
 
                 @if (pick.isPlayed && pick.status === 'W') {
-                  <mat-icon color="primary">check_circle</mat-icon>
+                  <mat-icon class="pick-icon" color="primary">check_circle</mat-icon>
                 }
                 @if (pick.isPlayed && pick.status === 'L') {
-                  <mat-icon color="warn">cancel</mat-icon>
+                  <mat-icon class="pick-icon" color="warn">cancel</mat-icon>
                 }
                 @if (pick.isPlayed && pick.status === 'T') {
-                  <mat-icon>minimize</mat-icon>
+                  <mat-icon class="pick-icon">minimize</mat-icon>
                 }
               </div>
             </mat-list-item>
