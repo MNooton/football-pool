@@ -287,8 +287,8 @@
         {
           "id": 24,
           "weekId": 7,
-          "homeTeamId": 1,
-          "awayTeamId": 12,
+          "homeTeamId": 28,
+          "awayTeamId": 2,
           "awayTeamSpread": "2.5",
           "dayId": 1,
           "dateTimeUtc": "20251019172000",
@@ -298,8 +298,8 @@
         {
           "id": 25,
           "weekId": 7,
-          "homeTeamId": 28,
-          "awayTeamId": 2,
+          "homeTeamId": 11,
+          "awayTeamId": 30,
           "awayTeamSpread": "5.5",
           "dayId": 2,
           "dateTimeUtc": "20251020171500",
