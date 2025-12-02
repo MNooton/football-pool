@@ -761,10 +761,15 @@
       "dateTimeUtc": "20251227171500",
       "homePoints": 0,
       "awayPoints": 0
-    },
-    {
+    }
+   
+  ]
+},{
+  "id": 18,
+  "name": "Week 18",
+  "games": [ {
       "id": 52,
-      "weekId": 17,
+      "weekId": 18,
       "homeTeamId": 27,
       "awayTeamId": 28,
       "awayTeamSpread": "",
@@ -775,7 +780,7 @@
     },
     {
       "id": 53,
-      "weekId": 17,
+      "weekId": 18,
       "homeTeamId": 0,
       "awayTeamId": 0,
       "awayTeamSpread": "",
@@ -783,8 +788,7 @@
       "dateTimeUtc": "20251229171500",
       "homePoints": 0,
       "awayPoints": 0
-    }
-  ]
+    }]
 }
   ]
 }
