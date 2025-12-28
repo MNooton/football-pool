@@ -1,5 +1,18 @@
 <p class="sectionTitle">{{ week.name }}</p>
+@if (week.id <= actualWeekId) {
+  <mat-expansion-panel class="week-standings-panel">
+  <mat-expansion-panel-header>
+    <div class="week-standings-header">
+        Click here to see the standings at the start of Week {{ week.id }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
 
+    <app-standings
+      [standings]="standingsAtWeekStart"
+      [readonly]="true">
+    </app-standings>
+  </mat-expansion-panel>
+}
 <div class="games-grid">
   <div class="flex-container">
   @for (game of games; track game) {

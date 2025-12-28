@@ -180,4 +180,77 @@ export class RecordService {
       });
     });
   }
+
+  getStandingsAtStartOfWeek(weekNumber: number): Standing[] {
+    // Defensive: ensure picks & persons are loaded
+    if (!this.pickData || !this.personData) {
+      return [];
+    }
+
+    // WEEK 1: everyone starts 0-0-0
+    if (weekNumber === 1) {
+      const zeroStandings: Standing[] = this.personData.map(person => ({
+        personId: person.id,
+        name: person.name,
+        imageUrl: person.imageUrl,
+        record: '0-0-0',
+        points: 0,
+        rank: 1
+      }));
+
+      return (zeroStandings);
+    }
+
+    // 1️⃣ Get all games from weeks BEFORE the given week
+    const gamesBeforeWeek = this.scheduleData.weeks
+      .filter(w => w.id < weekNumber)   // or w.weekNumber depending on your model
+      .flatMap(w => w.games);
+
+  // 2️⃣ Determine which of those games have been played
+  const playedGamesBeforeWeek: GameResult[] = gamesBeforeWeek
+    .filter(game =>
+      this.dateFunctionService.getDateFromYYYYMMDD(game.dateTimeUtc) < this.currentDate
+    )
+    .map(game => ({
+      gameId: game.id,
+      winningTeamId: this.getWinner(game)
+    }));
+
+  // 3️⃣ Calculate standings per person
+  const standings: Standing[] = this.personData.map(person => {
+    const picks = this.pickData.filter(p => p.personId === person.id);
+
+    let wins = 0;
+    let losses = 0;
+    let ties = 0;
+
+    playedGamesBeforeWeek.forEach(game => {
+      const pick = picks.find(p => p.gameId === game.gameId);
+      if (!pick) {
+        return;
+      }
+
+      if (pick.winningTeamId === game.winningTeamId) {
+        wins++;
+      } else if (game.winningTeamId === 0) {
+        ties++;
+      } else {
+        losses++;
+      }
+    });
+
+    return {
+      personId: person.id,
+      name: person.name,
+      imageUrl: person.imageUrl,
+      record: `${wins}-${losses}-${ties}`,
+      points: (wins * 2) + ties,
+      rank: 1
+    };
+  });
+
+  // 4️⃣ Rank standings
+  return this.rankStandings(standings);
+}
+
 }

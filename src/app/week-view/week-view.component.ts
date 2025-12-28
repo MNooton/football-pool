@@ -8,10 +8,11 @@ import { DatePipe, getLocaleDateFormat } from '@angular/common';
 import { RecordService } from 'src/shared/services/record.service';
 import { AuthService } from 'src/shared/services/auth.service';
 import {MatSnackBar, MatSnackBarRef, MatSnackBarModule} from '@angular/material/snack-bar';
-// import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { FileService } from 'src/shared/services/file.service';
 import { SaveSnackBarComponent } from '../save-snack-bar/save-snack-bar.component';
 import { APP_CONSTANTS } from '../../shared/constants';
+import { Standing } from 'src/shared/models/interface.standing';
 
 @Component({
     selector: 'app-week-view',
@@ -28,6 +29,8 @@ export class WeekViewComponent implements OnInit, OnChanges {
   newPicks: Pick[];
   myPicks: Pick[];
   currentWeekId: number;
+  actualWeekId: number;
+  standingsAtWeekStart: Standing[];
 
   @Input() week: Week;
 
@@ -41,6 +44,7 @@ export class WeekViewComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.myPicks = this.recordService.pickData.filter(x => x.personId === this.authService.currentUser.email);
     this.currentWeekId = this.week.id; // The schedule browser will automatically set us to the current week.
+    this.actualWeekId = this.week.id;
     this.setWeek();
   }
 
@@ -91,6 +95,8 @@ export class WeekViewComponent implements OnInit, OnChanges {
     };
 
   });
+  console.log(this.week.id);
+    this.standingsAtWeekStart = this.recordService.getStandingsAtStartOfWeek(this.week.id);
   
   }
 

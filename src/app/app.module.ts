@@ -26,6 +26,7 @@ import { DatePipe } from '@angular/common';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 // import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatButtonModule as MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { RecordService } from 'src/shared/services/record.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -97,6 +98,7 @@ const routes: Routes = [
     MatButtonModule,
     MatBadgeModule,
     HammerModule,
+    MatExpansionModule,
     MatSnackBarModule,
     MatSelectModule
   ],
