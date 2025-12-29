@@ -770,8 +770,8 @@
       "awayTeamSpread": "2.5",
       "dayId": 1,
       "dateTimeUtc": "20251228171500",
-      "homePoints": 0,
-      "awayPoints": 0
+      "homePoints": 42,
+      "awayPoints": 38
     },
     {
       "id": 66,
@@ -795,10 +795,10 @@
       "homeTeamId": 27,
       "awayTeamId": 28,
       "awayTeamSpread": "",
-      "dayId": 6,
-      "dateTimeUtc": "20251227171500",
-      "homePoints": 0,
-      "awayPoints": 0
+      "dayId": 7,
+      "dateTimeUtc": "20260103171500",
+      "homePoints": 28,
+      "awayPoints": 29
     },
     {
       "id": 53,
@@ -806,8 +806,76 @@
       "homeTeamId": 0,
       "awayTeamId": 0,
       "awayTeamSpread": "",
+      "dayId": 1,
+      "dateTimeUtc": "20260104171500",
+      "homePoints": 27,
+      "awayPoints": 3
+    }]
+},{
+  "id": 19,
+  "name": "Wildcard Weekend",
+  "games": [ {
+      "id": 67,
+      "weekId": 19,
+      "homeTeamId": 27,
+      "awayTeamId": 28,
+      "awayTeamSpread": "",
+      "dayId": 7,
+      "dateTimeUtc": "20260110131500",
+      "homePoints": 0,
+      "awayPoints": 0
+    },
+    {
+      "id": 68,
+      "weekId": 19,
+      "homeTeamId": 0,
+      "awayTeamId": 0,
+      "awayTeamSpread": "",
+      "dayId": 7,
+      "dateTimeUtc": "20260110171500",
+      "homePoints": 0,
+      "awayPoints": 0
+    },{
+      "id": 67,
+      "weekId": 19,
+      "homeTeamId": 27,
+      "awayTeamId": 28,
+      "awayTeamSpread": "",
+      "dayId": 1,
+      "dateTimeUtc": "20260111101500",
+      "homePoints": 0,
+      "awayPoints": 0
+    },
+    {
+      "id": 68,
+      "weekId": 19,
+      "homeTeamId": 0,
+      "awayTeamId": 0,
+      "awayTeamSpread": "",
+      "dayId": 1,
+      "dateTimeUtc": "20260111131500",
+      "homePoints": 0,
+      "awayPoints": 0
+    },
+    {
+      "id": 69,
+      "weekId": 19,
+      "homeTeamId": 0,
+      "awayTeamId": 0,
+      "awayTeamSpread": "",
+      "dayId": 1,
+      "dateTimeUtc": "20260111171500",
+      "homePoints": 0,
+      "awayPoints": 0
+    },
+    {
+      "id": 70,
+      "weekId": 19,
+      "homeTeamId": 0,
+      "awayTeamId": 0,
+      "awayTeamSpread": "",
       "dayId": 2,
-      "dateTimeUtc": "20251229171500",
+      "dateTimeUtc": "20260121171500",
       "homePoints": 0,
       "awayPoints": 0
     }]
