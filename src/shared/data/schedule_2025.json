@@ -808,8 +808,8 @@
       "awayTeamSpread": "-3.5",
       "dayId": 1,
       "dateTimeUtc": "20260104171500",
-      "homePoints": 0,
-      "awayPoints": 0
+      "homePoints": 26,
+      "awayPoints": 24
     }]
 },{
   "id": 19,
@@ -817,8 +817,8 @@
   "games": [ {
       "id": 67,
       "weekId": 19,
-      "homeTeamId": 27,
-      "awayTeamId": 28,
+      "homeTeamId": 5,
+      "awayTeamId": 18,
       "awayTeamSpread": "",
       "dayId": 7,
       "dateTimeUtc": "20260110131500",
@@ -828,8 +828,8 @@
     {
       "id": 68,
       "weekId": 19,
-      "homeTeamId": 0,
-      "awayTeamId": 0,
+      "homeTeamId": 6,
+      "awayTeamId": 12,
       "awayTeamSpread": "",
       "dayId": 7,
       "dateTimeUtc": "20260110171500",
@@ -838,8 +838,8 @@
     },{
       "id": 67,
       "weekId": 19,
-      "homeTeamId": 27,
-      "awayTeamId": 28,
+      "homeTeamId": 15,
+      "awayTeamId": 4,
       "awayTeamSpread": "",
       "dayId": 1,
       "dateTimeUtc": "20260111101500",
@@ -849,8 +849,8 @@
     {
       "id": 68,
       "weekId": 19,
-      "homeTeamId": 0,
-      "awayTeamId": 0,
+      "homeTeamId": 26,
+      "awayTeamId": 28,
       "awayTeamSpread": "",
       "dayId": 1,
       "dateTimeUtc": "20260111131500",
@@ -860,8 +860,8 @@
     {
       "id": 69,
       "weekId": 19,
-      "homeTeamId": 0,
-      "awayTeamId": 0,
+      "homeTeamId": 21,
+      "awayTeamId": 17,
       "awayTeamSpread": "",
       "dayId": 1,
       "dateTimeUtc": "20260111171500",
@@ -871,14 +871,28 @@
     {
       "id": 70,
       "weekId": 19,
-      "homeTeamId": 0,
-      "awayTeamId": 0,
+      "homeTeamId": 27,
+      "awayTeamId": 13,
       "awayTeamSpread": "",
       "dayId": 2,
       "dateTimeUtc": "20260121171500",
       "homePoints": 0,
       "awayPoints": 0
     }]
-}
-  ]
+},{
+  "id": 20,
+  "name": "Division Weekend",
+  "games": [ {
+      "id": 71,
+      "weekId": 20,
+      "homeTeamId": 0,
+      "awayTeamId": 0,
+      "awayTeamSpread": "",
+      "dayId": 7,
+      "dateTimeUtc": "20260117131500",
+      "homePoints": 0,
+      "awayPoints": 0
+    }
+  ]}]
+  
 }
