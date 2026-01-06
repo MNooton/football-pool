@@ -4,7 +4,7 @@ import { Pick } from '../models/interface.pick';
 import { Game } from '../models/interface.game';
 import { Record } from '../models/interface.record';
 import { DateFunctionService } from './date.function.service';
-import importedScheduleData from '../../shared/data/schedule_2025.json';
+import importedScheduleData from '../../shared/data/schedule_playoff_2026.json';
 import importedPersonData from '../../shared/data/persons.json';
 import { GameResult } from '../models/interface.gameResult';
 import { ConstantPool, NodeWithI18n } from '@angular/compiler';
@@ -142,7 +142,7 @@ export class RecordService {
     return new Promise<void>((resolve, reject) => { this.fileService.listFiles().then(data => {
         const pickFileList = data.filter(file => file.path.startsWith(APP_CONSTANTS.PICK_FOLDER));
         let filesProcessed = 0;
-
+        
         if (pickFileList.length === 0) {
           resolve();
         }
