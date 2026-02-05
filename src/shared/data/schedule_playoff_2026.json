@@ -150,8 +150,8 @@
       "weekId": 4,
       "homeTeamId": 29,
       "awayTeamId": 21,
-      "awayTeamSpread": "",
-      "dayId": 7,
+      "awayTeamSpread": "4.5",
+      "dayId": 1,
       "dateTimeUtc": "20260208151500",
       "homePoints": 0,
       "awayPoints": 0
