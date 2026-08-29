@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Schedule } from 'src/shared/models/interface.schedule';
 import { DateFunctionService } from 'src/shared/services/date.function.service';
 import { RecordService } from 'src/shared/services/record.service';
@@ -7,6 +7,7 @@ import { RecordService } from 'src/shared/services/record.service';
     selector: 'app-schedule-browser',
     templateUrl: './schedule-browser.component.html',
     styleUrls: ['./schedule-browser.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ScheduleBrowserComponent implements OnInit {

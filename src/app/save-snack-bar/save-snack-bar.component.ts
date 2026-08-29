@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {
   MatSnackBar as MatSnackBar,
   MAT_SNACK_BAR_DATA as MAT_SNACK_BAR_DATA,
@@ -9,6 +9,7 @@ import {
     selector: 'app-save-snack-bar',
     templateUrl: './save-snack-bar.component.html',
     styleUrls: ['./save-snack-bar.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SaveSnackBarComponent {

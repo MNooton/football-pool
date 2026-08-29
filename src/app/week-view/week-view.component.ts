@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { Week } from 'src/shared/models/interface.week';
 import { Pick } from 'src/shared/models/interface.pick';
 import teamData from '../../shared/data/teams.json';
@@ -18,6 +18,7 @@ import { Standing } from 'src/shared/models/interface.standing';
     selector: 'app-week-view',
     templateUrl: './week-view.component.html',
     styleUrls: ['./week-view.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class WeekViewComponent implements OnInit, OnChanges {

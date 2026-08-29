@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { Standing } from 'src/shared/models/interface.standing';
 import { RecordService } from 'src/shared/services/record.service';
 
@@ -6,6 +6,7 @@ import { RecordService } from 'src/shared/services/record.service';
   selector: 'app-standings',
   templateUrl: './standings.component.html',
   styleUrls: ['./standings.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
 export class StandingsComponent implements OnInit, OnChanges {
