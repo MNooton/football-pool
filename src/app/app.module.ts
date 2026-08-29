@@ -1,5 +1,5 @@
 import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule } from '@angular/platform-browser';
-import { Injectable, NgModule, inject, provideAppInitializer } from '@angular/core';
+import { Injectable, NgModule, inject, provideAppInitializer, provideZoneChangeDetection } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -12,7 +12,6 @@ import { MatBadgeModule } from '@angular/material/badge';
 import {MatSnackBar, MatSnackBarRef, MatSnackBarModule} from '@angular/material/snack-bar';
 // import { MatLegacySnackBarModule as MatSnackBarModule } from '@angular/material/legacy-snack-bar';
 import { MatSelectModule as MatSelectModule } from '@angular/material/select';
-import * as Hammer from 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,15 +34,6 @@ import { OnlyLoggedInUsersGuard } from 'src/shared/services/onlyLoggedInUsers.gu
 import { AuthService } from 'src/shared/services/auth.service';
 import { SaveSnackBarComponent } from './save-snack-bar/save-snack-bar.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-@Injectable()
-export class MyHammerConfig extends HammerGestureConfig {
-  overrides = {
-    swipe: { direction: Hammer.DIRECTION_HORIZONTAL },
-    pinch: { enable: false },
-    rotate: { enable: false }
-  } as any;
-}
-
 
 const routes: Routes = [
   {
@@ -103,8 +93,7 @@ const routes: Routes = [
     MatSelectModule
   ],
   providers: [DateFunctionService, RecordService, DatePipe
-    , OnlyLoggedInUsersGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}, AuthService
-    , { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
+    , OnlyLoggedInUsersGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}, AuthService,
     provideAppInitializer(() => {
         const initializerFn = ((cs: AuthService) => () => cs.isAuthenticated())(inject(AuthService));
         return initializerFn();
@@ -112,7 +101,7 @@ const routes: Routes = [
     provideAppInitializer(() => {
         const initializerFn = ((rs: RecordService) => () => rs.loadRecords())(inject(RecordService));
         return initializerFn();
-      })],
+      }), provideZoneChangeDetection({ eventCoalescing: true })],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

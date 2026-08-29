@@ -13,6 +13,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "buffer",
+              "@aws-crypto/sha256-js",
+              "qrcode",
+              "fast-xml-parser",
+              "crc-32"
+            ],
             "outputPath": {
               "base": "docs",
               "browser": ""
