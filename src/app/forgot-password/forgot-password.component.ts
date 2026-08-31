@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/shared/services/auth.service';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
     selector: 'app-forgot-password',

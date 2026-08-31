@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
-import { Standing } from 'src/shared/models/interface.standing';
-import { RecordService } from 'src/shared/services/record.service';
+import { Standing } from '../../shared/models/interface.standing';
+import { RecordService } from '../../shared/services/record.service';
 
 @Component({
   selector: 'app-standings',

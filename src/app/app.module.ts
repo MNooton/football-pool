@@ -1,4 +1,4 @@
-import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { Injectable, NgModule, inject, provideAppInitializer, provideZoneChangeDetection } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,18 +20,18 @@ import { HomeComponent } from './home/home.component';
 import { StandingsComponent } from './standings/standings.component';
 import { WeekViewComponent } from './week-view/week-view.component';
 import { GameCardComponent } from './game-card/game-card.component';
-import { DateFunctionService } from 'src/shared/services/date.function.service';
+import { DateFunctionService } from '../shared/services/date.function.service';
 import { DatePipe } from '@angular/common';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 // import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatButtonModule as MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { RecordService } from 'src/shared/services/record.service';
+import { RecordService } from '../shared/services/record.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ProfileComponent } from './profile/profile.component';
-import { OnlyLoggedInUsersGuard } from 'src/shared/services/onlyLoggedInUsers.guard';
-import { AuthService } from 'src/shared/services/auth.service';
+import { OnlyLoggedInUsersGuard } from '../shared/services/onlyLoggedInUsers.guard';
+import { AuthService } from '../shared/services/auth.service';
 import { SaveSnackBarComponent } from './save-snack-bar/save-snack-bar.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
@@ -64,15 +64,15 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ScheduleBrowserComponent,
-    HomeComponent,
-    StandingsComponent,
+    HomeComponent,    
     WeekViewComponent,
     GameCardComponent,
     SignUpComponent,
     SignInComponent,
     ProfileComponent,
     SaveSnackBarComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    StandingsComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +87,6 @@ const routes: Routes = [
     MatDividerModule,
     MatButtonModule,
     MatBadgeModule,
-    HammerModule,
     MatExpansionModule,
     MatSnackBarModule,
     MatSelectModule

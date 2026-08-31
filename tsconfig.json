@@ -2,7 +2,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "paths": {
+      "@services/*": ["./src/app/services/*"],
+      "@components/*": ["./src/app/components/*"]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "esModuleInterop": true,
@@ -14,9 +17,20 @@
     "target": "ES2022",
     "module": "es2020",
     "lib": [
-      "es2019",
+      "es2022",
       "dom"
     ],
-    "useDefineForClassFields": false
+    "types": ["node"],
+    "useDefineForClassFields": false,
+    "strict": true,
+    
+    // 🟢 Fixes: "Property has no initializer" (@Input() and class properties)
+    "strictPropertyInitialization": false,
+    
+    // 🟢 Fixes: "Object is possibly null or undefined" (the filter, findIndex, and email errors)
+    "strictNullChecks": false,
+    
+    // 🟢 Fixes: "Property does not exist on type 'never'" (empty array type inference)
+    "noImplicitAny": false
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Schedule } from 'src/shared/models/interface.schedule';
-import { DateFunctionService } from 'src/shared/services/date.function.service';
-import { RecordService } from 'src/shared/services/record.service';
+import { Schedule } from '../../shared/models/interface.schedule';
+import { DateFunctionService } from '../../shared/services/date.function.service';
+import { RecordService } from '../../shared/services/record.service';
 
 @Component({
     selector: 'app-schedule-browser',

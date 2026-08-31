@@ -1,18 +1,18 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
-import { Week } from 'src/shared/models/interface.week';
-import { Pick } from 'src/shared/models/interface.pick';
+import { Week } from '../../shared/models/interface.week';
+import { Pick } from '../../shared/models/interface.pick';
 import teamData from '../../shared/data/teams.json';
 import dayData from '../../shared/data/days.json';
-import { DateFunctionService } from 'src/shared/services/date.function.service';
+import { DateFunctionService } from '../../shared/services/date.function.service';
 import { DatePipe, getLocaleDateFormat } from '@angular/common';
-import { RecordService } from 'src/shared/services/record.service';
-import { AuthService } from 'src/shared/services/auth.service';
+import { RecordService } from '../../shared/services/record.service';
+import { AuthService } from '../../shared/services/auth.service';
 import {MatSnackBar, MatSnackBarRef, MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { FileService } from 'src/shared/services/file.service';
+import { FileService } from '../../shared/services/file.service';
 import { SaveSnackBarComponent } from '../save-snack-bar/save-snack-bar.component';
 import { APP_CONSTANTS } from '../../shared/constants';
-import { Standing } from 'src/shared/models/interface.standing';
+import { Standing } from '../../shared/models/interface.standing';
 
 @Component({
     selector: 'app-week-view',

@@ -114,7 +114,7 @@
   {
     "city": "Kansas City",
     "id": 16,
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e1/Kansas_City_Chiefs_logo.svg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Kansas_City_Chiefs_KC_logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
     "name": "Chiefs",
     "state": "Missouri"
   },
@@ -219,7 +219,7 @@
   {
     "city": "Tennesee",
     "id": 31,
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c1/Tennessee_Titans_logo.svg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Tennessee_Titans_Alternate_Logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
     "name": "Titans",
     "state": "Tennessee"
   },
