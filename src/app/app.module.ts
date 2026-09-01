@@ -34,6 +34,7 @@ import { OnlyLoggedInUsersGuard } from '../shared/services/onlyLoggedInUsers.gua
 import { AuthService } from '../shared/services/auth.service';
 import { SaveSnackBarComponent } from './save-snack-bar/save-snack-bar.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { SwipeDirective } from '../shared/services/swipe.directive';
 
 const routes: Routes = [
   {
@@ -72,7 +73,8 @@ const routes: Routes = [
     ProfileComponent,
     SaveSnackBarComponent,
     ForgotPasswordComponent,
-    StandingsComponent
+    StandingsComponent,
+    SwipeDirective
   ],
   imports: [
     BrowserModule,
