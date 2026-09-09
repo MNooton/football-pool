@@ -26,3 +26,9 @@ simple-snack-bar span {
   font-size: large;
   font-weight: bolder;
 }
+
+/* src/styles.css */
+.game-card .mat-mdc-card-header-text {
+  width: 100%;
+  text-align: center;
+}
