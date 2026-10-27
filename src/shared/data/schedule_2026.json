@@ -270,19 +270,19 @@
           "awayTeamSpread": "2.5",
           "dayId": 1,
           "dateTimeUtc": "20261025172000",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 20,
+          "awayPoints": 3
         },
         {
           "id": 22,
           "weekId": 7,
           "homeTeamId": 26,
           "awayTeamId": 9,
-          "awayTeamSpread": "4.5",
+          "awayTeamSpread": "-4.5",
           "dayId": 2,
           "dateTimeUtc": "20261026171500",
-          "homePoints": 0,
-          "awayPoints": 0
+          "homePoints": 21,
+          "awayPoints": 38
         }
       ]
     },
